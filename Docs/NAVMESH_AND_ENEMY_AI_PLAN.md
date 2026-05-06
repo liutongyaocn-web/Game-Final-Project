@@ -63,6 +63,19 @@ Safe next step:
 - Remaining issues to inspect: disconnected islands, holes near props, insufficient coverage at spawn/extraction points, and open routes out of the intended arena.
 - Next step: one-enemy movement/combat test in Task 4.5.
 
+## Task 4.5 Single Enemy Validation
+- Test source prefab: `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab`.
+- Scene test object: `_Systems/AI_Test/Enemy_Test_Zombie_Walker`.
+- Saved test placement: `(15, 0, -128)`, rotation `(0, 250, 0)`.
+- Final saved state: disabled, so the validation object is available for inspection but does not interfere with future scene work.
+- Source prefab modification: none.
+- NavMeshAgent observation: no standard `UnityEngine.AI.NavMeshAgent` was found on the root object; the zombie uses JU TPS `JU_AI_Zombie` navigation/behaviour components.
+- Movement validation: confirmed. The zombie stood on the arena floor and moved using JU TPS navigation/random movement at the saved placement.
+- Detection/combat validation: confirmed in a temporary close-range Play Mode pass. The zombie detected `Player_JUTPS`, entered attack targeting, moved close, and reduced player health.
+- Console result: 0 errors and 0 warnings after final validation.
+- Known tuning need: the default zombie field-of-view distance is `10`, so future Last Stand enemy variants should tune detection distance, speed, health, and attack pressure deliberately under `Assets/_LastStand` instead of editing the JU TPS source prefab.
+- Next step: create Last Stand enemy wrappers/variants and then connect enemy death/spawn events to custom wave/stat systems.
+
 ## Enemy Prefab Candidates
 
 | Candidate prefab path | Description / likely use | AI type or observed components | Melee/ranged suitability | Recommended Last Stand role | Risks/manual setup |

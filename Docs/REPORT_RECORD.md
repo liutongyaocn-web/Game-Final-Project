@@ -117,3 +117,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The baked NavMesh prepares the scene for JU TPS enemy pathfinding tests.
 - This supports future Coursework002 Game AI evidence, especially enemy navigation, approach routes, and arena pathfinding constraints.
 - No enemies, wave systems, scoring, pickups, or combat logic were added in this task.
+
+## Task 4.5 Single JU TPS Zombie AI Validation
+- A single JU TPS Zombie AI was tested in `LS_Arena_01` as the first enemy AI validation step.
+- The test confirmed that a JU TPS zombie prefab can exist in the custom arena scene, remain stable, move through its JU TPS navigation behaviour, detect the JU TPS player at close range, and apply melee damage.
+- This validates the foundation for Coursework002 Game AI evidence without implementing the full wave system yet.
+- The saved scene keeps the test enemy disabled under `_Systems/AI_Test`, so it remains explainable evidence without disrupting future tasks.
+- Later custom Last Stand systems will manage enemy variants, spawning, waves, scoring, death reporting, statistics, and HUD integration.

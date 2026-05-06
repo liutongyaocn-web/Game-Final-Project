@@ -192,3 +192,17 @@
 
 ## Next Planned Task
 - Task 4.5: place one safe JU TPS enemy test instance and validate NavMesh movement/combat using the baked arena NavMesh.
+
+## 2026-05-07 00:10 +01:00 - Task 4.5 Single JU TPS Zombie AI Test
+- Placed exactly one JU TPS Zombie AI test instance in `LS_Arena_01`.
+- Source prefab: `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab`.
+- Scene object: `_Systems/AI_Test/Enemy_Test_Zombie_Walker`.
+- Confirmed the prefab uses JU TPS AI/character/health/damage/ragdoll components and does not expose a standard root `NavMeshAgent`.
+- Confirmed `Player_JUTPS` already has the `Player` tag expected by the zombie target list.
+- Play Mode validation showed the zombie remains stable, uses JU TPS navigation movement, detects the player at close range, and can apply melee damage.
+- Final scene state keeps the test enemy disabled at `(15, 0, -128)` so it remains available for inspection without disrupting future development.
+- Unity Console after final refresh/check: 0 errors and 0 warnings.
+- No wave logic, spawning systems, scoring, pickups, custom HUD, Build Settings changes, actor skin replacement, custom scripts, or third-party source edits were made.
+
+## Next Planned Task
+- Task 5: create safe Last Stand enemy wrappers/variants and plan integration hooks for later wave spawning, enemy death reporting, score/kills, and HUD statistics.
