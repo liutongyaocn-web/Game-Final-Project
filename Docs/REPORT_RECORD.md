@@ -88,3 +88,11 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The short Play Mode stability check showed the player spawning correctly without falling through the map, and the Console showed 0 errors and 0 warnings.
 - This supports future demonstration evidence for player control, third-person camera, animation foundation, combat foundation, and UI foundation.
 - Hands-on input checks for movement, mouse look, aiming, shooting, reloading, and stance actions remain a manual validation item before building wave gameplay around the foundation.
+
+## Task 3.6 Manual JU TPS Input Validation
+- Manual Unity testing confirmed that the JU TPS player, camera, and default UI work in the custom LS_Arena_01 scene.
+- The player stays on the ground, camera follow works, mouse look controls the view, the default UI is visible, and the Console has no red errors.
+- The previous two-audio-listener warning was resolved by testing with only LS_Arena_01 loaded.
+- This supports Coursework002 evidence for player control, camera behaviour, animation/combat foundation, and UI foundation.
+- The default JU TPS UI will later be extended with Last Stand-specific HUD elements for wave number, score, kills, survival timer, FPS, pickups, and objective text.
+- Known polish items: camera position feels slightly low, and the default UI needs Last Stand styling and statistics presentation.

@@ -127,3 +127,14 @@
 
 ## Next Planned Task
 - Task 4: perform/record hands-on input validation for movement, mouse look, aim, shoot/reload, stance actions, then begin NavMesh and JU TPS enemy integration planning.
+
+## 2026-05-06 22:45 +01:00 - Task 3.6 Manual JU TPS Input Validation Record
+- User manually validated the core JU TPS player, camera, and UI behaviour in Unity with only LS_Arena_01 loaded.
+- Confirmed the player remains on the ground, the camera follows the player, mouse look controls the view, and the JU TPS default UI is visible.
+- Confirmed Unity Console has no red errors and the earlier two-audio-listener warning disappeared after closing SampleScene.
+- The JU TPS foundation is stable enough to proceed toward NavMesh and enemy setup planning.
+- Logged later polish tasks: camera position feels slightly low, and the JU TPS default UI should be extended with a Last Stand-specific HUD layer.
+- No scene files, code, gameplay systems, ProjectSettings, Build Settings, or third-party assets were changed in this task.
+
+## Next Planned Task
+- Task 4: begin NavMesh and enemy setup planning around the manually validated JU TPS player/camera/UI foundation.

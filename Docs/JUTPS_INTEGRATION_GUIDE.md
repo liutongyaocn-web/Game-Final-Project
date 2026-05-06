@@ -55,6 +55,7 @@ The planned main custom scene is `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
 
 ## UI Integration Rules
 - Start with JU TPS Default User Interface.
+- Treat JU TPS Default User Interface as a functional base. Last Stand will add a custom HUD layer rather than immediately replacing all JU TPS UI.
 - Add or wrap custom Last Stand HUD elements for:
   - current wave
   - score
