@@ -1,0 +1,6 @@
+﻿# AI Usage Log
+
+| Date/time | Tool used | Prompt summary | Files changed | What was generated | Student review/modification | Limitations/issues |
+|---|---|---|---|---|---|---|
+| 2026-05-06 17:57 +01:00 | Codex | Task 0: Inspect Unity project safely, identify assets/status, prepare _LastStand and documentation foundation without major implementation. | Assets/_LastStand/README.md; Docs/*.md; project folder structure under Assets/_LastStand. | Documentation templates, asset/workflow notes, and custom folder scaffold. | Pending student review. | Unity project path differs from shell workspace path; Unity Console was checked and had no errors/warnings; no gameplay implementation started. No third-party folders modified. |
+| 2026-05-06 18:02 +01:00 | Codex | Task 0B: Clean Git baseline for Coursework002 scaffold only; create/update root README, confirm Unity .gitignore, update documentation evidence, stage only scaffold/docs files. | README.md; Assets/_LastStand/README.md; Docs/*.md. | Root project README and refined coursework evidence logs. | Pending student review before final submission; staged paths checked before commit. | No gameplay implementation yet. No JU TPS, JUTPS Addons, Synty, POLYGON Apocalypse, Library, Temp, Logs, UserSettings, or imported asset source folders modified by this task. |
