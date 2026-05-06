@@ -9,6 +9,12 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Custom coursework code, wrappers, scenes, prefabs, and data will be placed under `Assets/_LastStand`.
 - Documentation will be maintained throughout development in `Docs` so the final report, video demo, Q&A evidence, and release notes can be produced quickly.
 
+## Development Strategy Entry - JU TPS Integration
+- JU TPS is intentionally used to reduce low-level third-person shooter implementation risk for movement, camera, aiming, shooting, reload, inventory, health/damage, animation, ragdoll, and baseline AI.
+- The student's custom contribution focuses on game structure, wave progression, enemy AI integration, statistics, UI extensions, pickup rules, win/lose flow, extraction objective, documentation, and final playable vertical-slice polish.
+- POLYGON Apocalypse is used for map/environment content only during core development, including buildings, props, cover, vehicles, barricades, and apocalypse atmosphere.
+- Actor skin replacement is deliberately avoided during core development because it can create skeleton, IK, weapon alignment, animation, and ragdoll risks that do not improve the required Coursework002 gameplay loop.
+
 ## 1. Game Story And Game Logic
 - Game title: Last Stand.
 - Concept: a lone survivor fights repeated zombie waves in an apocalypse combat area.

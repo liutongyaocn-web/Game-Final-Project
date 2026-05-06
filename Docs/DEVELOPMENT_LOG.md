@@ -21,6 +21,16 @@
 ## Next Planned Task
 - Scene selection and arena planning for Assets/_LastStand/Scenes/LS_Arena_01.unity.
 
+## 2026-05-06 18:16 +01:00 - Task 0D JU TPS Integration Guardrails
+- Created `Docs/JUTPS_INTEGRATION_GUIDE.md` before scene creation or gameplay implementation.
+- Documented that JU TPS is the gameplay foundation for controller, camera, weapon handling, aiming, shooting, reload, inventory, health/damage, animation, ragdoll, and AI foundations.
+- Documented that POLYGON Apocalypse remains environment/map/prop content during core development.
+- Documented that custom Coursework002 work belongs under `Assets/_LastStand` and should extend or integrate with JU TPS rather than replacing it.
+- Confirmed this task is documentation-only: no gameplay systems, custom scene, Build Settings change, or third-party source asset edits were made.
+
+## Next Planned Task
+- Scene selection and arena planning for `Assets/_LastStand/Scenes/LS_Arena_01.unity`, following the JU TPS integration guide.
+
 ## 2026-05-06 18:12 +01:00 - Task 0C Unity Validation And Project Configuration Baseline
 - Confirmed current branch: main.
 - Refreshed Unity assets through MCP; Unity remained idle and not compiling.
