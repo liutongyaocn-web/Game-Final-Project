@@ -81,3 +81,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - This supports Coursework002 evidence for player control, animation, combat-readiness, and UI foundation before custom Last Stand systems are layered around it.
 - The student's custom contribution will continue around this foundation through wave progression, spawn control, statistics, HUD extensions, pickup rules, win/lose flow, and extraction objective logic.
 - The copied POLYGON scene remained a custom scene copy under _LastStand; no Synty or JU TPS source prefabs were modified.
+
+## Task 3.5 JU TPS Foundation Validation
+- The JU TPS foundation was validated in the custom LS_Arena_01 arena with only the Last Stand scene loaded.
+- Player, camera controller, and default JU TPS UI are now confirmed as the base for later Coursework002 systems.
+- The short Play Mode stability check showed the player spawning correctly without falling through the map, and the Console showed 0 errors and 0 warnings.
+- This supports future demonstration evidence for player control, third-person camera, animation foundation, combat foundation, and UI foundation.
+- Hands-on input checks for movement, mouse look, aiming, shooting, reloading, and stance actions remain a manual validation item before building wave gameplay around the foundation.

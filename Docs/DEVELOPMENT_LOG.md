@@ -114,3 +114,16 @@
 - After refreshing Unity and re-running Play Mode, the Console showed 0 red errors.
 - The copied-scene BoxCollider negative-scale errors did not return after normalising the custom scene copy.
 - A repeated two-audio-listener warning remains while SampleScene is still loaded additively and dirty in the editor. SampleScene was not saved, modified intentionally, or staged.
+
+## 2026-05-06 22:22 +01:00 - Task 3.5 JU TPS Foundation Validation
+- Validated Assets/_LastStand/Scenes/LS_Arena_01.unity with only the custom arena scene loaded.
+- Confirmed Player_JUTPS, CameraController_JUTPS, and UI_JUTPS_Default are active in the scene.
+- Confirmed copied Demo/Main Camera remains inactive in the custom scene.
+- Confirmed there is one active Unity camera in LS_Arena_01, so the earlier two-audio-listener warning is gone when SampleScene is closed.
+- Entered Play Mode for a short stability check; Player_JUTPS remained near the intended start position and did not fall through the map.
+- Unity Console after Play Mode: 0 errors and 0 warnings.
+- No scene-level fixes were required in this task.
+- No gameplay systems, wave logic, pickups, enemy AI, custom combat scripts, actor skin replacement, or Build Settings changes were implemented.
+
+## Next Planned Task
+- Task 4: perform/record hands-on input validation for movement, mouse look, aim, shoot/reload, stance actions, then begin NavMesh and JU TPS enemy integration planning.
