@@ -153,3 +153,16 @@
 
 ## Next Planned Task
 - Task 4.5: resolve AI Navigation/NavMeshSurface availability, then place one safe test enemy in `LS_Arena_01` and validate movement/combat before creating Last Stand enemy variants.
+
+## 2026-05-06 23:23 +01:00 - Task 4.1R Unity AI Navigation Package Retry
+- Retried adding Unity's official AI Navigation package after the Windows application-control issue was addressed.
+- Added `com.unity.ai.navigation` through Unity Package Manager.
+- Unity resolved package version `2.0.12`.
+- Verified `NavMeshSurface` is available as `Unity.AI.Navigation.NavMeshSurface`.
+- Verified `NavMeshModifier` is available as `Unity.AI.Navigation.NavMeshModifier`.
+- Unity Console after import/refresh: 0 errors and 0 warnings.
+- No `LS_Arena_01` scene changes were made.
+- No NavMesh bake, enemy placement, wave logic, spawning, scoring, pickups, custom HUD, Build Settings, actor skin replacement, or third-party source edits were made.
+
+## Next Planned Task
+- Task 4.2: create `_Level/NavMesh_Setup` in `LS_Arena_01`, configure `NavMeshSurface`, and bake a first-pass arena NavMesh.

@@ -23,6 +23,16 @@ Known concerns for future NavMesh setup:
 Safe next step:
 - Add or enable Unity AI Navigation / `com.unity.ai.navigation` through a deliberate package-management task, then create `_Level/NavMesh_Setup` with a `NavMeshSurface` and bake a first-pass arena NavMesh.
 
+## Task 4.1R AI Navigation Package
+- Package added: `com.unity.ai.navigation`.
+- Resolved version: `2.0.12`.
+- `NavMeshSurface` availability after retry: available as `Unity.AI.Navigation.NavMeshSurface`.
+- `NavMeshModifier` availability after retry: available as `Unity.AI.Navigation.NavMeshModifier`; `NavMeshModifierVolume` is also available.
+- Unity Console after package import and refresh: 0 errors and 0 warnings.
+- No NavMesh bake was performed in this task.
+- No scene, enemy, gameplay, or third-party asset changes were made.
+- Next step: create `_Level/NavMesh_Setup` in `LS_Arena_01`, configure a first-pass arena `NavMeshSurface`, and bake/validate the controlled arena area.
+
 ## Enemy Prefab Candidates
 
 | Candidate prefab path | Description / likely use | AI type or observed components | Melee/ranged suitability | Recommended Last Stand role | Risks/manual setup |
