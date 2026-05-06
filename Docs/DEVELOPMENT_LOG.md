@@ -92,3 +92,25 @@
 
 ## Next Planned Task
 - Scene selection and arena planning for Assets/_LastStand/Scenes/LS_Arena_01.unity.
+
+## 2026-05-06 20:23 +01:00 - Task 3 JU TPS Player Camera UI Integration
+- Integrated JU TPS gameplay foundation into Assets/_LastStand/Scenes/LS_Arena_01.unity.
+- Player prefab used: Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/Character Prefabs/TPS Character.prefab.
+- Camera prefab used: Assets/Julhiecio TPS Controller/Prefabs/Game/Camera Prefabs/ThirdPerson Camera Controller.prefab.
+- Default UI prefab used: Assets/Julhiecio TPS Controller/Prefabs/Game/UI Interfaces/JUTPS Default User Interface.prefab.
+- Scene hierarchy updated under _PlayerSetup, _CameraSetup, and _UISetup with Player_JUTPS, CameraController_JUTPS, and UI_JUTPS_Default.
+- Player placement: approximately (-10, 0, -136) with Y rotation 80, matching the arena start area and facing into the combat space.
+- Demo camera handling: copied Demo/Main Camera is disabled in LS_Arena_01 only; it was not deleted and the original Synty scene was not modified.
+- Camera setup: CameraController_JUTPS has obvious follow/target fields assigned to Player_JUTPS where Unity MCP allowed it. The player-side MyPivotCamera field may still need manual Inspector confirmation because it expects a JU TPS camera component reference.
+- Added Note_JUTPS_player_camera_UI_integrated under _DebugMarkers/Arena_Planning_Notes.
+- Play Mode first pass showed the player/camera/UI scene setup could enter Play Mode, but surfaced copied-scene BoxCollider does not support negative scale or size errors from mirrored POLYGON ground pieces.
+- Applied a targeted scene-only cleanup by normalising negative local scale overrides in the copied custom LS_Arena_01 scene. No Synty source assets or prefabs were modified.
+- No custom gameplay systems, wave logic, pickups, enemy AI, actor skin replacement, or Build Settings changes were implemented.
+
+## Next Planned Task
+- Task 4: validate player movement/camera manually in the arena, then prepare NavMesh and JU TPS enemy integration planning before adding wave logic.
+
+### Task 3 Validation Update
+- After refreshing Unity and re-running Play Mode, the Console showed 0 red errors.
+- The copied-scene BoxCollider negative-scale errors did not return after normalising the custom scene copy.
+- A repeated two-audio-listener warning remains while SampleScene is still loaded additively and dirty in the editor. SampleScene was not saved, modified intentionally, or staged.

@@ -74,3 +74,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Current limitation: custom gameplay loop is not implemented yet.
 - Current limitation: build settings still reference JU TPS demo scenes.
 - Current limitation: active scene is the default `Assets/Scenes/SampleScene.unity`.
+
+## Task 3 JU TPS Gameplay Foundation Integration
+- JU TPS player, camera controller, and default UI were integrated into Assets/_LastStand/Scenes/LS_Arena_01.unity as the stable third-person gameplay foundation.
+- Default JU TPS player/camera/UI were used deliberately to avoid unnecessary low-level controller, camera, combat, animation, and UI foundation risk.
+- This supports Coursework002 evidence for player control, animation, combat-readiness, and UI foundation before custom Last Stand systems are layered around it.
+- The student's custom contribution will continue around this foundation through wave progression, spawn control, statistics, HUD extensions, pickup rules, win/lose flow, and extraction objective logic.
+- The copied POLYGON scene remained a custom scene copy under _LastStand; no Synty or JU TPS source prefabs were modified.

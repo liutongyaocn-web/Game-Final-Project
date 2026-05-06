@@ -20,3 +20,5 @@
 - Verify pickups.
 - Verify pause/restart.
 - Verify win/extraction and lose/death flows.
+| 2026-05-06 20:23 +01:00 | Task 3 JU TPS integration | Instantiated JU TPS player, camera, and default UI into LS_Arena_01; disabled copied demo camera; entered Play Mode through Unity MCP | Needs final manual/MCP confirmation | First Play Mode pass exposed copied-scene BoxCollider negative-scale errors and a two-audio-listener warning while SampleScene was loaded additively. Negative scale overrides were normalised in the custom scene only. Manual WASD/mouse movement test is still needed after Unity MCP reconnection. |
+| 2026-05-06 20:27 +01:00 | Task 3 Play Mode verification after collider cleanup | Refreshed Unity, entered Play Mode for approximately 6 seconds, exited Play Mode, and read Console errors/warnings | Pass with warning | Console returned 0 red errors. Repeated warning remained: There are 2 audio listeners in the scene, caused by unsaved additive SampleScene still being loaded alongside LS_Arena_01; SampleScene was not saved or staged. Manual WASD/mouse movement test still needed. |
