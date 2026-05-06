@@ -96,3 +96,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - This supports Coursework002 evidence for player control, camera behaviour, animation/combat foundation, and UI foundation.
 - The default JU TPS UI will later be extended with Last Stand-specific HUD elements for wave number, score, kills, survival timer, FPS, pickups, and objective text.
 - Known polish items: camera position feels slightly low, and the default UI needs Last Stand styling and statistics presentation.
+
+## Task 4 NavMesh And JU TPS Enemy Candidate Audit
+- NavMesh and JU TPS enemy prefab candidates were audited as the foundation for Coursework002 AI evidence.
+- The project currently lacks `NavMeshSurface`/Unity AI Navigation package support, so no NavMesh setup or bake was created in this task.
+- JU TPS enemy candidates were identified without modifying third-party prefabs: `Zombie AI.prefab` for Walker/Runner melee roles and `Patrol AI.prefab` for a ranged infected/armed hostile role.
+- The project will use JU TPS AI where possible and add custom Last Stand code later for wave spawning, enemy death reporting, score/kills, statistics, and HUD integration.
+- This prepares evidence for game AI, level progression, content generation through future wave spawning, and modular C# integration.

@@ -138,3 +138,18 @@
 
 ## Next Planned Task
 - Task 4: begin NavMesh and enemy setup planning around the manually validated JU TPS player/camera/UI foundation.
+
+## 2026-05-06 22:59 +01:00 - Task 4 NavMesh And Enemy Prefab Audit
+- Inspected `LS_Arena_01` for NavMesh-related scene setup.
+- `NavMeshSurface` and `NavMeshModifier` are not available in the current project assemblies.
+- `Packages/manifest.json` includes built-in `com.unity.modules.ai`, but does not include `com.unity.ai.navigation`.
+- No `NavMeshSurface` or `NavMeshModifier` scene objects were found. `Player_JUTPS` has a JU TPS inherited `NavMeshObstacle`.
+- Did not create `_Level/NavMesh_Setup` because the required `NavMeshSurface` component is unavailable.
+- Did not bake NavMesh in this task; safe package setup for Unity AI Navigation is required first.
+- Audited JU TPS enemy prefab candidates: `Zombie AI.prefab`, `Patrol AI.prefab`, `AI Sample Attack.prefab`, `AI Sample Escape.prefab`, and `AI Alert Indicator.prefab`.
+- Recommended `Zombie AI.prefab` for Walker and later Runner variants, and `Patrol AI.prefab` as the likely Ranged infected/armed hostile candidate.
+- No enemy variants/wrappers were created because NavMesh availability and first enemy behaviour validation should happen first.
+- No gameplay systems, wave logic, spawning, scoring, pickups, custom HUD, Build Settings, actor skin replacement, or third-party source edits were made.
+
+## Next Planned Task
+- Task 4.5: resolve AI Navigation/NavMeshSurface availability, then place one safe test enemy in `LS_Arena_01` and validate movement/combat before creating Last Stand enemy variants.
