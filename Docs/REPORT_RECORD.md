@@ -45,6 +45,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Task 1 level planning completed: POLYGON Apocalypse `Demo_City_Universal_RenderPipeline.unity` is the recommended source for a cropped quarantine checkpoint / military evacuation roadblock arena.
 - The final `LS_Arena_01` should use a controlled section of the city demo rather than the oversized full map, supporting reliable NavMesh, readable wave combat, and manageable performance.
 - This level plan supports Coursework002 evidence for level progression, content generation through wave/spawn rules, UI/statistics demonstration, and final game logic.
+- Task 2 created the initial custom arena scene at `Assets/_LastStand/Scenes/LS_Arena_01.unity` from a copied POLYGON Apocalypse city demo scene.
+- The source Synty demo scene was not saved or modified for this task.
+- The copied scene now includes spawn, pickup, extraction, boundary, player start, camera start, and arena centre markers so future wave-based survival work has clear planning anchors.
+- This supports Coursework002 evidence for level design, progression, enemy spawning/content generation, AI approach planning, and UI/statistics demonstration.
 
 ## 8. GitHub/Version Control Evidence
 - Repository: https://github.com/liutongyaocn-web/Game-Final-Project

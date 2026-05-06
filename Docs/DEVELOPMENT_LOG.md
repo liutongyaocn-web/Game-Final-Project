@@ -44,6 +44,22 @@
 ## Next Planned Task
 - Task 2: create `Assets/_LastStand/Scenes/LS_Arena_01.unity` as a new custom scene using the selected arena plan, with only custom scene changes saved under `Assets/_LastStand/Scenes`.
 
+## 2026-05-06 19:51 +01:00 - Task 2 Initial LS_Arena_01 Scene Creation
+- Created `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
+- Source scene path: `Assets/Synty/PolygonApocalypse/Scenes/Demo_City_Universal_RenderPipeline.unity`.
+- Workflow used a file copy into `_LastStand` followed by edits only to the copied custom scene.
+- Full demo content was copied as the first pass; no crop or large deletion was made because the exact combat area still needs visual/manual verification.
+- Created top-level custom hierarchy: `_Systems`, `_PlayerSetup`, `_CameraSetup`, `_UISetup`, `_Level`, `_SpawnPoints`, `_PickupPoints`, `_ExtractionObjective`, `_Lighting`, `_Audio`, and `_DebugMarkers`.
+- Created player, camera, arena centre, extraction, melee spawn, ranged spawn, ammo pickup, health pickup, boundary, and scene note markers.
+- NavMesh observation: no `NavMeshSurface` or `NavMeshModifier` objects were found; NavMesh setup/bake is needed later.
+- Camera/light observation: copied demo contains one `Demo/Main Camera` and one `Demo/Directional Light`. Final JU TPS camera setup is deferred.
+- No gameplay scripts were created or modified.
+- No player, weapons, enemies, waves, AI, or Build Settings changes were made.
+- The original Synty demo scene was not saved or staged.
+
+## Next Planned Task
+- Task 3: add the JU TPS-compatible player/camera/UI foundation to the custom scene, then validate Console and basic scene loading before any wave logic.
+
 ## 2026-05-06 18:12 +01:00 - Task 0C Unity Validation And Project Configuration Baseline
 - Confirmed current branch: main.
 - Refreshed Unity assets through MCP; Unity remained idle and not compiling.

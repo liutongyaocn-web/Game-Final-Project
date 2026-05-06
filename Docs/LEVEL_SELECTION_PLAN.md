@@ -110,3 +110,15 @@ LS_Arena_01
 
 ## Next Task Proposal
 Task 2: Create `LS_Arena_01` as a new custom scene using the selected source environment area, add the initial hierarchy, lighting/camera placeholders, and save only under `Assets/_LastStand/Scenes`.
+
+## Task 2 Scene Creation Result
+- Created `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
+- Source scene used: `Assets/Synty/PolygonApocalypse/Scenes/Demo_City_Universal_RenderPipeline.unity`.
+- The first pass is a full copied demo scene, not a cropped scene. This avoids accidental deletion of useful environment content before the exact combat block is verified visually in the editor.
+- No changes were saved to the original Synty source scene.
+- Added custom top-level setup objects: `_Systems`, `_PlayerSetup`, `_CameraSetup`, `_UISetup`, `_Level`, `_SpawnPoints`, `_PickupPoints`, `_ExtractionObjective`, `_Lighting`, `_Audio`, and `_DebugMarkers`.
+- Added placeholder marker objects: `Player_Start`, `Camera_Start`, `Arena_Center`, `Extraction_Point`, `Spawn_Melee_A`, `Spawn_Melee_B`, `Spawn_Melee_C`, `Spawn_Ranged_A`, `Spawn_Ranged_B`, `Pickup_Ammo_A`, `Pickup_Ammo_B`, `Pickup_Health_A`, `Pickup_Health_B`, `Boundary_North`, `Boundary_South`, `Boundary_East`, and `Boundary_West`.
+- Added note marker: `NOTE_LS_Arena_01_initial_scene_copied_POLYGON_gameplay_later`.
+- NavMesh observation: no `NavMeshSurface` or `NavMeshModifier` objects were found in the copied scene. NavMesh setup/baking is needed in a later task.
+- Camera/light observation: the copied demo scene currently has one demo `Main Camera` at `Demo/Main Camera` and one `Directional Light` at `Demo/Directional Light`. Final JU TPS camera/player setup is still planned for a later task.
+- Planned next steps: JU TPS player/camera/UI setup, visual arena crop/pass, NavMesh validation, and enemy spawn validation.
