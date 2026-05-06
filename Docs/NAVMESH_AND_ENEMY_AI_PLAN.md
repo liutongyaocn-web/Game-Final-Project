@@ -33,6 +33,23 @@ Safe next step:
 - No scene, enemy, gameplay, or third-party asset changes were made.
 - Next step: create `_Level/NavMesh_Setup` in `LS_Arena_01`, configure a first-pass arena `NavMeshSurface`, and bake/validate the controlled arena area.
 
+## Task 4.2 First-Pass Arena NavMesh
+- NavMeshSurface object path: `_Level/NavMesh_Setup`.
+- Component: `Unity.AI.Navigation.NavMeshSurface`.
+- Collection mode: Volume.
+- Object world position: `(5, 2, -157.5)`.
+- Surface local center: `(0, 0, 0)`.
+- Volume size: `(160, 20, 140)`, covering approximately x `-75` to `85`, y `-8` to `12`, z `-227.5` to `-87.5`.
+- Agent type: default humanoid agent (`agentTypeID` 0).
+- `ignoreNavMeshAgent`: true.
+- `ignoreNavMeshObstacle`: true.
+- Bake result: not completed through MCP. The in-memory MCP `execute_code` bake attempt failed because the MCP/Mono command exceeded the Windows filename/extension length limit, so no workaround script was created.
+- Generated NavMesh data location: none yet. No NavMeshData asset was generated in `Assets/_LastStand/Scenes`.
+- Manual bake instructions: select `_Level/NavMesh_Setup`, inspect `NavMeshSurface`, then click `Bake`.
+- Visual/inspection observations: the configured volume matches the intended arena area rather than the full city, but walkable coverage still needs visual confirmation after manual bake.
+- Known future tuning needs: curbs, vehicle colliders, dense props, open road exits, and boundary preview objects may need blockers/modifiers after the first enemy movement test.
+- Next step: bake manually or through a safe editor workflow, then place one test enemy in Task 4.5.
+
 ## Enemy Prefab Candidates
 
 | Candidate prefab path | Description / likely use | AI type or observed components | Melee/ranged suitability | Recommended Last Stand role | Risks/manual setup |

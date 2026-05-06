@@ -166,3 +166,17 @@
 
 ## Next Planned Task
 - Task 4.2: create `_Level/NavMesh_Setup` in `LS_Arena_01`, configure `NavMeshSurface`, and bake a first-pass arena NavMesh.
+
+## 2026-05-06 23:30 +01:00 - Task 4.2 First-Pass Arena NavMesh Setup
+- Created `_Level/NavMesh_Setup` in `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
+- Added `Unity.AI.Navigation.NavMeshSurface`.
+- Configured the surface to collect objects by Volume.
+- Set the setup object position to `(5, 2, -157.5)` and the surface volume size to `(160, 20, 140)`, covering the intended checkpoint/evacuation roadblock arena rather than the full copied city.
+- Kept default humanoid agent settings and did not tune radius/height yet.
+- Attempted an MCP-based bake, but the MCP `execute_code` tool failed with a Windows filename/extension length error before running the bake code.
+- No NavMeshData asset was generated. Manual bake is required: select `_Level/NavMesh_Setup`, then use the `NavMeshSurface` Bake button in the Inspector.
+- Unity Console was cleared after the MCP tool error and returned 0 errors and 0 warnings.
+- No enemies were placed and no gameplay systems, wave logic, spawning, scoring, pickups, custom HUD, Build Settings, actor skin replacement, or third-party source edits were made.
+
+## Next Planned Task
+- Task 4.5: manually bake/inspect the NavMesh if needed, then place one test enemy and validate movement/combat before creating enemy variants.

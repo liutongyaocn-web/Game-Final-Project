@@ -103,3 +103,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - JU TPS enemy candidates were identified without modifying third-party prefabs: `Zombie AI.prefab` for Walker/Runner melee roles and `Patrol AI.prefab` for a ranged infected/armed hostile role.
 - The project will use JU TPS AI where possible and add custom Last Stand code later for wave spawning, enemy death reporting, score/kills, statistics, and HUD integration.
 - This prepares evidence for game AI, level progression, content generation through future wave spawning, and modular C# integration.
+
+## Task 4.2 First-Pass Arena NavMesh Setup
+- A first-pass `NavMeshSurface` setup was created in the custom `LS_Arena_01` scene at `_Level/NavMesh_Setup`.
+- The surface is configured as a bounded Volume around the intended checkpoint/evacuation arena, avoiding an uncontrolled full-city navigation setup.
+- This supports future Coursework002 AI/pathfinding evidence by preparing a controlled navigation area for JU TPS enemy testing.
+- The NavMesh bake still needs to be performed manually from the `NavMeshSurface` Inspector because MCP bake automation was blocked by a tool command-length issue.
+- No enemies or gameplay systems were added in this task.
