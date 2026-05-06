@@ -20,3 +20,18 @@
 
 ## Next Planned Task
 - Scene selection and arena planning for Assets/_LastStand/Scenes/LS_Arena_01.unity.
+
+## 2026-05-06 18:12 +01:00 - Task 0C Unity Validation And Project Configuration Baseline
+- Confirmed current branch: main.
+- Refreshed Unity assets through MCP; Unity remained idle and not compiling.
+- Unity Console validation result: 0 errors and 0 warnings.
+- Inspected Packages and ProjectSettings diffs for local absolute paths, credentials, tokens, and user-specific machine data; none were found.
+- Prepared safe project configuration baseline candidates from Packages/manifest.json, Packages/packages-lock.json, and standard Unity ProjectSettings files.
+- Included ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json as empty standard Unity package configuration.
+- Deliberately left third-party source asset folders uncommitted: Assets/Julhiecio TPS Controller, Assets/JUTPS Addons, and Assets/Synty.
+- Deliberately left generated/local folders uncommitted or ignored: Library, Temp, Logs, UserSettings, .vs, build outputs, and caches.
+- Active scene remains Assets/Scenes/SampleScene.unity.
+- Build settings still reference JU TPS demo scenes; no Build Settings changes were made in this task.
+
+## Next Planned Task
+- Scene selection and arena planning for Assets/_LastStand/Scenes/LS_Arena_01.unity.
