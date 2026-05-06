@@ -60,6 +60,24 @@
 ## Next Planned Task
 - Task 3: add the JU TPS-compatible player/camera/UI foundation to the custom scene, then validate Console and basic scene loading before any wave logic.
 
+## 2026-05-06 20:00 +01:00 - Task 2.5 Arena Boundary And Marker Refinement
+- Opened and refined only `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
+- Confirmed the arena should be a medium-sized checkpoint / evacuation roadblock area, not the entire copied city.
+- Confirmed most existing marker positions and adjusted `Player_Start` rotation to face into the combat space.
+- Created `_DebugMarkers/Arena_Boundary_Preview`.
+- Created boundary preview cube placeholders: `BoundaryPreview_North`, `BoundaryPreview_South`, `BoundaryPreview_East`, and `BoundaryPreview_West`.
+- Created `_DebugMarkers/Arena_Planning_Notes`.
+- Created planning note markers: `Note_Player_start_safe_but_exposed`, `Note_Extraction_after_wave_5`, `Note_Spawn_points_outside_player_view`, and `Note_Pickups_risk_reward_positions`.
+- No large environment crop or deletion was made; far-away copied demo content remains for later visual review after player/camera validation.
+- NavMesh concerns recorded: road/curb transitions, blocked streets, dense props, vehicle colliders, and boundary preview objects may affect walkability later.
+- No gameplay scripts were added.
+- No JU TPS player/camera/UI was added.
+- No Build Settings changes were made.
+- No third-party source scene was modified.
+
+## Next Planned Task
+- Task 3: add JU TPS-compatible player, camera, and UI foundation to `LS_Arena_01`, then validate basic player/camera scene readiness before implementing waves.
+
 ## 2026-05-06 18:12 +01:00 - Task 0C Unity Validation And Project Configuration Baseline
 - Confirmed current branch: main.
 - Refreshed Unity assets through MCP; Unity remained idle and not compiling.

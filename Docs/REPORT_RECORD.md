@@ -49,6 +49,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The source Synty demo scene was not saved or modified for this task.
 - The copied scene now includes spawn, pickup, extraction, boundary, player start, camera start, and arena centre markers so future wave-based survival work has clear planning anchors.
 - This supports Coursework002 evidence for level design, progression, enemy spawning/content generation, AI approach planning, and UI/statistics demonstration.
+- Task 2.5 refined the arena boundary and marker layout inside `LS_Arena_01`.
+- The full copied city demo is now controlled through a smaller intended playable combat area marked by boundary preview objects, keeping the scope suitable for a final vertical slice.
+- This improves evidence clarity for level progression, wave spawning, enemy AI approach routes, pickup risk/reward design, and video demonstration.
 
 ## 8. GitHub/Version Control Evidence
 - Repository: https://github.com/liutongyaocn-web/Game-Final-Project

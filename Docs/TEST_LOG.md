@@ -9,6 +9,7 @@
 | 2026-05-06 18:16 +01:00 | Task 0D documentation guardrails | Unity MCP asset refresh and Console read | Pass | Console returned 0 errors and 0 warnings. No gameplay test yet. No scene test yet. |
 | 2026-05-06 18:16 +01:00 | Task 1 scene audit | File inspection, Unity MCP hierarchy read, and Console read | Pass with notes | Console showed 0 red errors and 1 MCP transport warning. No gameplay test yet. No scene test yet. Demo scene opened additively for inspection only; do not save third-party scene changes. |
 | 2026-05-06 19:51 +01:00 | Task 2 initial scene creation | Copied source scene, loaded `LS_Arena_01`, added hierarchy/markers, saved custom scene, refreshed Unity, and read Console | Pass with notes | Scene opened and saved successfully. Console showed 0 red errors and 3 MCP warnings. No gameplay test yet. No player/AI test yet. |
+| 2026-05-06 20:00 +01:00 | Task 2.5 arena boundary refinement | Opened `LS_Arena_01`, confirmed marker layout, added boundary preview/planning notes, saved scene, refreshed Unity, and read Console | Pass with notes | Console showed 0 red errors and 1 MCP transport warning. No player test yet. No AI/NavMesh test yet. |
 
 ## Manual Test Checklist To Build Up
 - Launch Last Stand scene.
