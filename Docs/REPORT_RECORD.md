@@ -42,6 +42,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 ## 7. Level Design And Progression
 - Required progression: 5 waves with increasing difficulty and an extraction/win condition.
 - Environment strategy: use POLYGON Apocalypse for map, buildings, props, cover, vehicles, barricades, and atmosphere.
+- Task 1 level planning completed: POLYGON Apocalypse `Demo_City_Universal_RenderPipeline.unity` is the recommended source for a cropped quarantine checkpoint / military evacuation roadblock arena.
+- The final `LS_Arena_01` should use a controlled section of the city demo rather than the oversized full map, supporting reliable NavMesh, readable wave combat, and manageable performance.
+- This level plan supports Coursework002 evidence for level progression, content generation through wave/spawn rules, UI/statistics demonstration, and final game logic.
 
 ## 8. GitHub/Version Control Evidence
 - Repository: https://github.com/liutongyaocn-web/Game-Final-Project

@@ -31,6 +31,19 @@
 ## Next Planned Task
 - Scene selection and arena planning for `Assets/_LastStand/Scenes/LS_Arena_01.unity`, following the JU TPS integration guide.
 
+## 2026-05-06 18:16 +01:00 - Task 1 POLYGON Apocalypse Scene Audit
+- Found POLYGON Apocalypse scenes: `Demo_Building_Interior_Dressing.unity`, `Demo_Bunker.unity`, `Demo_City_Standard_RenderPipeline.unity`, `Demo_City_Universal_RenderPipeline.unity`, and `Overview.unity`.
+- Found POLYGON Generic overview scene: `Assets/Synty/PolygonGeneric/Scenes/Overview.unity`.
+- Inspected `Demo_City_Universal_RenderPipeline.unity` through file metadata and Unity MCP hierarchy. It contains grouped `Buildings`, `Ground`, `Terrain`, `Props`, `Vehicles`, `Vehicles_Wrecked`, `Trees`, `DeadBodies`, `Weapons`, lighting, camera, and volume objects.
+- Recommended `Assets/Synty/PolygonApocalypse/Scenes/Demo_City_Universal_RenderPipeline.unity` as the source for a cropped quarantine checkpoint / military evacuation roadblock area.
+- No gameplay code was implemented.
+- No Build Settings changes were made.
+- No third-party scene was saved or intentionally modified. The demo scene was opened additively for inspection only; Unity marked it dirty in-editor, so it must be closed without saving.
+- Final Console read showed 0 red errors and 1 Unity MCP transport warning. Unity also generated local lighting/shader settings files during inspection; these were deliberately left uncommitted.
+
+## Next Planned Task
+- Task 2: create `Assets/_LastStand/Scenes/LS_Arena_01.unity` as a new custom scene using the selected arena plan, with only custom scene changes saved under `Assets/_LastStand/Scenes`.
+
 ## 2026-05-06 18:12 +01:00 - Task 0C Unity Validation And Project Configuration Baseline
 - Confirmed current branch: main.
 - Refreshed Unity assets through MCP; Unity remained idle and not compiling.
