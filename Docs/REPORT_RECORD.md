@@ -110,3 +110,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - This supports future Coursework002 AI/pathfinding evidence by preparing a controlled navigation area for JU TPS enemy testing.
 - The NavMesh bake still needs to be performed manually from the `NavMeshSurface` Inspector because MCP bake automation was blocked by a tool command-length issue.
 - No enemies or gameplay systems were added in this task.
+
+## Task 4.3 Manual NavMesh Bake
+- The arena NavMesh was manually baked for `LS_Arena_01`.
+- Generated NavMesh data is stored under the custom scene folder at `Assets/_LastStand/Scenes/LS_Arena_01/NavMesh-NavMesh_Setup.asset`.
+- The baked NavMesh prepares the scene for JU TPS enemy pathfinding tests.
+- This supports future Coursework002 Game AI evidence, especially enemy navigation, approach routes, and arena pathfinding constraints.
+- No enemies, wave systems, scoring, pickups, or combat logic were added in this task.

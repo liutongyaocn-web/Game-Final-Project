@@ -180,3 +180,15 @@
 
 ## Next Planned Task
 - Task 4.5: manually bake/inspect the NavMesh if needed, then place one test enemy and validate movement/combat before creating enemy variants.
+
+## 2026-05-06 23:39 +01:00 - Task 4.3 Manual NavMesh Bake Record
+- User manually baked the `NavMeshSurface` on `_Level/NavMesh_Setup`.
+- The scene now references generated NavMesh data at `Assets/_LastStand/Scenes/LS_Arena_01/NavMesh-NavMesh_Setup.asset`.
+- Confirmed the `NavMeshSurface` still uses Volume collection and the intended arena volume size `(160, 20, 140)`.
+- Confirmed key planning markers are inside the configured volume: `Player_Start`, `Arena_Center`, melee/ranged spawn points, `Extraction_Point`, and pickup points.
+- Visual walkable coverage still needs manual Scene view confirmation before trusting enemy movement.
+- No enemies were placed.
+- No gameplay systems, wave logic, spawning, scoring, pickups, custom HUD, Build Settings, actor skin replacement, or third-party source edits were made.
+
+## Next Planned Task
+- Task 4.5: place one safe JU TPS enemy test instance and validate NavMesh movement/combat using the baked arena NavMesh.

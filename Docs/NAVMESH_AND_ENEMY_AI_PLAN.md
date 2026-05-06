@@ -50,6 +50,19 @@ Safe next step:
 - Known future tuning needs: curbs, vehicle colliders, dense props, open road exits, and boundary preview objects may need blockers/modifiers after the first enemy movement test.
 - Next step: bake manually or through a safe editor workflow, then place one test enemy in Task 4.5.
 
+## Task 4.3 Manual NavMesh Bake Result
+- Manual bake completed by user from `_Level/NavMesh_Setup` using the `NavMeshSurface` Inspector.
+- NavMeshSurface object path: `_Level/NavMesh_Setup`.
+- Generated NavMesh data location: `Assets/_LastStand/Scenes/LS_Arena_01/NavMesh-NavMesh_Setup.asset`.
+- Unity also generated: `Assets/_LastStand/Scenes/LS_Arena_01.meta` and `Assets/_LastStand/Scenes/LS_Arena_01/NavMesh-NavMesh_Setup.asset.meta`.
+- The `NavMeshSurface` now references the generated NavMeshData asset.
+- Collection mode remains Volume.
+- Volume remains centered around the intended arena: object position `(5, 2, -157.5)`, surface center `(0, 0, 0)`, size `(160, 20, 140)`.
+- Coverage observations: `Player_Start`, `Arena_Center`, melee spawn points, ranged spawn points, extraction point, and pickup points are inside the configured NavMesh volume.
+- Visual blue NavMesh coverage still needs manual confirmation in Scene view, especially at curbs, blocked roads, props, vehicles, and road exits.
+- Remaining issues to inspect: disconnected islands, holes near props, insufficient coverage at spawn/extraction points, and open routes out of the intended arena.
+- Next step: one-enemy movement/combat test in Task 4.5.
+
 ## Enemy Prefab Candidates
 
 | Candidate prefab path | Description / likely use | AI type or observed components | Melee/ranged suitability | Recommended Last Stand role | Risks/manual setup |
