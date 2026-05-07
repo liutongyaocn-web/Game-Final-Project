@@ -110,6 +110,13 @@ Safe next step:
 - Source JU TPS example scene and source prefabs were inspected but not saved or staged.
 - Next step: validate the three Last Stand variants one at a time in `LS_Arena_01`.
 
+## Task 5.5 Melee Variant Validation
+- NavMesh and arena setup supported fist-based melee enemy movement from the saved test placement toward `Player_JUTPS`.
+- Knife/blade melee validation confirmed stable close-range movement and attack behaviour, but the initial farther placement did not reliably close distance during the observation window.
+- No NavMesh red errors or navigation-related Console errors appeared.
+- Future tuning should verify spawn point NavMesh connectivity and choose melee spawn positions that reliably lead enemies into the combat lane.
+- Runtime target assignment is required for spawned Attack-example wrappers because their demo-scene `Target` reference becomes `null` outside the example scene.
+
 ## Future Integration Plan
 - Task 5.5: validate the fist-based melee, knife-based melee, and ranged Last Stand enemy prefabs one at a time in `LS_Arena_01`.
 - Later: create `EnemyDeathReporter` to translate JU TPS enemy death into Last Stand kill/score events.

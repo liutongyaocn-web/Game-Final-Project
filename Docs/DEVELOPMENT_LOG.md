@@ -219,3 +219,16 @@
 
 ## Next Planned Task
 - Task 5.5: validate the fist-based melee, knife-based melee, and ranged enemy wrappers one at a time in `LS_Arena_01`.
+
+## 2026-05-07 11:49 +01:00 - Task 5.5 Melee Enemy Variant Validation
+- Validated `Enemy_FistMelee_JUTPS.prefab` in `LS_Arena_01`.
+- Fist enemy moved toward `Player_JUTPS` and applied unarmed melee damage, reducing player health from `400` to `0` during Play Mode validation.
+- Validated `Enemy_KnifeMelee_JUTPS.prefab` in `LS_Arena_01`.
+- Knife enemy kept the JU TPS Katana blade setup because no dedicated Knife/Dagger prefab was found in the imported JU TPS/JUTPS Addons assets.
+- Knife enemy close-range validation confirmed blade melee damage, reducing player health from `400` to `0`.
+- Safe scene-instance fix applied: the Attack example AI `Target` field was assigned to `Player_JUTPS` on test instances because the demo-scene target reference becomes `null` in `LS_Arena_01`.
+- Final saved scene state keeps both melee test enemies disabled under `_Systems/AI_Test/MeleeVariant_Test`.
+- No ranged enemy test, wave/spawn/stat systems, pickups, custom HUD, EnemyDeathReporter, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 5.6: validate `Enemy_Ranged_JUTPS.prefab` separately and confirm ranged/P226 behaviour.

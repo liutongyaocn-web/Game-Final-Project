@@ -19,3 +19,24 @@
 - Fixes applied: created `_Systems/AI_Test` and instantiated exactly one scene-only test enemy. No JU TPS prefab/source changes were made.
 - Final scene state: disabled test enemy remains under `_Systems/AI_Test`, positioned at `(15, 0, -128)`, but inactive so it does not interfere with future setup.
 - Recommendation for next step: Task 5 should create Last Stand-owned enemy prefab wrappers/variants and define safe detection/speed/health tuning before building wave spawning.
+
+## Task 5.5 Melee Enemy Variant Validation
+- Fist enemy prefab path: `Assets/_LastStand/Prefabs/Enemies/Enemy_FistMelee_JUTPS.prefab`.
+- Fist test object path: `_Systems/AI_Test/MeleeVariant_Test/Enemy_Test_FistMelee`.
+- Fist spawn position: saved disabled at `(15, 0, -128)` with rotation `(0, 250, 0)`.
+- Fist movement result: pass. With the scene-instance `JU_AI_AttackActionExample.Target` assigned to `_PlayerSetup/Player_JUTPS`, the enemy moved from the test spawn toward the player.
+- Fist attack result: pass. The enemy reached close range and performed unarmed/fist melee attack behaviour.
+- Fist effect on player health: pass. Player health dropped from `400` to `0` during the close-range validation.
+- Knife enemy prefab path: `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab`.
+- Knife test object path: `_Systems/AI_Test/MeleeVariant_Test/Enemy_Test_KnifeMelee`.
+- Knife spawn position: saved disabled at `(-8, 0, -134)` with rotation `(0, 220, 0)` after close-range validation.
+- Knife/blade weapon used: JU TPS right-hand `Katana` child with `MeleeWeapon` and `Damager` setup.
+- Real Knife/Dagger asset search result: no dedicated Knife or Dagger prefab was found in the imported JU TPS/JUTPS Addons folders. The available configured blade asset is `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/Items/Melee Weapons/Katana.prefab`.
+- Katana stand-in status: Katana remains as the current stable blade/knife melee stand-in for the Coursework001 knife-based melee role.
+- Knife movement result: pass with note. The enemy was stable and moved/rotated, but the far test position did not reliably close distance within the observation window. A close-range validation position near `Player_JUTPS` confirmed approach and attack behaviour.
+- Knife attack result: pass. The enemy used the blade melee setup at close range.
+- Knife effect on player health: pass. Player health dropped from `400` to `0` during the close-range validation.
+- Console result: 0 errors and 0 warnings after final clear/recheck.
+- Final scene state: both `Enemy_Test_FistMelee` and `Enemy_Test_KnifeMelee` are disabled under `_Systems/AI_Test/MeleeVariant_Test`; no active melee test enemies are left for scene startup.
+- Issues and fixes: both project-owned prefabs inherited a demo-scene target reference that becomes `null` in `LS_Arena_01`; safe scene-instance target assignment to `Player_JUTPS` was applied to the test instances. A later spawn/integration system should assign targets at runtime rather than relying on demo-scene references.
+- Recommendation for Task 5.6: validate `Enemy_Ranged_JUTPS.prefab` separately, confirm P226/ranged behaviour, and again verify runtime target assignment needs.

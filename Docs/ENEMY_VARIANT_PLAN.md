@@ -21,6 +21,14 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` | `AI Sample Attack Melee` | Knife-based melee enemy | Root name is `Enemy_KnifeMelee_JUTPS`; tag is `Enemy`; `ItemToEquipOnStart = 1`; includes right-hand Katana `MeleeWeapon` and damager. | Default JU TPS example values preserved. | Yes, for single-prefab validation. |
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | `AI Sample Attack Gun` | Ranged enemy | Root name is `Enemy_Ranged_JUTPS`; tag is `Enemy`; `ItemToEquipOnStart = 0`; includes right-hand P226 `Weapon`. | Default JU TPS example values preserved. | Yes, for single-prefab validation. |
 
+## Task 5.5 Validation Status
+
+| Variant prefab path | Validation result | Ready for later wave spawning | Notes |
+|---|---|---|---|
+| `Assets/_LastStand/Prefabs/Enemies/Enemy_FistMelee_JUTPS.prefab` | Pass | Conditionally yes | Movement toward the player and unarmed melee damage were confirmed in `LS_Arena_01`. Later spawning code should assign the JU TPS AI target at runtime. |
+| `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` | Pass with notes | Conditionally yes | Close-range blade melee damage was confirmed. No dedicated Knife/Dagger prefab was found, so the configured JU TPS Katana remains the stable blade/knife stand-in. Later spawning code should assign the JU TPS AI target at runtime. |
+| `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Not tested in Task 5.5 | No | Reserved for Task 5.6 ranged enemy validation. |
+
 ## Planned Enemy Roles
 
 1. Fist-based melee enemy
