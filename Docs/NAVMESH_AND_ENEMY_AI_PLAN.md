@@ -65,7 +65,7 @@ Safe next step:
 
 ## Task 4.5 Single Enemy Validation
 - Test source prefab: `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab`.
-- Scene test object: `_Systems/AI_Test/Enemy_Test_Zombie_Walker`.
+- Scene test object: disabled JU TPS zombie validation enemy under `_Systems/AI_Test`.
 - Saved test placement: `(15, 0, -128)`, rotation `(0, 250, 0)`.
 - Final saved state: disabled, so the validation object is available for inspection but does not interfere with future scene work.
 - Source prefab modification: none.
@@ -80,34 +80,38 @@ Safe next step:
 
 | Candidate prefab path | Description / likely use | AI type or observed components | Melee/ranged suitability | Recommended Last Stand role | Risks/manual setup |
 |---|---|---|---|---|---|
-| `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab` | JU TPS zombie-style AI character with humanoid body, ragdoll, health, hitboxes, and alert indicator. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, and `JU_AI_Zombie`. | Best melee candidate. Includes hand hitboxes/damagers. | Walker / slow melee infected; possible Runner after speed/health tuning later. | Needs NavMesh/navigation validation in `LS_Arena_01`; speed/health tuning should be done in safe Last Stand variants later. |
-| `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Patrol AI.prefab` | Armed patrol-style JU TPS AI character. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, `JU_AI_PatrolCharacter`, and `JUInteractionSystem`; has nested `P226` weapon. | Strong ranged candidate. | Ranged infected or armed hostile stand-in. | May need patrol/target setup, weapon behaviour validation, faction/tag setup, and careful balancing. |
-| `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Sample Attack.prefab` | JU TPS example AI for attack behaviour. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, and `JU_AI_AttackActionExample`; includes nested `P226` and `Katana`. | Mixed melee/ranged example. | Reference candidate for attack behaviour, not first production enemy. | Example prefab may depend on demo-scene assumptions; use for learning before wrapping. |
+| `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab` | JU TPS zombie-style AI character with humanoid body, ragdoll, health, hitboxes, and alert indicator. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, and `JU_AI_Zombie`. | Strong baseline melee reference. Includes hand hitboxes/damagers. | Fist-based melee reference and early validation source. | Validated as a first close-range enemy test, but final Coursework001-aligned enemy wrappers should come from configured AI Attack examples. |
+| `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Patrol AI.prefab` | Armed patrol-style JU TPS AI character. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, `JU_AI_PatrolCharacter`, and `JUInteractionSystem`; has nested `P226` weapon. | Ranged reference candidate. | Ranged enemy reference only. | The configured AI Attack gun example is preferred for the first Last Stand ranged prefab because it directly demonstrates attack behaviour. |
+| `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Sample Attack.prefab` | JU TPS example AI for attack behaviour. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, and `JU_AI_AttackActionExample`; includes nested `P226` and `Katana`. | Configured scene instances show fist, melee-weapon, and gun setups. | Preferred source for Last Stand fist-based melee, knife-based melee, and ranged wrappers. | Example instances may depend on demo-scene assumptions; validate wrappers in `LS_Arena_01`. |
 | `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Escape/AI Sample Escape.prefab` | JU TPS example AI for escape behaviour. | Root includes `JUCharacterController`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController`, `JUInventory`, `JU_AI_EscapeActionExample`, and `NavMeshObstacle`; includes nested `P226` and `Katana`. | Mixed capability but behaviour is escape-focused. | Reference only; not recommended for main zombie wave roles. | Behaviour goal does not match survival enemy pressure; may require demo-scene setup. |
 | `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/AI Alert Indicator.prefab` | Visual alert indicator used by AI prefabs. | Contains JU TPS AI alert visual component. | Not an enemy. | Supporting UI/VFX for AI awareness. | Use only through existing JU TPS AI prefab references unless a later task needs custom alert visuals. |
 
 ## Recommended Enemy Roles
-1. Walker / slow melee infected
-   - Source candidate: `Zombie AI.prefab`.
-   - Low speed.
-   - Medium health.
-   - Close-range pressure.
+1. Fist-based melee enemy
+   - Source candidate: configured `AI Sample Attack Punch` instance from the AI Attack example scene.
+   - Unarmed close-range pressure.
+   - Intended as the simplest early-wave enemy.
 
-2. Runner / fast melee infected
-   - Source candidate: `Zombie AI.prefab` as a later Last Stand variant.
-   - Higher speed.
-   - Lower health.
-   - Close-range pressure and flanking.
+2. Knife-based melee enemy
+   - Source candidate: configured `AI Sample Attack Melee` instance from the AI Attack example scene.
+   - Melee-weapon pressure using the JU TPS Katana setup as the current stable stand-in for the Coursework001 knife enemy.
+   - Intended as a higher-threat close-range enemy.
 
-3. Ranged infected
-   - Source candidate: `Patrol AI.prefab`.
-   - Lower health.
-   - Ranged attack or weapon pressure.
+3. Ranged enemy
+   - Source candidate: configured `AI Sample Attack Gun` instance from the AI Attack example scene.
+   - Gun/ranged weapon pressure.
    - Forces the player to use cover and movement.
 
+## Task 5 Enemy Variant Creation
+- Corrected source strategy: use configured instances from `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity` rather than creating role labels from base prefabs alone.
+- Created `Assets/_LastStand/Prefabs/Enemies/Enemy_FistMelee_JUTPS.prefab` from `AI Sample Attack Punch`; key setup is `ItemToEquipOnStart = -1`.
+- Created `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` from `AI Sample Attack Melee`; key setup is `ItemToEquipOnStart = 1` and a right-hand Katana `MeleeWeapon`.
+- Created `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` from `AI Sample Attack Gun`; key setup is `ItemToEquipOnStart = 0` and a right-hand P226 `Weapon`.
+- Source JU TPS example scene and source prefabs were inspected but not saved or staged.
+- Next step: validate the three Last Stand variants one at a time in `LS_Arena_01`.
+
 ## Future Integration Plan
-- Task 4.5: after AI Navigation availability is resolved, place one test enemy and validate NavMesh movement/combat in `LS_Arena_01`.
-- Later: create Last Stand enemy prefab variants/wrappers under `Assets/_LastStand/Prefabs/Enemies`.
+- Task 5.5: validate the fist-based melee, knife-based melee, and ranged Last Stand enemy prefabs one at a time in `LS_Arena_01`.
 - Later: create `EnemyDeathReporter` to translate JU TPS enemy death into Last Stand kill/score events.
 - Later: create `WaveManager` and `SpawnDirector`.
 - Later: connect kills, score, wave state, and survival timing to `StatsManager` and `HUDPresenter`.

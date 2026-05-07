@@ -147,7 +147,7 @@
 - Did not create `_Level/NavMesh_Setup` because the required `NavMeshSurface` component is unavailable.
 - Did not bake NavMesh in this task; safe package setup for Unity AI Navigation is required first.
 - Audited JU TPS enemy prefab candidates: `Zombie AI.prefab`, `Patrol AI.prefab`, `AI Sample Attack.prefab`, `AI Sample Escape.prefab`, and `AI Alert Indicator.prefab`.
-- Recommended `Zombie AI.prefab` for Walker and later Runner variants, and `Patrol AI.prefab` as the likely Ranged infected/armed hostile candidate.
+- Initially recommended `Zombie AI.prefab` and `Patrol AI.prefab` as broad melee/ranged candidates. Later Task 5 clarification refined this to the configured AI Attack example instances for fist-based melee, knife-based melee, and ranged enemy wrappers.
 - No enemy variants/wrappers were created because NavMesh availability and first enemy behaviour validation should happen first.
 - No gameplay systems, wave logic, spawning, scoring, pickups, custom HUD, Build Settings, actor skin replacement, or third-party source edits were made.
 
@@ -196,7 +196,7 @@
 ## 2026-05-07 00:10 +01:00 - Task 4.5 Single JU TPS Zombie AI Test
 - Placed exactly one JU TPS Zombie AI test instance in `LS_Arena_01`.
 - Source prefab: `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/AI/Zombie AI.prefab`.
-- Scene object: `_Systems/AI_Test/Enemy_Test_Zombie_Walker`.
+- Scene object: a disabled JU TPS zombie validation enemy under `_Systems/AI_Test`.
 - Confirmed the prefab uses JU TPS AI/character/health/damage/ragdoll components and does not expose a standard root `NavMeshAgent`.
 - Confirmed `Player_JUTPS` already has the `Player` tag expected by the zombie target list.
 - Play Mode validation showed the zombie remains stable, uses JU TPS navigation movement, detects the player at close range, and can apply melee damage.
@@ -206,3 +206,16 @@
 
 ## Next Planned Task
 - Task 5: create safe Last Stand enemy wrappers/variants and plan integration hooks for later wave spawning, enemy death reporting, score/kills, and HUD statistics.
+
+## 2026-05-07 00:50 +01:00 - Task 5 Last Stand Enemy Variant Wrappers
+- Inspected the JU TPS AI Attack example at `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity`.
+- Found the configured enemy instances matching Coursework001 terminology: `AI Sample Attack Punch`, `AI Sample Attack Melee`, and `AI Sample Attack Gun`.
+- Created project-owned wrappers under `Assets/_LastStand/Prefabs/Enemies`:
+  - `Enemy_FistMelee_JUTPS.prefab` from `AI Sample Attack Punch`, with `ItemToEquipOnStart = -1`.
+  - `Enemy_KnifeMelee_JUTPS.prefab` from `AI Sample Attack Melee`, with `ItemToEquipOnStart = 1` and a right-hand Katana `MeleeWeapon`.
+  - `Enemy_Ranged_JUTPS.prefab` from `AI Sample Attack Gun`, with `ItemToEquipOnStart = 0` and a right-hand P226 `Weapon`.
+- No disabled preview instances were added to `LS_Arena_01`.
+- No wave, spawn, stat, pickup, custom HUD, enemy death reporting, Build Settings, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 5.5: validate the fist-based melee, knife-based melee, and ranged enemy wrappers one at a time in `LS_Arena_01`.

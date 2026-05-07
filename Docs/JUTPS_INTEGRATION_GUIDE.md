@@ -49,9 +49,9 @@ The planned main custom scene is `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
 - Last Stand custom code should manage spawning, waves, scoring, and death reporting.
 - Avoid replacing JU TPS AI with a fully custom AI unless necessary.
 - Planned enemy types:
-  1. Walker / slow melee infected
-  2. Runner / fast melee infected
-  3. Ranged infected
+  1. Fist-based melee enemy
+  2. Knife-based melee enemy
+  3. Ranged enemy
 
 ## UI Integration Rules
 - Start with JU TPS Default User Interface.

@@ -100,7 +100,7 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 ## Task 4 NavMesh And JU TPS Enemy Candidate Audit
 - NavMesh and JU TPS enemy prefab candidates were audited as the foundation for Coursework002 AI evidence.
 - The project currently lacks `NavMeshSurface`/Unity AI Navigation package support, so no NavMesh setup or bake was created in this task.
-- JU TPS enemy candidates were identified without modifying third-party prefabs: `Zombie AI.prefab` for Walker/Runner melee roles and `Patrol AI.prefab` for a ranged infected/armed hostile role.
+- JU TPS enemy candidates were identified without modifying third-party prefabs. Later Task 5 refinement selected the configured AI Attack example instances for the three Coursework001-aligned enemy roles: fist-based melee, knife-based melee, and ranged enemy.
 - The project will use JU TPS AI where possible and add custom Last Stand code later for wave spawning, enemy death reporting, score/kills, statistics, and HUD integration.
 - This prepares evidence for game AI, level progression, content generation through future wave spawning, and modular C# integration.
 
@@ -124,3 +124,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - This validates the foundation for Coursework002 Game AI evidence without implementing the full wave system yet.
 - The saved scene keeps the test enemy disabled under `_Systems/AI_Test`, so it remains explainable evidence without disrupting future tasks.
 - Later custom Last Stand systems will manage enemy variants, spawning, waves, scoring, death reporting, statistics, and HUD integration.
+
+## Task 5 Enemy Variant Wrappers
+- Last Stand enemy roles were formalised as three JU TPS-based project-owned prefabs under `Assets/_LastStand/Prefabs/Enemies`.
+- The source configuration came from the JU TPS AI Attack example instances rather than from generic renamed base prefabs.
+- Created `Enemy_FistMelee_JUTPS`, `Enemy_KnifeMelee_JUTPS`, and `Enemy_Ranged_JUTPS` to match Coursework001 terminology and support Coursework002 AI/mechanics evidence.
+- This prepares the project for later wave-based spawning, difficulty progression, enemy death reporting, score/kills/statistics, and HUD integration.
+- The project still avoids actor skin replacement and does not modify JU TPS source prefabs or scenes.

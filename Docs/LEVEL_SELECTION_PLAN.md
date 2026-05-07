@@ -94,7 +94,7 @@ LS_Arena_01
 ## Coursework002 Evidence Supported
 - Game story and logic: the arena represents an abandoned evacuation/checkpoint area where the survivor makes a final stand and escapes after wave 5.
 - Game mechanics: the space supports JU TPS movement, aiming, shooting, reload, cover use, pickup collection, and extraction.
-- Game AI: multiple approach lanes support walker, runner, and ranged infected behaviours.
+- Game AI: multiple approach lanes support fist-based melee, knife-based melee, and ranged enemy behaviours.
 - Content generation through wave/spawn system: spawn point selection, weighted enemy selection, max alive enemies, spawn timing, and difficulty scaling can all be demonstrated in one controlled arena.
 - Level progression: the arena can become more dangerous across five waves while keeping the same readable layout.
 - UI/statistics demonstration: wave number, kills, score, survival timer, objective text, FPS, health, ammo, and pickup prompts can be shown clearly.
