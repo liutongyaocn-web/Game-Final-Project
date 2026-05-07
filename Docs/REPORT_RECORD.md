@@ -159,3 +159,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The ranged enemy was validated without manual target assignment, confirming that the binder can populate the JU TPS AI target field at runtime.
 - This prepares the enemy prefabs for future `WaveManager` and `SpawnDirector` spawning.
 - This supports Coursework002 evidence for Game AI integration, modular C# code quality, and a stable path toward the final wave-based gameplay loop.
+
+## Task 7 WaveDefinition Data Layer
+- Five wave definition assets were created for the Last Stand survival progression.
+- The waves introduce the three enemy types gradually: fist-based melee in wave 1, knife/blade melee in wave 2, and ranged enemies from wave 3 onward.
+- The final wave unlocks extraction after completion, matching the planned survival/extraction game loop.
+- This supports the Coursework001 wave-based survival direction and Coursework002 evidence for level progression, content generation, game logic, and configurable C# data design.
+- Runtime wave execution is intentionally deferred to a later task so the data can be checked before gameplay implementation.

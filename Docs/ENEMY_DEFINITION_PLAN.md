@@ -43,6 +43,16 @@ The three `EnemyDefinition` assets point to prefabs that now include `EnemyTarge
 
 The binder is intentionally kept on the prefab rather than inside `EnemyDefinition`, because target binding is runtime scene behaviour and the definition asset remains pure configuration data.
 
+## Task 7 WaveDefinition References
+The EnemyDefinition assets are now referenced by five `WaveDefinition` assets under `Assets/_LastStand/ScriptableObjects/Waves`.
+
+Wave data uses:
+- `EnemyDefinition_FistMelee.asset` from wave 1 onward.
+- `EnemyDefinition_KnifeMelee.asset` from wave 2 onward.
+- `EnemyDefinition_Ranged.asset` from wave 3 onward.
+
+This preserves the EnemyDefinition layer as the source of enemy prefab/configuration references while allowing wave data to describe progression and enemy composition.
+
 ## Coursework002 Evidence Supported
 - Game AI: the three validated enemy behaviours are represented as explicit data.
 - Game mechanics: each role has scoring, wave introduction, and max-alive balancing values.

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a150e70db96140bf9522761930877, type: 3}
+  m_Name: WaveDefinition_02
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Waves.WaveDefinition
+  waveNumber: 2
+  displayName: Wave 2 - Armed Infected
+  objectiveText: Survive the armed melee infected.
+  enemies:
+  - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
+    count: 5
+    spawnWeight: 1
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 2
+    notes: Baseline fist melee pressure.
+  - enemyDefinition: {fileID: 11400000, guid: 182a02cd44d84a84195af3df81efb2d5, type: 2}
+    count: 2
+    spawnWeight: 0.7
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 1
+    notes: Introduces knife/blade melee threat.
+  maxAliveAtOnce: 3
+  spawnIntervalSeconds: 3.5
+  startDelaySeconds: 2
+  intermissionAfterWaveSeconds: 8
+  unlockExtractionAfterWave: 0
+  difficultyNotes: Adds the knife/blade melee enemy while keeping close-range pressure
+    manageable.
+  validatedForRuntime: 0

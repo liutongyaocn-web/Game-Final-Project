@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a150e70db96140bf9522761930877, type: 3}
+  m_Name: WaveDefinition_03
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Waves.WaveDefinition
+  waveNumber: 3
+  displayName: Wave 3 - Crossfire
+  objectiveText: Survive melee pressure and ranged fire.
+  enemies:
+  - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
+    count: 4
+    spawnWeight: 1
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 2
+    notes: Keeps melee pressure moving.
+  - enemyDefinition: {fileID: 11400000, guid: 182a02cd44d84a84195af3df81efb2d5, type: 2}
+    count: 3
+    spawnWeight: 0.8
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 1
+    notes: Armed blade melee pressure.
+  - enemyDefinition: {fileID: 11400000, guid: 79abd52b64ffc3a4f9fd1dc1abe0e86b, type: 2}
+    count: 1
+    spawnWeight: 0.4
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 1
+    notes: First cautious ranged introduction.
+  maxAliveAtOnce: 3
+  spawnIntervalSeconds: 3
+  startDelaySeconds: 2
+  intermissionAfterWaveSeconds: 8
+  unlockExtractionAfterWave: 0
+  difficultyNotes: Introduces the ranged enemy cautiously because Task 5.6 showed
+    ranged damage is very high.
+  validatedForRuntime: 0

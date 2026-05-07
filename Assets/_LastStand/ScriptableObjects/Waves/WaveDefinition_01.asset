@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995a150e70db96140bf9522761930877, type: 3}
+  m_Name: WaveDefinition_01
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Waves.WaveDefinition
+  waveNumber: 1
+  displayName: Wave 1 - First Contact
+  objectiveText: Survive the first infected attack.
+  enemies:
+  - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
+    count: 4
+    spawnWeight: 1
+    minSpawnGroupSize: 1
+    maxSpawnGroupSize: 2
+    notes: Fist melee introduction.
+  maxAliveAtOnce: 2
+  spawnIntervalSeconds: 4
+  startDelaySeconds: 2
+  intermissionAfterWaveSeconds: 8
+  unlockExtractionAfterWave: 0
+  difficultyNotes: Introduces the fist-based melee enemy only.
+  validatedForRuntime: 0

@@ -275,3 +275,21 @@
 
 ## Next Planned Task
 - Task 7: begin wave/spawn architecture using `EnemyDefinition` assets and the new runtime target binding foundation.
+
+## 2026-05-07 16:00 +01:00 - Task 7 WaveDefinition Data Assets
+- Created `Assets/_LastStand/Scripts/Waves/WaveEnemyEntry.cs`.
+- Created `Assets/_LastStand/Scripts/Waves/WaveDefinition.cs`.
+- `WaveEnemyEntry` stores an `EnemyDefinition` reference, count, spawn weight, group sizes, and notes.
+- `WaveDefinition` stores wave number, objective text, enemy composition, max alive count, spawn interval, start delay, intermission duration, extraction unlock flag, balancing notes, and runtime validation status.
+- Created five wave assets under `Assets/_LastStand/ScriptableObjects/Waves`.
+- Wave 1 introduces fist melee enemies.
+- Wave 2 adds knife/blade melee enemies.
+- Wave 3 introduces one ranged enemy cautiously.
+- Wave 4 increases mixed pressure.
+- Wave 5 is the final wave and unlocks extraction after completion.
+- Verified the wave assets reference the correct `EnemyDefinition` assets.
+- Unity Console after refresh/compile: 0 errors and 0 warnings.
+- No runtime wave manager, spawn director, stats, HUD, pickups, enemy death reporting, scene changes, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 8: implement a small runtime wave/spawn foundation that reads these definitions, or first add a validation helper for wave data before runtime spawning.
