@@ -94,7 +94,7 @@ Safe next step:
 
 2. Knife-based melee enemy
    - Source candidate: configured `AI Sample Attack Melee` instance from the AI Attack example scene.
-   - Melee-weapon pressure using the JU TPS Katana setup as the current stable stand-in for the Coursework001 knife enemy.
+   - Melee-weapon pressure using the JU TPS AI Attack demo's configured Katana/blade setup for the Coursework001 knife-based melee enemy role.
    - Intended as a higher-threat close-range enemy.
 
 3. Ranged enemy

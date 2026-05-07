@@ -10,7 +10,7 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 | Source scene or prefab path | Hierarchy object name | Base prefab / source | Observed AI components | Inventory / weapon setup | Health / damage setup | Intended Last Stand use | Risks / notes |
 |---|---|---|---|---|---|---|---|
 | `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity` | `AI Sample Attack Punch` | Configured instance from `AI Sample Attack.prefab` example content | `JU_AI_AttackActionExample`, `JUCharacterController`, `JUInventory`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController` | `ItemToEquipOnStart = -1`; P226 and Katana objects exist in the shared example hierarchy, but no item is equipped at start. | `JUHealth` 100/100, body damage multipliers, hand hitbox/damager components. | Fist-based melee enemy. | Must be validated in `LS_Arena_01`; demo-scene target reference may need runtime assignment later. |
-| `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity` | `AI Sample Attack Melee` | Configured instance from `AI Sample Attack.prefab` example content | `JU_AI_AttackActionExample`, `JUCharacterController`, `JUInventory`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController` | `ItemToEquipOnStart = 1`; right-hand Katana child has `MeleeWeapon`, `BoxCollider`, `Rigidbody`, and a child `Damager`. | `JUHealth` 100/100, body damage multipliers, Katana damager plus character hitbox/damager components. | Knife-based melee enemy. | The visible weapon is a Katana in the JU TPS example; it stands in for the Coursework001 knife/melee weapon enemy until visual polish is needed. |
+| `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity` | `AI Sample Attack Melee` | Configured instance from `AI Sample Attack.prefab` example content | `JU_AI_AttackActionExample`, `JUCharacterController`, `JUInventory`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController` | `ItemToEquipOnStart = 1`; right-hand Katana child has `MeleeWeapon`, `BoxCollider`, `Rigidbody`, and a child `Damager`. | `JUHealth` 100/100, body damage multipliers, Katana damager plus character hitbox/damager components. | Knife-based melee enemy. | The JU TPS Attack demo implements the Coursework001 knife/melee role as an armed Katana/blade enemy. Keep this configuration unless a functional error appears. |
 | `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity` | `AI Sample Attack Gun` | Configured instance from `AI Sample Attack.prefab` example content | `JU_AI_AttackActionExample`, `JUCharacterController`, `JUInventory`, `JUHealth`, `DamageableBody`, `AdvancedRagdollController` | `ItemToEquipOnStart = 0`; right-hand P226 child has `Weapon`, `PreventGunClipping`, and `JU_AI_WeaponSoundSource`. | `JUHealth` 100/100, body damage multipliers, JU TPS weapon damage setup inherited from the example weapon. | Ranged enemy. | Needs one-enemy ranged validation in the arena before adding it to waves. |
 
 ## Created Enemy Variants
@@ -26,7 +26,7 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 | Variant prefab path | Validation result | Ready for later wave spawning | Notes |
 |---|---|---|---|
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_FistMelee_JUTPS.prefab` | Pass | Conditionally yes | Movement toward the player and unarmed melee damage were confirmed in `LS_Arena_01`. Later spawning code should assign the JU TPS AI target at runtime. |
-| `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` | Pass with notes | Conditionally yes | Close-range blade melee damage was confirmed. No dedicated Knife/Dagger prefab was found, so the configured JU TPS Katana remains the stable blade/knife stand-in. Later spawning code should assign the JU TPS AI target at runtime. |
+| `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` | Pass with notes | Conditionally yes | Close-range blade melee damage was confirmed using the inherited JU TPS AI Attack Katana configuration. This is the project's knife/blade melee implementation. Later spawning code should assign the JU TPS AI target at runtime. |
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Not tested in Task 5.5 | No | Reserved for Task 5.6 ranged enemy validation. |
 
 ## Planned Enemy Roles
@@ -63,7 +63,7 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 
 ## Risks and Mitigation
 - JU TPS Attack example instances carry a demo-scene target reference; future testing should confirm how target selection behaves when spawned in `LS_Arena_01`.
-- The knife-based enemy currently uses the JU TPS Katana visual as the available configured melee weapon; keep it stable first and polish visuals later only if time allows.
+- The knife-based enemy intentionally keeps the JU TPS Attack demo's Katana/blade melee configuration; do not replace weapon references unless a functional error appears.
 - The ranged enemy needs careful fairness tuning so it does not overwhelm the player from spawn.
 - Source JU TPS prefabs and scenes must not be modified.
 - Actor skin replacement remains out of scope during core development.

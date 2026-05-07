@@ -224,7 +224,7 @@
 - Validated `Enemy_FistMelee_JUTPS.prefab` in `LS_Arena_01`.
 - Fist enemy moved toward `Player_JUTPS` and applied unarmed melee damage, reducing player health from `400` to `0` during Play Mode validation.
 - Validated `Enemy_KnifeMelee_JUTPS.prefab` in `LS_Arena_01`.
-- Knife enemy kept the JU TPS Katana blade setup because no dedicated Knife/Dagger prefab was found in the imported JU TPS/JUTPS Addons assets.
+- Knife enemy kept the JU TPS AI Attack demo's configured Katana blade setup. This represents the Coursework001 knife-based melee role as an armed close-range blade enemy, and weapon references should not be changed unless a functional error appears.
 - Knife enemy close-range validation confirmed blade melee damage, reducing player health from `400` to `0`.
 - Safe scene-instance fix applied: the Attack example AI `Target` field was assigned to `Player_JUTPS` on test instances because the demo-scene target reference becomes `null` in `LS_Arena_01`.
 - Final saved scene state keeps both melee test enemies disabled under `_Systems/AI_Test/MeleeVariant_Test`.

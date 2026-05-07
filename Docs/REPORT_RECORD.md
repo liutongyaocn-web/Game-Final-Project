@@ -135,6 +135,6 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 ## Task 5.5 Melee Enemy Variant Validation
 - The fist-based melee enemy and knife/blade melee enemy variants were validated in `LS_Arena_01`.
 - The fist enemy demonstrated unarmed close-range pressure by moving toward the player and damaging player health.
-- The knife-based enemy uses the available JU TPS Katana blade setup as a stable stand-in for the Coursework001 knife/melee role; close-range blade melee damage was confirmed.
+- The knife-based enemy keeps the JU TPS AI Attack demo's configured Katana/blade melee setup, representing the Coursework001 knife/melee role as an armed close-range blade enemy; close-range blade melee damage was confirmed.
 - This directly supports the three-enemy-type design inherited from Coursework001: ranged enemy, fist-based melee enemy, and knife-based melee enemy.
 - Later systems will spawn these enemies through `WaveManager` and `SpawnDirector`, with runtime target assignment handled by Last Stand integration code.

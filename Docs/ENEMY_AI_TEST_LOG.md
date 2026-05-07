@@ -30,9 +30,9 @@
 - Knife enemy prefab path: `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab`.
 - Knife test object path: `_Systems/AI_Test/MeleeVariant_Test/Enemy_Test_KnifeMelee`.
 - Knife spawn position: saved disabled at `(-8, 0, -134)` with rotation `(0, 220, 0)` after close-range validation.
-- Knife/blade weapon used: JU TPS right-hand `Katana` child with `MeleeWeapon` and `Damager` setup.
-- Real Knife/Dagger asset search result: no dedicated Knife or Dagger prefab was found in the imported JU TPS/JUTPS Addons folders. The available configured blade asset is `Assets/Julhiecio TPS Controller/Demos/Demo Prefabs/Items/Melee Weapons/Katana.prefab`.
-- Katana stand-in status: Katana remains as the current stable blade/knife melee stand-in for the Coursework001 knife-based melee role.
+- Knife/blade weapon used: the configured JU TPS AI Attack demo right-hand `Katana` child with `MeleeWeapon` and `Damager` setup.
+- Weapon mapping note: Coursework001 describes a knife-based melee enemy. In the JU TPS implementation, that design role is represented by the AI Attack demo's configured Katana/blade melee enemy.
+- Katana status: Katana remains intentionally unchanged as the armed close-range blade/knife melee implementation. Do not replace weapon references unless a functional error appears.
 - Knife movement result: pass with note. The enemy was stable and moved/rotated, but the far test position did not reliably close distance within the observation window. A close-range validation position near `Player_JUTPS` confirmed approach and attack behaviour.
 - Knife attack result: pass. The enemy used the blade melee setup at close range.
 - Knife effect on player health: pass. Player health dropped from `400` to `0` during the close-range validation.
