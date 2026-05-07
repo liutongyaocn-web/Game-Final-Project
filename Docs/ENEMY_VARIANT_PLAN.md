@@ -52,6 +52,15 @@ Validated result:
 - `Enemy_Ranged_JUTPS.prefab` successfully targeted and damaged `Player_JUTPS` in `LS_Arena_01` without manual target assignment.
 - Fist and knife/blade prefabs received the same binder component and should be rechecked quickly when wave spawning begins.
 
+## Task 11 Lifecycle Reporting
+
+All three enemy variants now include `EnemyLifecycleReporter` on the root prefab. The reporter is configured by `WaveManager` after spawning and can notify `WaveManager.NotifyEnemyDefeated` when an enemy is destroyed or when likely JU TPS health/death fields indicate defeat.
+
+Validated result:
+- Runtime-spawned fist melee enemies received the reporter and were configured with `_Systems/WaveSystem`.
+- Destroy-fallback lifecycle reporting allowed Wave 1 to clear and progress into Wave 2 during validation.
+- Real hands-on death detection from normal player combat still needs a later manual pass.
+
 ## Planned Enemy Roles
 
 1. Fist-based melee enemy

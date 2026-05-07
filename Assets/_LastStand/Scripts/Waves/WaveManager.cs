@@ -147,6 +147,7 @@ namespace LastStand.Waves
                 if (enemy != null)
                 {
                     aliveEnemies.Add(enemy);
+                    ConfigureLifecycleReporter(enemy);
                     enemiesSpawnedThisWave++;
                 }
                 else
@@ -217,6 +218,22 @@ namespace LastStand.Waves
         private void CleanupAliveEnemies()
         {
             aliveEnemies.RemoveAll(enemy => enemy == null || !enemy.activeInHierarchy);
+        }
+
+        private void ConfigureLifecycleReporter(GameObject enemy)
+        {
+            if (enemy == null)
+            {
+                return;
+            }
+
+            EnemyLifecycleReporter reporter = enemy.GetComponent<EnemyLifecycleReporter>();
+            if (reporter == null)
+            {
+                reporter = enemy.AddComponent<EnemyLifecycleReporter>();
+            }
+
+            reporter.Configure(this);
         }
 
         private void StopActiveRoutine()

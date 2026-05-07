@@ -9528,6 +9528,7 @@ GameObject:
   - component: {fileID: 7211024314516356517}
   - component: {fileID: 3845518582602514496}
   - component: {fileID: 5056032413035980433}
+  - component: {fileID: 2067194700165898083}
   m_Layer: 9
   m_Name: Enemy_FistMelee_JUTPS
   m_TagString: Enemy
@@ -10398,6 +10399,26 @@ MonoBehaviour:
   bindOnStart: 1
   includeChildren: 1
   logBindingResult: 0
+--- !u!114 &2067194700165898083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534191831600193145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4241922432a1d5d40ba0fc352a6ee658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.AI.EnemyLifecycleReporter
+  waveManager: {fileID: 0}
+  autoFindWaveManager: 1
+  pollHealthState: 1
+  pollIntervalSeconds: 0.2
+  reportOnDestroy: 1
+  reportOnDisable: 0
+  logLifecycleEvents: 0
+  lastReportReason: 
 --- !u!1 &7678512398670528766
 GameObject:
   m_ObjectHideFlags: 0

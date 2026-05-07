@@ -60,6 +60,9 @@ Future `WaveManager` can read a `WaveDefinition`, ask `SpawnDirector` to spawn s
 ## Task 10 WaveManager Integration
 `WaveManager` now consumes `SpawnDirector` for wave-based spawning. Runtime validation confirmed Wave 1 can request spawns through `SpawnDirector`, which selects melee spawn points and instantiates enemies from `EnemyDefinition` data.
 
+## Task 11 Lifecycle Integration
+`SpawnDirector` still only selects spawn points and instantiates prefabs. After `SpawnDirector` returns the spawned enemy GameObject, `WaveManager` configures `EnemyLifecycleReporter` on the enemy so lifecycle reporting stays owned by the wave layer rather than the spawn-location layer.
+
 ## Pickup/Drop Design Decision
 - Do not use fixed health/ammo pickup points.
 - Future health/ammo pickups should drop from killed enemies.

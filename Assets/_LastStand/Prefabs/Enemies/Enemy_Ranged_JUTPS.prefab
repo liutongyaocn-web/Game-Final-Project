@@ -10843,6 +10843,7 @@ GameObject:
   - component: {fileID: 4291332377873551454}
   - component: {fileID: 22368901892666907}
   - component: {fileID: 6630670573457577303}
+  - component: {fileID: 4916407023213746887}
   m_Layer: 9
   m_Name: Enemy_Ranged_JUTPS
   m_TagString: Enemy
@@ -11713,6 +11714,26 @@ MonoBehaviour:
   bindOnStart: 1
   includeChildren: 1
   logBindingResult: 0
+--- !u!114 &4916407023213746887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8632835416570390665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4241922432a1d5d40ba0fc352a6ee658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.AI.EnemyLifecycleReporter
+  waveManager: {fileID: 0}
+  autoFindWaveManager: 1
+  pollHealthState: 1
+  pollIntervalSeconds: 0.2
+  reportOnDestroy: 1
+  reportOnDisable: 0
+  logLifecycleEvents: 0
+  lastReportReason: 
 --- !u!1 &8724141869358640139
 GameObject:
   m_ObjectHideFlags: 0

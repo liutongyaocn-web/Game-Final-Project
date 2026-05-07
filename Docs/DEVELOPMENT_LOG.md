@@ -347,3 +347,20 @@
 
 ## Next Planned Task
 - Task 11: add an enemy lifecycle/death bridge so WaveManager can detect defeated JU TPS enemies, complete waves reliably, and later connect kills/score/drops.
+
+## 2026-05-07 21:40 +01:00 - Task 11 Enemy Lifecycle Reporter Bridge
+- Created `Assets/_LastStand/Scripts/AI/EnemyLifecycleReporter.cs`.
+- Added `EnemyLifecycleReporter` to `Enemy_FistMelee_JUTPS`, `Enemy_KnifeMelee_JUTPS`, and `Enemy_Ranged_JUTPS`.
+- Updated `WaveManager` so spawned enemies are configured with an `EnemyLifecycleReporter`.
+- Inspected JU TPS lifecycle/health components including `JUTPS.JUHealth`, `JUTPS.JUCharacterController`, `DamageableBody`, `AdvancedRagdollController`, and `JU_AI_AttackActionExample`.
+- Runtime validation temporarily enabled Wave 1 auto-start.
+- Spawned enemies included `EnemyLifecycleReporter` and still bound to `Player_JUTPS` through `EnemyTargetBinder`.
+- Destroy-fallback validation removed runtime-spawned enemies and confirmed Wave 1 could clear/progress into Wave 2.
+- `WaveManager.autoStartOnPlay` was restored to false before saving.
+- `SpawnDirector.debugSpawnOnStart` remained false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after validation: 0 errors and 0 warnings.
+- No StatsManager, HUD, pickups, enemy death drops, extraction, game over flow, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Add score/kill statistics or complete hands-on lifecycle validation against real JU TPS enemy death before connecting HUD and extraction.

@@ -68,6 +68,11 @@ Enemy death/lifecycle reporting has not been implemented yet. `WaveManager` curr
 ## Future EnemyDeathReporter Requirement
 A future bridge should listen for JU TPS enemy death/disable events and call `WaveManager.NotifyEnemyDefeated(enemy)`. This will allow waves to clear reliably, drive score/kills, and trigger intermission/extraction progression.
 
+## Task 11 EnemyLifecycleReporter Integration
+`WaveManager` now configures `EnemyLifecycleReporter` on each spawned enemy. The reporter calls `WaveManager.NotifyEnemyDefeated(GameObject enemy)` once when it detects defeat or receives a destroy fallback. Runtime validation confirmed that spawned enemies receive the reporter and that destroying runtime-spawned enemies lets Wave 1 clear and progress into Wave 2.
+
+Real hands-on JU TPS death detection from player combat still needs confirmation, but the bridge is now in place for wave progression, future score/kills, and future enemy drop logic.
+
 ## Future Enemy Death Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.

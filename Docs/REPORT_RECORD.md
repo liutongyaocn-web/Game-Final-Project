@@ -187,3 +187,11 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Runtime validation confirmed Wave 1 can begin spawning, respects `maxAliveAtOnce`, and produces enemies that target `Player_JUTPS`.
 - This supports the Coursework001 wave-based survival design and Coursework002 evidence for level progression and content generation.
 - Full kill/death reporting, score, HUD, pickups, enemy drops, extraction, and win/lose flow will be added later.
+
+## Task 11 Enemy Lifecycle Reporter Bridge
+- An `EnemyLifecycleReporter` bridge was added so spawned enemies can notify `WaveManager` when they are defeated or removed.
+- The bridge is project-owned, uses reflection/polling for JU TPS health/death fields, and avoids editing or directly depending on JU TPS source scripts.
+- All three Last Stand enemy prefabs now include the lifecycle reporter.
+- `WaveManager` configures the reporter after each spawn and removes reported enemies from its alive list through `NotifyEnemyDefeated`.
+- Runtime validation confirmed destroy-fallback reporting can unblock Wave 1 and allow progression into Wave 2.
+- This prepares wave completion and later score, kill, HUD, and enemy drop systems.
