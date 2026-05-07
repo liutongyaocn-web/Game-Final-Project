@@ -308,3 +308,22 @@
 
 ## Next Planned Task
 - Task 9: implement a small `SpawnDirector` foundation that reads `WaveDefinition`, `EnemyDefinition`, and `SpawnPointGroup` data without running full wave gameplay yet.
+
+## 2026-05-07 18:10 +01:00 - Task 9 SpawnDirector Foundation
+- Created `Assets/_LastStand/Scripts/Spawning/SpawnDirector.cs`.
+- Added `_Systems/SpawnSystem` to `LS_Arena_01`.
+- Added `_Systems/Spawned_Enemies` as the runtime spawned enemy parent.
+- Added `SpawnDirector` to `_Systems/SpawnSystem`.
+- Configured `SpawnDirector` with `_SpawnPoints`, `_Systems/Spawned_Enemies`, and `Player_JUTPS`.
+- Enabled NavMesh validation with a sample radius of `3`.
+- Debug validation A: spawned one fist melee enemy from `EnemyDefinition_FistMelee.asset` at wave 1.
+- Fist spawned under `_Systems/Spawned_Enemies`, received a JU TPS target binding to `Player_JUTPS`, and produced a NavMesh path.
+- Debug validation B: spawned one ranged enemy from `EnemyDefinition_Ranged.asset` at wave 3.
+- Ranged spawned under `_Systems/Spawned_Enemies`, received a JU TPS target binding to `Player_JUTPS`, and damaged the player from `400` to `70`.
+- `debugSpawnOnStart` was restored to false before saving.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after final check: 0 errors and 0 warnings.
+- No WaveManager, StatsManager, HUD, pickups, enemy death drops, EnemyDeathReporter, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 10: implement a minimal `WaveManager` foundation that can read `WaveDefinition` assets and request spawns through `SpawnDirector`, while still keeping stats/HUD/pickups/death reporting separate.

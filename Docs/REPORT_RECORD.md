@@ -173,3 +173,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - `_SpawnPoints` now has a `SpawnPointGroup` that references all five spawn points.
 - This prepares the arena for wave-based enemy spawning and controlled level progression.
 - This supports Coursework002 evidence for content generation, Game AI setup, level design, and modular C# scene integration.
+
+## Task 9 SpawnDirector Foundation
+- A project-owned `SpawnDirector` foundation was created.
+- It can instantiate enemies from `EnemyDefinition` assets using eligible `SpawnPointGroup` locations.
+- Debug validation confirmed both fist melee and ranged enemies can be spawned at runtime and bind to `Player_JUTPS` through `EnemyTargetBinder`.
+- This prepares the game for controlled wave-based enemy generation.
+- Full wave execution, score/stat tracking, HUD updates, pickups, enemy death drops, and enemy death reporting remain separate future tasks.

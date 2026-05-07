@@ -39,6 +39,9 @@ It validates simple data ranges in the Inspector and exposes `IsEligibleForWave(
 ## Relationship To Future SpawnDirector
 `SpawnDirector` can query `SpawnPointGroup.GetEligiblePoints(role, waveNumber)`, filter for distance/line of sight/NavMesh checks later, and instantiate enemy prefabs from `EnemyDefinition` assets at the chosen point.
 
+## Task 9 SpawnDirector Usage
+`SpawnDirector` now consumes this scene's `SpawnPointGroup`. Runtime validation confirmed it can select eligible melee and ranged points by enemy role and wave number, sample the NavMesh near the marker, and instantiate a single enemy from an `EnemyDefinition`.
+
 ## Relationship To Future WaveManager
 `WaveManager` can use each wave's composition to request melee or ranged spawn points through `SpawnDirector`. The minimum wave values help prevent later pressure routes from being used too early.
 
