@@ -61877,6 +61877,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 387bac994560d8843a6d57112c37127f, type: 2}
   - {fileID: 11400000, guid: deec20280a5128e4c95e1e608ecdc575, type: 2}
   spawnDirector: {fileID: 576107564}
+  statsManager: {fileID: 1987654302}
   autoStartOnPlay: 0
   firstWaveDelaySeconds: 2
   logWaveEvents: 0
@@ -80714,6 +80715,7 @@ Transform:
   - {fileID: 576107563}
   - {fileID: 2050536045}
   - {fileID: 308897815}
+  - {fileID: 1987654301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412944095
@@ -377076,6 +377078,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1987210037}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1987654300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987654301}
+  - component: {fileID: 1987654302}
+  m_Layer: 0
+  m_Name: StatsSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987654301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987654300}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 412428588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987654302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987654300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c425bc6c64ce243a2d93cc54076661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Stats.LastStandStatsManager
+  resetOnStart: 1
+  trackSurvivalTime: 1
+  logStatEvents: 0
+  fallbackScoreValue: 0
 --- !u!1001 &1988029571
 PrefabInstance:
   m_ObjectHideFlags: 0

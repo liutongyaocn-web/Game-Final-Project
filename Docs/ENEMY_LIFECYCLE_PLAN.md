@@ -83,6 +83,9 @@ During a later hands-on gameplay pass, kill a spawned fist, knife/blade, and ran
 - `WaveManager.AliveEnemyCount` decreases.
 - Waves can complete without deleting enemies manually.
 
+## Task 12 Manual Validation Update
+After Task 11, the user manually confirmed that wave enemies can spawn automatically, can be killed through normal combat, and that `WaveManager` continues spawning/progressing after enemy kills. This supports using `EnemyLifecycleReporter` as the foundation for Task 12 stats integration.
+
 ## Future Pickup/Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.

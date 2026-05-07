@@ -1,6 +1,7 @@
 // Initially generated with Codex assistance and intended for student review/modification.
 using System.Collections.Generic;
 using LastStand.AI;
+using LastStand.Stats;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -33,10 +34,15 @@ namespace LastStand.Spawning
         public GameObject SpawnEnemy(EnemyDefinition enemyDefinition, int waveNumber)
         {
             LastStandSpawnPoint spawnPoint = SelectSpawnPointForEnemy(enemyDefinition, waveNumber);
-            return spawnPoint != null ? SpawnEnemyAtPoint(enemyDefinition, spawnPoint) : null;
+            return spawnPoint != null ? SpawnEnemyAtPoint(enemyDefinition, spawnPoint, waveNumber) : null;
         }
 
         public GameObject SpawnEnemyAtPoint(EnemyDefinition enemyDefinition, LastStandSpawnPoint spawnPoint)
+        {
+            return SpawnEnemyAtPoint(enemyDefinition, spawnPoint, currentWaveNumber);
+        }
+
+        public GameObject SpawnEnemyAtPoint(EnemyDefinition enemyDefinition, LastStandSpawnPoint spawnPoint, int waveNumber)
         {
             if (enemyDefinition == null || enemyDefinition.Prefab == null || spawnPoint == null)
             {
@@ -52,6 +58,7 @@ namespace LastStand.Spawning
                 ResolveSpawnedEnemyParent());
 
             enemy.name = $"{enemyDefinition.Prefab.name}_Runtime";
+            ConfigureRuntimeInfo(enemy, enemyDefinition, waveNumber);
             Log($"Spawned {enemyDefinition.DisplayName} at {spawnPoint.SpawnId}" +
                 (navMeshAdjusted ? " using sampled NavMesh position." : "."));
 
@@ -62,6 +69,22 @@ namespace LastStand.Spawning
             }
 
             return enemy;
+        }
+
+        private static void ConfigureRuntimeInfo(GameObject enemy, EnemyDefinition enemyDefinition, int waveNumber)
+        {
+            if (enemy == null)
+            {
+                return;
+            }
+
+            SpawnedEnemyRuntimeInfo runtimeInfo = enemy.GetComponent<SpawnedEnemyRuntimeInfo>();
+            if (runtimeInfo == null)
+            {
+                runtimeInfo = enemy.AddComponent<SpawnedEnemyRuntimeInfo>();
+            }
+
+            runtimeInfo.Configure(enemyDefinition, waveNumber);
         }
 
         public LastStandSpawnPoint SelectSpawnPointForEnemy(EnemyDefinition enemyDefinition, int waveNumber)

@@ -195,3 +195,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - `WaveManager` configures the reporter after each spawn and removes reported enemies from its alive list through `NotifyEnemyDefeated`.
 - Runtime validation confirmed destroy-fallback reporting can unblock Wave 1 and allow progression into Wave 2.
 - This prepares wave completion and later score, kill, HUD, and enemy drop systems.
+
+## Task 12 StatsManager Foundation
+- A statistics foundation was added for kills, score, current wave, total waves, spawned enemies, alive enemies, and survival time.
+- `SpawnedEnemyRuntimeInfo` stores the `EnemyDefinition`, wave number, score value, and defeat-counting state on runtime-spawned enemies.
+- `LastStandStatsManager` receives wave and defeat updates from `WaveManager`.
+- Runtime validation confirmed Wave 1 stats update, survival time increases, and a defeated fist melee enemy awards 1 kill and 100 score.
+- This prepares the HUD and final video/report explanation for Coursework002 statistics.

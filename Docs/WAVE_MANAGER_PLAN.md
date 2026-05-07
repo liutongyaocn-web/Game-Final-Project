@@ -73,6 +73,9 @@ A future bridge should listen for JU TPS enemy death/disable events and call `Wa
 
 Real hands-on JU TPS death detection from player combat still needs confirmation, but the bridge is now in place for wave progression, future score/kills, and future enemy drop logic.
 
+## Task 12 Stats Integration
+`WaveManager` now reports run start, current wave, wave enemy counts, alive enemy count, and enemy defeat events to `LastStandStatsManager`. This allows statistics to update independently of the future HUD.
+
 ## Future Enemy Death Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.

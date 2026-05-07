@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using LastStand.AI;
 using LastStand.Spawning;
+using LastStand.Stats;
 using UnityEngine;
 
 namespace LastStand.Waves
@@ -11,6 +12,7 @@ namespace LastStand.Waves
     {
         [SerializeField] private List<WaveDefinition> waves = new();
         [SerializeField] private SpawnDirector spawnDirector;
+        [SerializeField] private LastStandStatsManager statsManager;
         [SerializeField] private bool autoStartOnPlay;
         [SerializeField] private float firstWaveDelaySeconds = 2f;
         [SerializeField] private bool logWaveEvents;
@@ -59,6 +61,11 @@ namespace LastStand.Waves
                 return;
             }
 
+            if (statsManager != null)
+            {
+                statsManager.BeginRun(waves.Count);
+            }
+
             StartWave(0);
         }
 
@@ -85,6 +92,12 @@ namespace LastStand.Waves
             spawnQueue.Clear();
             aliveEnemies.Clear();
             state = WaveState.Idle;
+
+            if (statsManager != null)
+            {
+                statsManager.EndRun();
+                statsManager.SetWaveEnemyCounts(0, 0, 0);
+            }
         }
 
         public void RegisterEnemyRemoved(GameObject enemy)
@@ -92,11 +105,17 @@ namespace LastStand.Waves
             if (enemy != null)
             {
                 aliveEnemies.Remove(enemy);
+                PublishWaveEnemyCounts();
             }
         }
 
         public void NotifyEnemyDefeated(GameObject enemy)
         {
+            if (statsManager != null)
+            {
+                statsManager.RegisterEnemyDefeated(enemy);
+            }
+
             RegisterEnemyRemoved(enemy);
         }
 
@@ -121,6 +140,8 @@ namespace LastStand.Waves
             aliveEnemies.Clear();
             BuildSpawnQueue(currentWave);
             totalEnemiesToSpawnThisWave = spawnQueue.Count;
+            PublishCurrentWaveStats();
+            PublishWaveEnemyCounts();
 
             float delay = waveIndex == 0 ? firstWaveDelaySeconds : currentWave.StartDelaySeconds;
             if (delay > 0f)
@@ -132,6 +153,7 @@ namespace LastStand.Waves
             while (spawnQueue.Count > 0)
             {
                 CleanupAliveEnemies();
+                PublishWaveEnemyCounts();
 
                 if (aliveEnemies.Count >= currentWave.MaxAliveAtOnce)
                 {
@@ -149,6 +171,7 @@ namespace LastStand.Waves
                     aliveEnemies.Add(enemy);
                     ConfigureLifecycleReporter(enemy);
                     enemiesSpawnedThisWave++;
+                    PublishWaveEnemyCounts();
                 }
                 else
                 {
@@ -165,12 +188,18 @@ namespace LastStand.Waves
             while (aliveEnemies.Count > 0)
             {
                 CleanupAliveEnemies();
+                PublishWaveEnemyCounts();
                 yield return null;
             }
 
             if (currentWave.UnlockExtractionAfterWave || IsFinalWave)
             {
                 state = WaveState.Completed;
+                if (statsManager != null)
+                {
+                    statsManager.EndRun();
+                }
+
                 waveRoutine = null;
                 yield break;
             }
@@ -218,6 +247,22 @@ namespace LastStand.Waves
         private void CleanupAliveEnemies()
         {
             aliveEnemies.RemoveAll(enemy => enemy == null || !enemy.activeInHierarchy);
+        }
+
+        private void PublishCurrentWaveStats()
+        {
+            if (statsManager != null && currentWave != null)
+            {
+                statsManager.SetCurrentWave(currentWave.WaveNumber, waves.Count);
+            }
+        }
+
+        private void PublishWaveEnemyCounts()
+        {
+            if (statsManager != null)
+            {
+                statsManager.SetWaveEnemyCounts(enemiesSpawnedThisWave, totalEnemiesToSpawnThisWave, aliveEnemies.Count);
+            }
         }
 
         private void ConfigureLifecycleReporter(GameObject enemy)

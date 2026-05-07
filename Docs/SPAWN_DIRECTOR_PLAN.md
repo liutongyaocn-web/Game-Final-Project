@@ -63,6 +63,9 @@ Future `WaveManager` can read a `WaveDefinition`, ask `SpawnDirector` to spawn s
 ## Task 11 Lifecycle Integration
 `SpawnDirector` still only selects spawn points and instantiates prefabs. After `SpawnDirector` returns the spawned enemy GameObject, `WaveManager` configures `EnemyLifecycleReporter` on the enemy so lifecycle reporting stays owned by the wave layer rather than the spawn-location layer.
 
+## Task 12 Runtime Metadata Integration
+`SpawnDirector` now attaches `SpawnedEnemyRuntimeInfo` to runtime-spawned enemies. The metadata records the source `EnemyDefinition`, wave number, configured score value, and spawn time so `LastStandStatsManager` can award score/kills without hard-coded prefab checks.
+
 ## Pickup/Drop Design Decision
 - Do not use fixed health/ammo pickup points.
 - Future health/ammo pickups should drop from killed enemies.

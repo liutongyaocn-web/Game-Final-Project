@@ -364,3 +364,25 @@
 
 ## Next Planned Task
 - Add score/kill statistics or complete hands-on lifecycle validation against real JU TPS enemy death before connecting HUD and extraction.
+
+## 2026-05-07 22:35 +01:00 - Task 12 StatsManager Foundation
+- Created `Assets/_LastStand/Scripts/Stats/SpawnedEnemyRuntimeInfo.cs`.
+- Created `Assets/_LastStand/Scripts/Stats/LastStandStatsManager.cs`.
+- Updated `SpawnDirector` to attach and configure runtime enemy metadata after instantiation.
+- Updated `WaveManager` to report run start, current wave, enemy counts, and enemy defeats to `LastStandStatsManager`.
+- Added `_Systems/StatsSystem` to `LS_Arena_01`.
+- Added `LastStandStatsManager` to `_Systems/StatsSystem`.
+- Assigned `WaveManager.statsManager` to `_Systems/StatsSystem`.
+- Runtime validation temporarily enabled `WaveManager.autoStartOnPlay`.
+- Wave 1 updated stats with current wave `1`, total waves `5`, total wave enemies `4`, and alive enemies `2`.
+- Spawned fist enemies received `SpawnedEnemyRuntimeInfo` with score value `100`.
+- Destroy-fallback defeat validation increased kills to `1` and score to `100`.
+- Survival time increased during Play Mode.
+- `WaveManager.autoStartOnPlay` was restored to false before saving.
+- `SpawnDirector.debugSpawnOnStart` remained false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after validation: 0 errors and 0 warnings.
+- No HUD, pickups, enemy drops, extraction, game over flow, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Add a HUD presenter layer that reads from `LastStandStatsManager` and WaveManager without controlling gameplay.
