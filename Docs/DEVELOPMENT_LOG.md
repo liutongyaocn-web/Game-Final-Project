@@ -232,3 +232,17 @@
 
 ## Next Planned Task
 - Task 5.6: validate `Enemy_Ranged_JUTPS.prefab` separately and confirm ranged/P226 behaviour.
+
+## 2026-05-07 12:20 +01:00 - Task 5.6 Ranged Enemy Variant Validation
+- Validated `Enemy_Ranged_JUTPS.prefab` in `LS_Arena_01`.
+- Test object: `_Systems/AI_Test/RangedVariant_Test/Enemy_Test_Ranged`.
+- The ranged enemy uses the JU TPS AI Attack demo's configured P226/gun setup.
+- Safe scene-instance fix applied: `JU_AI_AttackActionExample.Target` was assigned to `_PlayerSetup/Player_JUTPS`, matching the target-assignment requirement found during melee validation.
+- Initial placement at `(15, 0, -128)` confirmed movement on the arena floor toward the player.
+- Clearer line-of-sight validation at `(-2, 0, -132)` confirmed ranged/gun damage, reducing player health from `400` to `0`.
+- Final saved scene state keeps `Enemy_Test_Ranged` disabled under `_Systems/AI_Test/RangedVariant_Test`.
+- Unity Console after final check: 0 errors and 0 warnings.
+- No wave/spawn/stat systems, pickups, custom HUD, EnemyDeathReporter, Build Settings changes, actor skin replacement, ranged prefab source edits, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 6: design and implement the first Last Stand-owned runtime integration layer, likely starting with safe enemy target assignment and enemy definitions before WaveManager/SpawnDirector.

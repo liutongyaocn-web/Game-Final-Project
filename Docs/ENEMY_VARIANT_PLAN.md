@@ -29,6 +29,12 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_KnifeMelee_JUTPS.prefab` | Pass with notes | Conditionally yes | Close-range blade melee damage was confirmed using the inherited JU TPS AI Attack Katana configuration. This is the project's knife/blade melee implementation. Later spawning code should assign the JU TPS AI target at runtime. |
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Not tested in Task 5.5 | No | Reserved for Task 5.6 ranged enemy validation. |
 
+## Task 5.6 Validation Status
+
+| Variant prefab path | Validation result | Ready for later wave spawning | Notes |
+|---|---|---|---|
+| `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Pass | Conditionally yes | The ranged variant detected/targeted `Player_JUTPS` after safe scene-instance target assignment, moved on the arena floor, used the inherited P226/gun attack behaviour, and reduced player health from `400` to `0`. Later spawning code should assign the JU TPS AI target at runtime and tune fair ranged spawn distances/line of sight. |
+
 ## Planned Enemy Roles
 
 1. Fist-based melee enemy
@@ -47,7 +53,7 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
    - Later tuning direction: lower health, controlled accuracy/fire rate, fair spawn locations.
 
 ## Future Integration
-- Task 5.5: validate each enemy variant one at a time in `LS_Arena_01`.
+- Task 5.5/5.6: validate each enemy variant one at a time in `LS_Arena_01`.
 - Later: add Last Stand runtime target assignment or metadata if the JU TPS demo target reference is not suitable outside the example scene.
 - Later: create `EnemyDeathReporter`.
 - Later: create `EnemyDefinition` ScriptableObjects if tuning data needs to be kept separate from JU TPS prefab assets.

@@ -138,3 +138,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The knife-based enemy keeps the JU TPS AI Attack demo's configured Katana/blade melee setup, representing the Coursework001 knife/melee role as an armed close-range blade enemy; close-range blade melee damage was confirmed.
 - This directly supports the three-enemy-type design inherited from Coursework001: ranged enemy, fist-based melee enemy, and knife-based melee enemy.
 - Later systems will spawn these enemies through `WaveManager` and `SpawnDirector`, with runtime target assignment handled by Last Stand integration code.
+
+## Task 5.6 Ranged Enemy Variant Validation
+- The ranged enemy variant was validated in `LS_Arena_01`.
+- The enemy uses the JU TPS AI Attack demo's P226/gun setup and demonstrated distance-pressure combat by targeting the player and applying gun damage.
+- Together with the validated fist-based melee enemy and knife/blade melee enemy, this completes the three-enemy-type foundation carried forward from Coursework001.
+- This supports Coursework002 evidence for Game AI, game mechanics, animation/combat behaviour, and future content generation through wave spawning.
+- Later systems will spawn these enemies through `WaveManager`/`SpawnDirector` and assign targets at runtime rather than relying on demo-scene references.

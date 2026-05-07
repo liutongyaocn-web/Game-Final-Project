@@ -117,8 +117,16 @@ Safe next step:
 - Future tuning should verify spawn point NavMesh connectivity and choose melee spawn positions that reliably lead enemies into the combat lane.
 - Runtime target assignment is required for spawned Attack-example wrappers because their demo-scene `Target` reference becomes `null` outside the example scene.
 
+## Task 5.6 Ranged Variant Validation
+- `Enemy_Ranged_JUTPS.prefab` was validated in `LS_Arena_01`.
+- Initial placement at `(15, 0, -128)` confirmed the ranged enemy could stand on the arena floor and move toward `Player_JUTPS`.
+- A clearer line-of-sight validation position at `(-2, 0, -132)` confirmed P226/gun attack behaviour and player health damage.
+- No NavMesh red errors, Console warnings, or Console errors appeared after the final check.
+- Runtime target assignment is also required for the ranged Attack-example wrapper because its demo-scene `Target` reference becomes `null` in the Last Stand scene.
+- Future wave spawning should place ranged enemies on NavMesh with fair sightlines: visible enough to demonstrate ranged pressure, but not directly beside the player.
+
 ## Future Integration Plan
-- Task 5.5: validate the fist-based melee, knife-based melee, and ranged Last Stand enemy prefabs one at a time in `LS_Arena_01`.
+- Task 6: begin Last Stand-owned runtime integration planning for target assignment, enemy death reporting, spawn management, and wave progression.
 - Later: create `EnemyDeathReporter` to translate JU TPS enemy death into Last Stand kill/score events.
 - Later: create `WaveManager` and `SpawnDirector`.
 - Later: connect kills, score, wave state, and survival timing to `StatsManager` and `HUDPresenter`.

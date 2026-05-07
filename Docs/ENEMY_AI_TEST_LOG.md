@@ -40,3 +40,18 @@
 - Final scene state: both `Enemy_Test_FistMelee` and `Enemy_Test_KnifeMelee` are disabled under `_Systems/AI_Test/MeleeVariant_Test`; no active melee test enemies are left for scene startup.
 - Issues and fixes: both project-owned prefabs inherited a demo-scene target reference that becomes `null` in `LS_Arena_01`; safe scene-instance target assignment to `Player_JUTPS` was applied to the test instances. A later spawn/integration system should assign targets at runtime rather than relying on demo-scene references.
 - Recommendation for Task 5.6: validate `Enemy_Ranged_JUTPS.prefab` separately, confirm P226/ranged behaviour, and again verify runtime target assignment needs.
+
+## Task 5.6 Ranged Enemy Variant Validation
+- Ranged enemy prefab path: `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab`.
+- Source AI Attack example used: `AI Sample Attack Gun` from `Assets/Julhiecio TPS Controller/Demos/Demo Scenes/AI/Examples/Attack/AI Attack Example.unity`.
+- Weapon used: right-hand `P226` gun setup inherited from the JU TPS AI Attack example.
+- Test object path: `_Systems/AI_Test/RangedVariant_Test/Enemy_Test_Ranged`.
+- Spawn position: saved disabled at `(-2, 0, -132)` with rotation `(0, 220, 0)` after close line-of-sight validation.
+- NavMesh result: pass. The enemy stood on the arena floor and moved from the initial ranged placement `(15, 0, -128)` toward `Player_JUTPS`, confirming the arena navigation setup supports the ranged variant.
+- Detection/targeting result: pass with scene-instance fix. The inherited demo-scene `JU_AI_AttackActionExample.Target` reference was `null` in `LS_Arena_01`, so the test instance target was assigned to `_PlayerSetup/Player_JUTPS`.
+- Ranged firing result: pass. At the clearer close-to-mid-range line-of-sight validation position, the enemy used the P226/gun attack behaviour.
+- Player damage result: pass. Player health dropped from `400` to `0` during the ranged validation, confirming gun damage can affect the JU TPS player.
+- Console result: 0 errors and 0 warnings after final check. JU TPS emitted ordinary runtime log messages about audio tag/inventory switch IDs during Play Mode, but no warnings or red errors remained.
+- Issues and fixes: the ranged wrapper, like the melee wrappers, needs runtime target assignment when spawned outside the JU TPS demo scene. No JU TPS source prefab or script was modified.
+- Final scene state: `Enemy_Test_Ranged` is disabled under `_Systems/AI_Test/RangedVariant_Test`; no active test enemies are left in the startup scene.
+- Recommendation for next step: Task 6 should begin Last Stand-owned runtime integration planning, especially target assignment, enemy definitions, death reporting, and later WaveManager/SpawnDirector work.
