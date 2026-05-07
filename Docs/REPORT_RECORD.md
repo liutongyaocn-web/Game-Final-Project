@@ -166,3 +166,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The final wave unlocks extraction after completion, matching the planned survival/extraction game loop.
 - This supports the Coursework001 wave-based survival direction and Coursework002 evidence for level progression, content generation, game logic, and configurable C# data design.
 - Runtime wave execution is intentionally deferred to a later task so the data can be checked before gameplay implementation.
+
+## Task 8 Spawn Point Foundation
+- `LS_Arena_01` spawn markers were formalised with project-owned spawn point components.
+- Three melee spawn points and two ranged spawn points are configured with role, distance, minimum wave, line-of-sight requirement, and notes.
+- `_SpawnPoints` now has a `SpawnPointGroup` that references all five spawn points.
+- This prepares the arena for wave-based enemy spawning and controlled level progression.
+- This supports Coursework002 evidence for content generation, Game AI setup, level design, and modular C# scene integration.

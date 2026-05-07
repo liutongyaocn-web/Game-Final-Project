@@ -6090,7 +6090,7 @@ PrefabInstance:
     - target: {fileID: 8325505125749106588, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 390.75168
+      value: 393.59335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -80668,6 +80668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 412944096}
+  - component: {fileID: 412944097}
   m_Layer: 0
   m_Name: _SpawnPoints
   m_TagString: Untagged
@@ -80695,6 +80696,26 @@ Transform:
   - {fileID: 648130090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412944097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412944095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c037c578d0aa4fa42a7c27667851d832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.SpawnPointGroup
+  groupId: LS_Arena_01_SpawnPoints
+  spawnPoints:
+  - {fileID: 858949935}
+  - {fileID: 415870205}
+  - {fileID: 1754461386}
+  - {fileID: 1151665434}
+  - {fileID: 648130091}
+  autoCollectChildren: 1
 --- !u!1001 &413171123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81065,6 +81086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415870204}
+  - component: {fileID: 415870205}
   m_Layer: 0
   m_Name: Spawn_Melee_B
   m_TagString: Untagged
@@ -81087,6 +81109,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412944096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415870205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415870203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fc04da6d10954d8ddb8cf3acafcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.LastStandSpawnPoint
+  spawnId: melee_b
+  role: 0
+  minDistanceFromPlayer: 12
+  preferredDistanceFromPlayer: 25
+  requireLineOfSightCheck: 0
+  allowDuringEarlyWaves: 1
+  minimumWave: 1
+  notes: Secondary melee approach route.
 --- !u!1001 &416580682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125481,6 +125523,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648130090}
+  - component: {fileID: 648130091}
   m_Layer: 0
   m_Name: Spawn_Ranged_B
   m_TagString: Untagged
@@ -125503,6 +125546,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412944096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648130091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648130089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fc04da6d10954d8ddb8cf3acafcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.LastStandSpawnPoint
+  spawnId: ranged_b
+  role: 1
+  minDistanceFromPlayer: 18
+  preferredDistanceFromPlayer: 35
+  requireLineOfSightCheck: 1
+  allowDuringEarlyWaves: 0
+  minimumWave: 4
+  notes: Alternate ranged pressure point for later waves.
 --- !u!1001 &648350242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166526,6 +166589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858949934}
+  - component: {fileID: 858949935}
   m_Layer: 0
   m_Name: Spawn_Melee_A
   m_TagString: Untagged
@@ -166548,6 +166612,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412944096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &858949935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858949933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fc04da6d10954d8ddb8cf3acafcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.LastStandSpawnPoint
+  spawnId: melee_a
+  role: 0
+  minDistanceFromPlayer: 12
+  preferredDistanceFromPlayer: 25
+  requireLineOfSightCheck: 0
+  allowDuringEarlyWaves: 1
+  minimumWave: 1
+  notes: Early melee approach from one side of the arena.
 --- !u!1001 &858964172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221873,6 +221957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151665433}
+  - component: {fileID: 1151665434}
   m_Layer: 0
   m_Name: Spawn_Ranged_A
   m_TagString: Untagged
@@ -221895,6 +221980,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412944096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151665434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151665432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fc04da6d10954d8ddb8cf3acafcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.LastStandSpawnPoint
+  spawnId: ranged_a
+  role: 1
+  minDistanceFromPlayer: 18
+  preferredDistanceFromPlayer: 32
+  requireLineOfSightCheck: 1
+  allowDuringEarlyWaves: 0
+  minimumWave: 3
+  notes: Ranged line-of-sight point. Needs later balance because ranged damage is
+    high.
 --- !u!1001 &1151702740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335475,6 +335581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1754461385}
+  - component: {fileID: 1754461386}
   m_Layer: 0
   m_Name: Spawn_Melee_C
   m_TagString: Untagged
@@ -335497,6 +335604,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412944096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1754461386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754461384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8fc04da6d10954d8ddb8cf3acafcd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Spawning.LastStandSpawnPoint
+  spawnId: melee_c
+  role: 0
+  minDistanceFromPlayer: 12
+  preferredDistanceFromPlayer: 30
+  requireLineOfSightCheck: 0
+  allowDuringEarlyWaves: 1
+  minimumWave: 2
+  notes: Later melee pressure route.
 --- !u!1001 &1754665643
 PrefabInstance:
   m_ObjectHideFlags: 0

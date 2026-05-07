@@ -293,3 +293,18 @@
 
 ## Next Planned Task
 - Task 8: implement a small runtime wave/spawn foundation that reads these definitions, or first add a validation helper for wave data before runtime spawning.
+
+## 2026-05-07 17:05 +01:00 - Task 8 Spawn Point Foundation
+- Created `Assets/_LastStand/Scripts/Spawning/SpawnPointRole.cs`.
+- Created `Assets/_LastStand/Scripts/Spawning/LastStandSpawnPoint.cs`.
+- Created `Assets/_LastStand/Scripts/Spawning/SpawnPointGroup.cs`.
+- Added `SpawnPointGroup` to `_SpawnPoints` in `LS_Arena_01`.
+- Added `LastStandSpawnPoint` to `Spawn_Melee_A`, `Spawn_Melee_B`, `Spawn_Melee_C`, `Spawn_Ranged_A`, and `Spawn_Ranged_B`.
+- Configured melee spawn points for waves 1, 1, and 2.
+- Configured ranged spawn points for waves 3 and 4 with future line-of-sight checks required.
+- Confirmed `SpawnPointGroup` references all five configured spawn points.
+- Unity Console after refresh/compile: 0 errors and 0 warnings.
+- No runtime spawning, WaveManager, SpawnDirector, StatsManager, HUD, pickups, EnemyDeathReporter, Build Settings changes, actor skin replacement, active test enemies, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 9: implement a small `SpawnDirector` foundation that reads `WaveDefinition`, `EnemyDefinition`, and `SpawnPointGroup` data without running full wave gameplay yet.

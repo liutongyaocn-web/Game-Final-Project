@@ -46,6 +46,9 @@ It also exposes helper properties for total enemy count and checking whether the
 ## How This Supports Future SpawnDirector
 `SpawnDirector` can use each wave's enemy entries, spawn weights, group sizes, and max-alive value to choose what to spawn and when. Because each entry points to an `EnemyDefinition`, the director can spawn project-owned prefabs without hard-coded references.
 
+## Task 8 Spawn Point Foundation
+`LS_Arena_01` now has project-owned spawn point components on the existing melee and ranged spawn markers. A future `SpawnDirector` will combine `WaveDefinition` enemy composition with `SpawnPointGroup` role queries so wave data decides what to spawn while the scene's spawn points decide where enemies may appear.
+
 ## How This Supports Future WaveManager
 `WaveManager` can use wave order, start delay, intermission time, total enemy count, and extraction unlock flags to run the 5-wave survival loop. The data already describes when the final objective should become available.
 
