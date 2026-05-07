@@ -152,3 +152,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Each definition stores its prefab reference, score value, minimum wave, spawn weight, recommended max alive count, description, and validation notes.
 - This improves code organisation by separating balancing/configuration data from future runtime spawning code.
 - This prepares the project for wave-based spawning, level progression, content generation, scoring, and report/Q&A explanation.
+
+## Task 6.5 Runtime Enemy Target Binding
+- Runtime target binding was added so spawned enemy prefabs can automatically target `Player_JUTPS`.
+- `EnemyTargetBinder` is a project-owned integration script under `Assets/_LastStand` and does not edit or directly reference JU TPS source classes.
+- The ranged enemy was validated without manual target assignment, confirming that the binder can populate the JU TPS AI target field at runtime.
+- This prepares the enemy prefabs for future `WaveManager` and `SpawnDirector` spawning.
+- This supports Coursework002 evidence for Game AI integration, modular C# code quality, and a stable path toward the final wave-based gameplay loop.

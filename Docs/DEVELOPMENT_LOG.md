@@ -261,3 +261,17 @@
 
 ## Next Planned Task
 - Task 6.5 or Task 7: add the first runtime integration layer for assigning JU TPS AI targets when enemies are spawned, then begin WaveManager/SpawnDirector design.
+
+## 2026-05-07 14:45 +01:00 - Task 6.5 Runtime Enemy Target Binding
+- Inspected the three project-owned enemy prefabs and confirmed they use `JU_AI_AttackActionExample` with a serialized `Target` field that is `null` outside the JU TPS demo scene.
+- Created `Assets/_LastStand/Scripts/AI/EnemyTargetBinder.cs`.
+- The binder finds `Player_JUTPS` or an object tagged `Player`, then uses reflection to assign empty target-like fields/properties on AI-looking components without referencing JU TPS classes directly.
+- Added `EnemyTargetBinder` to the root of `Enemy_FistMelee_JUTPS`, `Enemy_KnifeMelee_JUTPS`, and `Enemy_Ranged_JUTPS`.
+- Configured each binder with `playerObjectName = Player_JUTPS`, `playerTag = Player`, `bindOnStart = true`, `includeChildren = true`, and `logBindingResult = false`.
+- Validated `Enemy_Ranged_JUTPS` in `LS_Arena_01` without manual Target assignment. The binder assigned `Target` to `Player_JUTPS` at runtime, and the ranged enemy attacked/damaged the player.
+- Final scene state keeps the ranged target-binder test enemy disabled under `_Systems/AI_Test/TargetBinder_Test`.
+- Unity Console after final check: 0 errors and 0 warnings.
+- No WaveManager, SpawnDirector, StatsManager, custom HUD, pickups, EnemyDeathReporter, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 7: begin wave/spawn architecture using `EnemyDefinition` assets and the new runtime target binding foundation.

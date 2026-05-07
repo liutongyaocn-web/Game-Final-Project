@@ -44,6 +44,14 @@ The three validated enemy prefabs now have project-owned `EnemyDefinition` Scrip
 
 These definitions keep prefab references, scores, minimum wave numbers, spawn weights, and recommended max-alive values in data for future `WaveManager` and `SpawnDirector` work.
 
+## Task 6.5 Runtime Target Binding
+
+All three enemy variants now include `EnemyTargetBinder` on the root prefab. The binder finds `Player_JUTPS` or the `Player` tag at runtime and assigns compatible empty JU TPS AI target fields by reflection. This removes the need for manual scene-instance target assignment when the prefabs are spawned later.
+
+Validated result:
+- `Enemy_Ranged_JUTPS.prefab` successfully targeted and damaged `Player_JUTPS` in `LS_Arena_01` without manual target assignment.
+- Fist and knife/blade prefabs received the same binder component and should be rechecked quickly when wave spawning begins.
+
 ## Planned Enemy Roles
 
 1. Fist-based melee enemy

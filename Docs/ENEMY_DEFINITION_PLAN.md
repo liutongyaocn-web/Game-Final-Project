@@ -38,6 +38,11 @@ These names match the Coursework001 enemy design while allowing implementation t
 ## Why This Supports Future WaveManager/SpawnDirector
 The future wave system can load or reference a list of `EnemyDefinition` assets, then use `minWave`, `spawnWeight`, and `recommendedMaxAlive` to decide which enemy types can appear in each wave. This keeps balancing data outside wave code and makes the implementation easier to explain in the report and live Q&A.
 
+## Task 6.5 Runtime Target Binding
+The three `EnemyDefinition` assets point to prefabs that now include `EnemyTargetBinder`. This means future systems can select definitions for spawning while the spawned prefab handles its own runtime target lookup for `Player_JUTPS`.
+
+The binder is intentionally kept on the prefab rather than inside `EnemyDefinition`, because target binding is runtime scene behaviour and the definition asset remains pure configuration data.
+
 ## Coursework002 Evidence Supported
 - Game AI: the three validated enemy behaviours are represented as explicit data.
 - Game mechanics: each role has scoring, wave introduction, and max-alive balancing values.
