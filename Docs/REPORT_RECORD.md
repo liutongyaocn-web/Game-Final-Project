@@ -145,3 +145,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Together with the validated fist-based melee enemy and knife/blade melee enemy, this completes the three-enemy-type foundation carried forward from Coursework001.
 - This supports Coursework002 evidence for Game AI, game mechanics, animation/combat behaviour, and future content generation through wave spawning.
 - Later systems will spawn these enemies through `WaveManager`/`SpawnDirector` and assign targets at runtime rather than relying on demo-scene references.
+
+## Task 6 EnemyDefinition Data Layer
+- A custom enemy data layer was created using ScriptableObjects under `Assets/_LastStand`.
+- The three validated enemy roles now have data assets matching the original Coursework001 design: fist-based melee, knife/blade melee, and ranged.
+- Each definition stores its prefab reference, score value, minimum wave, spawn weight, recommended max alive count, description, and validation notes.
+- This improves code organisation by separating balancing/configuration data from future runtime spawning code.
+- This prepares the project for wave-based spawning, level progression, content generation, scoring, and report/Q&A explanation.

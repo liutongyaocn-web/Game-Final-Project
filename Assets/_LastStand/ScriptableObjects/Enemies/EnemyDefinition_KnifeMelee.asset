@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ce8c7d0bb4ca4c9fa3f657ef86bf3, type: 3}
+  m_Name: EnemyDefinition_KnifeMelee
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.AI.EnemyDefinition
+  enemyId: knife_melee
+  displayName: Knife / Blade Melee Enemy
+  role: 1
+  prefab: {fileID: 5286053487309159108, guid: 3903e8dcf479a854f93cb0fa56686ec3, type: 3}
+  scoreValue: 150
+  minWave: 2
+  spawnWeight: 0.75
+  recommendedMaxAlive: 3
+  description: Armed blade melee enemy based on the JU TPS AI Attack Melee setup.
+    Uses the demo's Katana/blade weapon to represent the original knife-based melee
+    enemy role.
+  validatedInScene: 1
+  validationNotes: Validated in LS_Arena_01 as an armed close-range melee enemy.

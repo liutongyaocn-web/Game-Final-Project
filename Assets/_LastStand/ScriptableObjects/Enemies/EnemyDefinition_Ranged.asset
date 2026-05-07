@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ce8c7d0bb4ca4c9fa3f657ef86bf3, type: 3}
+  m_Name: EnemyDefinition_Ranged
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.AI.EnemyDefinition
+  enemyId: ranged
+  displayName: Ranged Enemy
+  role: 2
+  prefab: {fileID: 8632835416570390665, guid: e2f31332a749c224eb8db9a5e53b30c3, type: 3}
+  scoreValue: 200
+  minWave: 3
+  spawnWeight: 0.5
+  recommendedMaxAlive: 2
+  description: Gun-based ranged enemy based on the JU TPS AI Attack Gun setup with
+    P226.
+  validatedInScene: 1
+  validationNotes: Validated in LS_Arena_01. Can target and damage the player; later
+    balancing needed because validation damage was high.

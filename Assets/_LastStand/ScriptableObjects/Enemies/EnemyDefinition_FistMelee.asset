@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611ce8c7d0bb4ca4c9fa3f657ef86bf3, type: 3}
+  m_Name: EnemyDefinition_FistMelee
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.AI.EnemyDefinition
+  enemyId: fist_melee
+  displayName: Fist-Based Melee Enemy
+  role: 0
+  prefab: {fileID: 7534191831600193145, guid: e4610704501cdeb449a92dac18cbe3ff, type: 3}
+  scoreValue: 100
+  minWave: 1
+  spawnWeight: 1
+  recommendedMaxAlive: 5
+  description: Unarmed close-range enemy based on the JU TPS AI Attack Punch setup.
+  validatedInScene: 1
+  validationNotes: Validated in LS_Arena_01 as a close-range melee enemy.

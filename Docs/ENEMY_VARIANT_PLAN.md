@@ -35,6 +35,15 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 |---|---|---|---|
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Pass | Conditionally yes | The ranged variant detected/targeted `Player_JUTPS` after safe scene-instance target assignment, moved on the arena floor, used the inherited P226/gun attack behaviour, and reduced player health from `400` to `0`. Later spawning code should assign the JU TPS AI target at runtime and tune fair ranged spawn distances/line of sight. |
 
+## Task 6 EnemyDefinition Assets
+
+The three validated enemy prefabs now have project-owned `EnemyDefinition` ScriptableObject assets under `Assets/_LastStand/ScriptableObjects/Enemies`:
+- `EnemyDefinition_FistMelee.asset` references `Enemy_FistMelee_JUTPS.prefab`.
+- `EnemyDefinition_KnifeMelee.asset` references `Enemy_KnifeMelee_JUTPS.prefab`.
+- `EnemyDefinition_Ranged.asset` references `Enemy_Ranged_JUTPS.prefab`.
+
+These definitions keep prefab references, scores, minimum wave numbers, spawn weights, and recommended max-alive values in data for future `WaveManager` and `SpawnDirector` work.
+
 ## Planned Enemy Roles
 
 1. Fist-based melee enemy
@@ -54,7 +63,8 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 
 ## Future Integration
 - Task 5.5/5.6: validate each enemy variant one at a time in `LS_Arena_01`.
-- Later: add Last Stand runtime target assignment or metadata if the JU TPS demo target reference is not suitable outside the example scene.
+- Later: use `EnemyDefinition` assets as the data source for Last Stand wave/spawn selection.
+- Later: add Last Stand runtime target assignment if the JU TPS demo target reference is not suitable outside the example scene.
 - Later: create `EnemyDeathReporter`.
 - Later: create `EnemyDefinition` ScriptableObjects if tuning data needs to be kept separate from JU TPS prefab assets.
 - Later: create `WaveManager` and `SpawnDirector`.

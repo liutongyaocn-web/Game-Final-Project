@@ -246,3 +246,18 @@
 
 ## Next Planned Task
 - Task 6: design and implement the first Last Stand-owned runtime integration layer, likely starting with safe enemy target assignment and enemy definitions before WaveManager/SpawnDirector.
+
+## 2026-05-07 14:00 +01:00 - Task 6 EnemyDefinition Data Assets
+- Created `Assets/_LastStand/Scripts/AI/EnemyCombatRole.cs`.
+- Created `Assets/_LastStand/Scripts/AI/EnemyDefinition.cs`.
+- `EnemyDefinition` is a small ScriptableObject data type with inspector fields for enemy id, display name, role, prefab, score value, minimum wave, spawn weight, recommended max alive, description, and validation notes.
+- Added `OnValidate` safeguards for non-negative score/spawn weight, minimum wave `1`, minimum recommended max alive `1`, and safe enemy id auto-fill.
+- Created `Assets/_LastStand/ScriptableObjects/Enemies/EnemyDefinition_FistMelee.asset`.
+- Created `Assets/_LastStand/ScriptableObjects/Enemies/EnemyDefinition_KnifeMelee.asset`.
+- Created `Assets/_LastStand/ScriptableObjects/Enemies/EnemyDefinition_Ranged.asset`.
+- Verified the three assets reference the correct Last Stand enemy prefabs.
+- Unity Console after script import/refresh: 0 errors and 0 warnings.
+- No wave, spawn, stats, pickup, custom HUD, EnemyDeathReporter, Build Settings, actor skin replacement, scene, or third-party source changes were made.
+
+## Next Planned Task
+- Task 6.5 or Task 7: add the first runtime integration layer for assigning JU TPS AI targets when enemies are spawned, then begin WaveManager/SpawnDirector design.
