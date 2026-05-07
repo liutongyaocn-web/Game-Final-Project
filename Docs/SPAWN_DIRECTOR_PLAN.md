@@ -57,6 +57,9 @@ When enabled, the director samples each candidate point with `UnityEngine.AI.Nav
 ## Future WaveManager Integration
 Future `WaveManager` can read a `WaveDefinition`, ask `SpawnDirector` to spawn selected `EnemyDefinition` entries over time, then track living enemies and wave completion.
 
+## Task 10 WaveManager Integration
+`WaveManager` now consumes `SpawnDirector` for wave-based spawning. Runtime validation confirmed Wave 1 can request spawns through `SpawnDirector`, which selects melee spawn points and instantiates enemies from `EnemyDefinition` data.
+
 ## Pickup/Drop Design Decision
 - Do not use fixed health/ammo pickup points.
 - Future health/ammo pickups should drop from killed enemies.

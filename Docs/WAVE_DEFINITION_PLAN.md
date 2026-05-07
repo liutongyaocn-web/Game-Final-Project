@@ -52,6 +52,9 @@ It also exposes helper properties for total enemy count and checking whether the
 ## Task 9 SpawnDirector Foundation
 `SpawnDirector` is now configured in `LS_Arena_01` and can spawn one enemy from an `EnemyDefinition` at an eligible spawn point. A future `WaveManager` can drive this director with `WaveDefinition` data to spawn each wave over time.
 
+## Task 10 WaveManager Foundation
+The five `WaveDefinition` assets are now assigned to `WaveManager` in order. Runtime validation confirmed Wave 1 can begin from the data asset, expand its enemy entries, and spawn enemies through `SpawnDirector` while respecting `maxAliveAtOnce`.
+
 ## How This Supports Future WaveManager
 `WaveManager` can use wave order, start delay, intermission time, total enemy count, and extraction unlock flags to run the 5-wave survival loop. The data already describes when the final objective should become available.
 

@@ -6090,7 +6090,7 @@ PrefabInstance:
     - target: {fileID: 8325505125749106588, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 390.25742
+      value: 390.34433
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61826,6 +61826,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 308579088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &308897814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308897815}
+  - component: {fileID: 308897816}
+  m_Layer: 0
+  m_Name: WaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308897815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308897814}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 412428588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308897816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308897814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319131ce77ba444429d9bb76f83b919c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Waves.WaveManager
+  waves:
+  - {fileID: 11400000, guid: b92b1c0336715254392a7aa0402e2923, type: 2}
+  - {fileID: 11400000, guid: 9df910335be6e7143b4de738e8f4f7b0, type: 2}
+  - {fileID: 11400000, guid: 11a8834ce5b399c4c98946b94e928e94, type: 2}
+  - {fileID: 11400000, guid: 387bac994560d8843a6d57112c37127f, type: 2}
+  - {fileID: 11400000, guid: deec20280a5128e4c95e1e608ecdc575, type: 2}
+  spawnDirector: {fileID: 576107564}
+  autoStartOnPlay: 0
+  firstWaveDelaySeconds: 2
+  logWaveEvents: 0
 --- !u!1001 &309535420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80659,6 +80713,7 @@ Transform:
   - {fileID: 2125660815}
   - {fileID: 576107563}
   - {fileID: 2050536045}
+  - {fileID: 308897815}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412944095

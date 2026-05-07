@@ -180,3 +180,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Debug validation confirmed both fist melee and ranged enemies can be spawned at runtime and bind to `Player_JUTPS` through `EnemyTargetBinder`.
 - This prepares the game for controlled wave-based enemy generation.
 - Full wave execution, score/stat tracking, HUD updates, pickups, enemy death drops, and enemy death reporting remain separate future tasks.
+
+## Task 10 WaveManager Foundation
+- A `WaveManager` foundation was created and configured in `LS_Arena_01`.
+- It reads the five `WaveDefinition` assets and uses `SpawnDirector` to generate enemies over time.
+- Runtime validation confirmed Wave 1 can begin spawning, respects `maxAliveAtOnce`, and produces enemies that target `Player_JUTPS`.
+- This supports the Coursework001 wave-based survival design and Coursework002 evidence for level progression and content generation.
+- Full kill/death reporting, score, HUD, pickups, enemy drops, extraction, and win/lose flow will be added later.

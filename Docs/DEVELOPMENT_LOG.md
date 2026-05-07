@@ -327,3 +327,23 @@
 
 ## Next Planned Task
 - Task 10: implement a minimal `WaveManager` foundation that can read `WaveDefinition` assets and request spawns through `SpawnDirector`, while still keeping stats/HUD/pickups/death reporting separate.
+
+## 2026-05-07 18:55 +01:00 - Task 10 WaveManager Foundation
+- Created `Assets/_LastStand/Scripts/Waves/WaveState.cs`.
+- Created `Assets/_LastStand/Scripts/Waves/WaveManager.cs`.
+- Added `_Systems/WaveSystem` to `LS_Arena_01`.
+- Added `WaveManager` to `_Systems/WaveSystem`.
+- Assigned the five `WaveDefinition` assets in order from wave 1 to wave 5.
+- Assigned `_Systems/SpawnSystem` `SpawnDirector`.
+- Safe runtime validation temporarily enabled `autoStartOnPlay` for Wave 1 only.
+- Wave 1 entered `Spawning`, expanded four fist melee enemies from `WaveDefinition_01`, spawned two enemies, and respected `maxAliveAtOnce = 2`.
+- Spawned enemies were parented under `_Systems/Spawned_Enemies` through `SpawnDirector`.
+- Spawned enemies bound to `Player_JUTPS` through `EnemyTargetBinder`.
+- `autoStartOnPlay` was restored to false before saving.
+- `SpawnDirector.debugSpawnOnStart` remained false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after final check: 0 errors and 0 warnings.
+- No final enemy death reporting, score/kills, HUD, pickups, enemy death drops, extraction activation, win/lose UI, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Task 11: add an enemy lifecycle/death bridge so WaveManager can detect defeated JU TPS enemies, complete waves reliably, and later connect kills/score/drops.
