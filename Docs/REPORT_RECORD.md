@@ -263,3 +263,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The project-owned `Enemy_Ranged_JUTPS` prefab now uses a shorter gun attack range and shot distance.
 - Failed-state restart with `R` was manually validated.
 - This improves ranged enemy fairness and final demo readability without editing JU TPS source assets.
+
+## Task 18.5 Automated Playtest Smoke Audit
+- Codex/MCP smoke playtest audit was performed on the Last Stand vertical slice.
+- Core scene systems, enemy prefab bridge components, Wave 1 spawning, ranged enemy runtime behaviour, failed-state flow, victory-state flow, HUD/stat references, and Console stability were checked.
+- The audit supports final polish planning by separating verified runtime wiring from remaining manual feel checks.

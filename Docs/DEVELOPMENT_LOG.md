@@ -538,3 +538,17 @@
 
 ## Next Planned Task
 - Manually validate the tuned ranged enemy in a live wave and continue with final NavMesh/spawn fairness polish.
+
+## 2026-05-08 21:29 +01:00 - Task 18.5 Automated Playtest Smoke Audit
+- Ran a Unity MCP smoke audit against `LS_Arena_01`.
+- Confirmed core scene systems are present and referenced: WaveManager, SpawnDirector, StatsManager, GameFlowManager, PlayerDeathMonitor, ExtractionObjective, SpawnPointGroup, HUD, and EndScreenController.
+- Confirmed default debug/autostart flags are false after cleanup.
+- Temporarily enabled Wave 1 auto-start in Play Mode and observed Wave 1 spawning `2 / 4` enemies with max-alive `2` respected.
+- Confirmed spawned enemies are parented under `_Systems/Spawned_Enemies` and include target binding, lifecycle, dropper, and runtime info components.
+- Debug-spawned the ranged enemy and confirmed it still targets `Player_JUTPS`, equips P226, enters firing mode, and uses the tuned range values.
+- Triggered failed and victory debug end states; both activated the end screen and produced correct objective text.
+- Console stayed clear with 0 red errors and 0 warnings.
+- Did not save or stage the dirty scene; this task is documentation-only.
+
+## Next Planned Task
+- Run targeted manual Game view checks for tuned ranged feel, victory-state `R` restart, and any NavMesh stuck points.
