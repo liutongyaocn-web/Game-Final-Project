@@ -17,15 +17,15 @@ MonoBehaviour:
   objectiveText: Survive the first infected attack.
   enemies:
   - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
-    count: 4
+    count: 3
     spawnWeight: 1
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Fist melee introduction.
   maxAliveAtOnce: 2
-  spawnIntervalSeconds: 4
+  spawnIntervalSeconds: 2.5
   startDelaySeconds: 2
-  intermissionAfterWaveSeconds: 8
+  intermissionAfterWaveSeconds: 5
   unlockExtractionAfterWave: 0
   difficultyNotes: Introduces the fist-based melee enemy only.
   validatedForRuntime: 0

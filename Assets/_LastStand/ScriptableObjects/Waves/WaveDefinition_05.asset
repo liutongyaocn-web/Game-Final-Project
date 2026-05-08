@@ -17,25 +17,25 @@ MonoBehaviour:
   objectiveText: Survive the final attack and reach extraction.
   enemies:
   - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
-    count: 6
+    count: 4
     spawnWeight: 1
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Final melee crowd pressure.
   - enemyDefinition: {fileID: 11400000, guid: 182a02cd44d84a84195af3df81efb2d5, type: 2}
-    count: 4
+    count: 3
     spawnWeight: 0.8
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Final armed melee pressure.
   - enemyDefinition: {fileID: 11400000, guid: 79abd52b64ffc3a4f9fd1dc1abe0e86b, type: 2}
-    count: 3
+    count: 1
     spawnWeight: 0.35
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 1
     notes: Limited but dangerous final ranged pressure.
-  maxAliveAtOnce: 5
-  spawnIntervalSeconds: 2.5
+  maxAliveAtOnce: 4
+  spawnIntervalSeconds: 2
   startDelaySeconds: 2
   intermissionAfterWaveSeconds: 0
   unlockExtractionAfterWave: 1

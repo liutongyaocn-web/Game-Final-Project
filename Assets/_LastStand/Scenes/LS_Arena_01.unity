@@ -61882,7 +61882,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: deec20280a5128e4c95e1e608ecdc575, type: 2}
   spawnDirector: {fileID: 576107564}
   statsManager: {fileID: 1987654302}
-  autoStartOnPlay: 0
+  autoStartOnPlay: 1
   firstWaveDelaySeconds: 2
   logWaveEvents: 0
 --- !u!1001 &309535420

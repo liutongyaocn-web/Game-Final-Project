@@ -17,21 +17,21 @@ MonoBehaviour:
   objectiveText: Survive the armed melee infected.
   enemies:
   - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
-    count: 5
+    count: 3
     spawnWeight: 1
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Baseline fist melee pressure.
   - enemyDefinition: {fileID: 11400000, guid: 182a02cd44d84a84195af3df81efb2d5, type: 2}
-    count: 2
+    count: 1
     spawnWeight: 0.7
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 1
     notes: Introduces knife/blade melee threat.
   maxAliveAtOnce: 3
-  spawnIntervalSeconds: 3.5
+  spawnIntervalSeconds: 2.5
   startDelaySeconds: 2
-  intermissionAfterWaveSeconds: 8
+  intermissionAfterWaveSeconds: 5
   unlockExtractionAfterWave: 0
   difficultyNotes: Adds the knife/blade melee enemy while keeping close-range pressure
     manageable.

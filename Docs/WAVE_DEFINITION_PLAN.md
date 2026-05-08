@@ -37,11 +37,11 @@ It also exposes helper properties for total enemy count and checking whether the
 
 | Wave asset | Wave number | Enemy mix | Total enemies | Max alive | Spawn interval | Extraction unlock | Balance notes |
 |---|---:|---|---:|---:|---:|---|---|
-| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_01.asset` | 1 | 4 fist melee | 4 | 2 | 4.0s | No | Introduces only the fist-based melee enemy. |
-| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_02.asset` | 2 | 5 fist melee, 2 knife/blade melee | 7 | 3 | 3.5s | No | Adds armed melee pressure while staying manageable. |
-| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_03.asset` | 3 | 4 fist melee, 3 knife/blade melee, 1 ranged | 8 | 3 | 3.0s | No | Introduces ranged pressure cautiously because ranged damage is high. |
-| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_04.asset` | 4 | 5 fist melee, 4 knife/blade melee, 2 ranged | 11 | 4 | 2.75s | No | Mixed pressure with limited ranged count. |
-| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_05.asset` | 5 | 6 fist melee, 4 knife/blade melee, 3 ranged | 13 | 5 | 2.5s | Yes | Final wave unlocks extraction; ranged count remains controlled. |
+| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_01.asset` | 1 | 3 fist melee | 3 | 2 | 2.5s | No | Introduces only the fist-based melee enemy. |
+| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_02.asset` | 2 | 3 fist melee, 1 knife/blade melee | 4 | 3 | 2.5s | No | Adds armed melee pressure while staying manageable. |
+| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_03.asset` | 3 | 3 fist melee, 2 knife/blade melee, 1 ranged | 6 | 3 | 2.25s | No | Introduces ranged pressure cautiously because ranged damage is high. |
+| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_04.asset` | 4 | 4 fist melee, 2 knife/blade melee, 1 ranged | 7 | 4 | 2.0s | No | Mixed pressure with limited ranged count. |
+| `Assets/_LastStand/ScriptableObjects/Waves/WaveDefinition_05.asset` | 5 | 4 fist melee, 3 knife/blade melee, 1 ranged | 8 | 4 | 2.0s | Yes | Final wave unlocks extraction; ranged count remains intentionally conservative. |
 
 ## How This Supports Future SpawnDirector
 `SpawnDirector` can use each wave's enemy entries, spawn weights, group sizes, and max-alive value to choose what to spawn and when. Because each entry points to an `EnemyDefinition`, the director can spawn project-owned prefabs without hard-coded references.
@@ -54,6 +54,9 @@ It also exposes helper properties for total enemy count and checking whether the
 
 ## Task 10 WaveManager Foundation
 The five `WaveDefinition` assets are now assigned to `WaveManager` in order. Runtime validation confirmed Wave 1 can begin from the data asset, expand its enemy entries, and spawn enemies through `SpawnDirector` while respecting `maxAliveAtOnce`.
+
+## Task 19 Final Gameplay Pacing
+After playtest feedback, the five wave assets were shortened for final demo usability while preserving the original 5-wave progression. Total planned enemies were reduced from 37 to 28, intermissions for Waves 1-4 were shortened to 5 seconds, and ranged enemy counts were kept low because the ranged enemy remains dangerous.
 
 ## How This Supports Future WaveManager
 `WaveManager` can use wave order, start delay, intermission time, total enemy count, and extraction unlock flags to run the 5-wave survival loop. The data already describes when the final objective should become available.

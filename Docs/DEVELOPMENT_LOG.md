@@ -552,3 +552,15 @@
 
 ## Next Planned Task
 - Run targeted manual Game view checks for tuned ranged feel, victory-state `R` restart, and any NavMesh stuck points.
+
+## 2026-05-08 21:39 +01:00 - Task 19 Final Gameplay Pacing
+- Enabled `WaveManager.autoStartOnPlay` in `LS_Arena_01` so normal Play Mode starts the Last Stand wave loop automatically.
+- Kept `SpawnDirector.debugSpawnOnStart`, `PlayerDeathMonitor.debugReportDeathOnStart`, and GameFlow debug extraction flags disabled.
+- Shortened the five wave assets while preserving the original progression: fist-only, fist+knife, ranged introduction, mixed pressure, final extraction wave.
+- Reduced total enemy count from 37 to 28.
+- Shortened Waves 1-4 intermission duration from 8 seconds to 5 seconds.
+- Kept Wave 5 ranged count at 1 because the ranged enemy remains dangerous.
+- Unity imported the changed scene/wave assets; no C# compile errors were found in the Editor log, but MCP stopped responding after refresh, so final Play Mode smoke remains a manual follow-up.
+
+## Next Planned Task
+- Reopen/reconnect Unity MCP if needed, then run a normal Play Mode pass to confirm Wave 1 auto-start, tuned pacing, extraction, and victory restart.

@@ -17,27 +17,27 @@ MonoBehaviour:
   objectiveText: Hold the arena against mixed infected.
   enemies:
   - enemyDefinition: {fileID: 11400000, guid: 8dad8c638cdf7dc4e9c8fe4907dc5c16, type: 2}
-    count: 5
+    count: 4
     spawnWeight: 1
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Core crowd pressure.
   - enemyDefinition: {fileID: 11400000, guid: 182a02cd44d84a84195af3df81efb2d5, type: 2}
-    count: 4
+    count: 2
     spawnWeight: 0.8
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 2
     notes: Stronger close-range threat.
   - enemyDefinition: {fileID: 11400000, guid: 79abd52b64ffc3a4f9fd1dc1abe0e86b, type: 2}
-    count: 2
+    count: 1
     spawnWeight: 0.4
     minSpawnGroupSize: 1
     maxSpawnGroupSize: 1
     notes: Limited ranged pressure.
   maxAliveAtOnce: 4
-  spawnIntervalSeconds: 2.75
+  spawnIntervalSeconds: 2
   startDelaySeconds: 2
-  intermissionAfterWaveSeconds: 8
+  intermissionAfterWaveSeconds: 5
   unlockExtractionAfterWave: 0
   difficultyNotes: Mixed enemy pressure with limited ranged count for balance.
   validatedForRuntime: 0
