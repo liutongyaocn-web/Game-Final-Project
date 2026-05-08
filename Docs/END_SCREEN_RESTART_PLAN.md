@@ -50,6 +50,15 @@ Debug validation was performed in Play Mode:
 
 The `R` restart path is implemented in code, but a full keypress/reload validation should be completed manually because MCP did not send keyboard input to the Game view during this task.
 
+## Task 17R Input System Fix
+Manual playtesting after Task 17 found that the end screen appeared correctly, but pressing `R` did not restart the scene. Unity reported an `InvalidOperationException` because `EndScreenController` used `UnityEngine.Input.GetKeyDown` while the project is configured for Unity's New Input System.
+
+`EndScreenController` now uses conditional input handling:
+- `Keyboard.current.rKey.wasPressedThisFrame` when `ENABLE_INPUT_SYSTEM` is active.
+- `Input.GetKeyDown(restartKey)` only when `ENABLE_LEGACY_INPUT_MANAGER` is active.
+
+The restart behaviour is otherwise unchanged: restart only works while the end screen is visible after `Failed` or `Victory`, resets `Time.timeScale` to `1`, and reloads the active scene.
+
 Before saving:
 - `WaveManager.autoStartOnPlay = false`
 - `SpawnDirector.debugSpawnOnStart = false`

@@ -4,6 +4,9 @@ using LastStand.Stats;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace LastStand.UI
 {
@@ -53,7 +56,7 @@ namespace LastStand.UI
             {
                 ShowPanel(state);
 
-                if (Input.GetKeyDown(restartKey))
+                if (WasRestartPressed())
                 {
                     RestartScene();
                 }
@@ -131,6 +134,22 @@ namespace LastStand.UI
 
             restartButton.onClick.RemoveListener(RestartScene);
             restartButton.onClick.AddListener(RestartScene);
+        }
+
+        private bool WasRestartPressed()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame)
+            {
+                return true;
+            }
+#endif
+
+#if ENABLE_LEGACY_INPUT_MANAGER
+            return Input.GetKeyDown(restartKey);
+#else
+            return false;
+#endif
         }
 
         private void ResolveReferences()

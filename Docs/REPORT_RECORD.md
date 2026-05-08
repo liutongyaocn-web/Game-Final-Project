@@ -252,3 +252,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Victory state displays `Extraction Complete`.
 - The screen includes run stats and a `Press R to Restart` prompt.
 - This improves final demo clarity by giving both win and fail states a visible conclusion.
+
+## Task 17R Restart Input System Fix
+- End screen restart input was fixed for Unity's New Input System.
+- The previous `UnityEngine.Input.GetKeyDown` exception was removed from `EndScreenController`.
+- This improves final demo stability by keeping the visible restart prompt compatible with the project's active input handling.

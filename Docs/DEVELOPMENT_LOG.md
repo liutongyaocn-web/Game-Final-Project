@@ -515,3 +515,14 @@
 
 ## Next Planned Task
 - Manually keypress-test the restart prompt, then continue with final polish/balancing or presentation evidence tasks.
+
+## 2026-05-08 19:00 +01:00 - Task 17R New Input System Restart Fix
+- Fixed `EndScreenController` restart input for Unity's New Input System.
+- Replaced direct `UnityEngine.Input.GetKeyDown(restartKey)` usage with a `WasRestartPressed()` helper.
+- New Input System path uses `Keyboard.current.rKey.wasPressedThisFrame`.
+- Legacy Input Manager fallback remains only behind `ENABLE_LEGACY_INPUT_MANAGER`.
+- Unity refresh/compile validation reported 0 errors and 0 warnings.
+- No scene, ProjectSettings, Packages, third-party assets, UI layout, or gameplay systems were changed.
+
+## Next Planned Task
+- Manually recheck `R` restart on the Failed/Victory end screen, then continue with final polish/balancing or presentation evidence tasks.
