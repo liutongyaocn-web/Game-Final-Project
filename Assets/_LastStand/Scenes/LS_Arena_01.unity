@@ -6090,7 +6090,7 @@ PrefabInstance:
     - target: {fileID: 8325505125749106588, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 391.02454
+      value: 393.77493
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78279,7 +78279,7 @@ RectTransform:
   m_GameObject: {fileID: 401260771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 405090888}
@@ -80909,6 +80909,7 @@ Transform:
   - {fileID: 2050536045}
   - {fileID: 308897815}
   - {fileID: 1987654301}
+  - {fileID: 1095115678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &412944095
@@ -91717,6 +91718,7 @@ MonoBehaviour:
   fpsCounter: {fileID: 472935464}
   healthReader: {fileID: 472935463}
   waveManager: {fileID: 308897816}
+  gameFlowManager: {fileID: 1095115677}
   autoFindReferences: 1
   showDebugFallbackText: 1
   updateInterval: 0.1
@@ -95288,6 +95290,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492474785}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &492582400
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &492849347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123595,6 +123610,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 637034247}
+  - component: {fileID: 637034249}
+  - component: {fileID: 637034248}
   m_Layer: 0
   m_Name: Extraction_Point
   m_TagString: Untagged
@@ -123617,6 +123634,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 641153175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &637034248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637034246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399ff05f4c8fe824d80ce03b3cef1861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.GameFlow.ExtractionObjective
+  gameFlowManager: {fileID: 1095115677}
+  unlocked: 0
+  completed: 0
+  playerObjectName: Player_JUTPS
+  playerTag: Player
+  logObjectiveEvents: 0
+  visualRoot: {fileID: 0}
+  triggerCollider: {fileID: 637034249}
+--- !u!65 &637034249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637034246}
+  m_Material: {fileID: 492582400}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &637331815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211951,6 +212009,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1095114709}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1095115676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095115678}
+  - component: {fileID: 1095115677}
+  m_Layer: 0
+  m_Name: GameFlowSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1095115677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095115676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1926c5fdafcd3e54fbdb81095089011b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.GameFlow.GameFlowManager
+  waveManager: {fileID: 308897816}
+  statsManager: {fileID: 1987654302}
+  extractionObjective: {fileID: 637034248}
+  autoFindReferences: 1
+  logGameFlowEvents: 0
+  debugUnlockExtractionOnStart: 0
+  debugCompleteExtractionOnStart: 0
+--- !u!4 &1095115678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095115676}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 412428588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1095270437
 PrefabInstance:
   m_ObjectHideFlags: 0

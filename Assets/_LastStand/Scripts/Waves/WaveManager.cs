@@ -10,6 +10,8 @@ namespace LastStand.Waves
 {
     public class WaveManager : MonoBehaviour
     {
+        public event System.Action<WaveDefinition> FinalWaveCompleted;
+
         [SerializeField] private List<WaveDefinition> waves = new();
         [SerializeField] private SpawnDirector spawnDirector;
         [SerializeField] private LastStandStatsManager statsManager;
@@ -25,6 +27,7 @@ namespace LastStand.Waves
         private readonly List<GameObject> aliveEnemies = new();
         private readonly Queue<EnemyDefinition> spawnQueue = new();
         private Coroutine waveRoutine;
+        private bool hasCompletedAllWaves;
 
         public WaveState State => state;
         public int CurrentWaveNumber => currentWave != null ? currentWave.WaveNumber : 0;
@@ -43,6 +46,7 @@ namespace LastStand.Waves
 
         public bool IsFinalWave => currentWaveIndex >= 0 && currentWaveIndex == waves.Count - 1;
         public bool ExtractionShouldUnlock => currentWave != null && (currentWave.UnlockExtractionAfterWave || IsFinalWave) && state == WaveState.Completed;
+        public bool HasCompletedAllWaves => hasCompletedAllWaves;
 
         private void Start()
         {
@@ -92,6 +96,7 @@ namespace LastStand.Waves
             spawnQueue.Clear();
             aliveEnemies.Clear();
             state = WaveState.Idle;
+            hasCompletedAllWaves = false;
 
             if (statsManager != null)
             {
@@ -136,6 +141,11 @@ namespace LastStand.Waves
             currentWaveIndex = waveIndex;
             currentWave = waves[waveIndex];
             state = WaveState.Starting;
+            if (waveIndex == 0)
+            {
+                hasCompletedAllWaves = false;
+            }
+
             enemiesSpawnedThisWave = 0;
             aliveEnemies.Clear();
             BuildSpawnQueue(currentWave);
@@ -195,11 +205,8 @@ namespace LastStand.Waves
             if (currentWave.UnlockExtractionAfterWave || IsFinalWave)
             {
                 state = WaveState.Completed;
-                if (statsManager != null)
-                {
-                    statsManager.EndRun();
-                }
-
+                hasCompletedAllWaves = true;
+                FinalWaveCompleted?.Invoke(currentWave);
                 waveRoutine = null;
                 yield break;
             }
@@ -218,6 +225,8 @@ namespace LastStand.Waves
             else
             {
                 state = WaveState.Completed;
+                hasCompletedAllWaves = true;
+                FinalWaveCompleted?.Invoke(currentWave);
                 waveRoutine = null;
             }
         }

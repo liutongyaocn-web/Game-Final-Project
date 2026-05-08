@@ -406,3 +406,24 @@
 
 ## Next Planned Task
 - Continue with the next gameplay foundation task, likely extraction/objective flow or pickup/drop planning, while keeping HUD and stats separate from JU TPS source code.
+
+## 2026-05-08 01:10 +01:00 - Task 14 Game Flow and Extraction Foundation
+- Created `Assets/_LastStand/Scripts/GameFlow/GameFlowState.cs`.
+- Created `Assets/_LastStand/Scripts/GameFlow/GameFlowManager.cs`.
+- Created `Assets/_LastStand/Scripts/GameFlow/ExtractionObjective.cs`.
+- Updated `WaveManager` with `FinalWaveCompleted` and `HasCompletedAllWaves`.
+- Updated `LastStandHudController` so the objective line can read from `GameFlowManager`.
+- Added `_Systems/GameFlowSystem` to `LS_Arena_01`.
+- Added `ExtractionObjective` and a trigger `BoxCollider` to `_ExtractionObjective/Extraction_Point`.
+- Assigned `GameFlowManager` references to `WaveManager`, `LastStandStatsManager`, and `ExtractionObjective`.
+- Assigned the HUD controller's `gameFlowManager` reference.
+- Runtime debug validation confirmed extraction unlock changes objective text to `Reach extraction`.
+- Runtime debug validation confirmed extraction completion changes state to `Victory` and objective text to `Extraction complete`.
+- Debug validation toggles were restored to false before saving.
+- `WaveManager.autoStartOnPlay` and `SpawnDirector.debugSpawnOnStart` remain false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after validation: 0 errors and 0 warnings.
+- No game over UI, restart UI, pause menu, pickups, enemy drops, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Manually validate full Wave 5 completion unlocking extraction, then add either player failure/game-over handling or enemy drop planning.

@@ -1,6 +1,7 @@
 // Initially generated with Codex assistance and intended for student review/modification.
 using LastStand.Stats;
 using LastStand.Waves;
+using LastStand.GameFlow;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace LastStand.UI
         [SerializeField] private FpsCounter fpsCounter;
         [SerializeField] private PlayerHealthReader healthReader;
         [SerializeField] private WaveManager waveManager;
+        [SerializeField] private GameFlowManager gameFlowManager;
         [SerializeField] private bool autoFindReferences = true;
         [SerializeField] private bool showDebugFallbackText = true;
         [SerializeField] private float updateInterval = 0.1f;
@@ -60,6 +62,11 @@ namespace LastStand.UI
             if (waveManager == null)
             {
                 waveManager = FindFirstObjectByType<WaveManager>();
+            }
+
+            if (gameFlowManager == null)
+            {
+                gameFlowManager = FindFirstObjectByType<GameFlowManager>();
             }
 
             if (fpsCounter == null)
@@ -111,6 +118,11 @@ namespace LastStand.UI
 
         private string GetObjectiveText()
         {
+            if (gameFlowManager != null && !string.IsNullOrWhiteSpace(gameFlowManager.CurrentObjectiveText))
+            {
+                return gameFlowManager.CurrentObjectiveText;
+            }
+
             if (waveManager != null && waveManager.ExtractionShouldUnlock)
             {
                 return "Reach extraction";

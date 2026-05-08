@@ -27,6 +27,9 @@ TextMeshPro is not currently available in the project manifest, so this pass use
 ## LastStandHudController Summary
 `Assets/_LastStand/Scripts/UI/LastStandHudController.cs` reads from `LastStandStatsManager`, `WaveManager`, `FpsCounter`, and `PlayerHealthReader`, then writes formatted values to the HUD text objects. Missing references are handled with safe placeholder values rather than runtime exceptions.
 
+## Task 14 Game Flow Objective Integration
+`LastStandHudController` now optionally reads `GameFlowManager.CurrentObjectiveText`. This allows the objective line to change from preparation, to survival, to `Reach extraction`, and finally `Extraction complete` without putting game-flow logic inside the HUD.
+
 ## Scene UI Setup
 `LS_Arena_01` now contains:
 - `_UISetup/LastStandHUD`

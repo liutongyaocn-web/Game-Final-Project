@@ -208,3 +208,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The HUD displays wave, enemies alive/total, kills, score, survival time, FPS, objective text, and player health when readable.
 - Runtime validation confirmed the HUD updates from `LastStandStatsManager` and `WaveManager`.
 - This directly supports Coursework002 UI/statistics evidence and makes gameplay progress clearer for the final video demonstration.
+
+## Task 14 Game Flow and Extraction Foundation
+- Game flow and extraction objective foundations were added.
+- The final wave now has a clean signal path to unlock extraction through `GameFlowManager`.
+- The player wins by entering the extraction trigger after it is unlocked.
+- The HUD objective line now reflects game-flow state.
+- This strengthens the final game objective, win condition, and level progression evidence for Coursework002.

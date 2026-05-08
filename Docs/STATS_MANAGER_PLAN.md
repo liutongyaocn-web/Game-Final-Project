@@ -77,9 +77,11 @@ The user also manually confirmed after Task 11 that normal combat kills allow Wa
 
 Runtime validation confirmed the HUD read Wave 1 stats (`1 / 5`, `2 / 4` enemies), survival/FPS values, player health (`400 / 400`), and updated kills/score to `1` and `100` after a defeat event.
 
+## Task 14 Victory Integration
+`GameFlowManager` can call `LastStandStatsManager.EndRun()` when extraction is completed. This allows survival time to continue after the final wave is cleared and stop when the player actually reaches extraction.
+
 ## Deliberately Not Implemented
 - Pickups or enemy death drops.
-- Extraction objective.
 - Game over UI.
 - Ranged enemy damage tuning.
 
