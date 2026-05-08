@@ -459,3 +459,15 @@
 
 ## Next Planned Task
 - Manually re-run Wave 1 or debug-spawn the fist enemy to confirm the `JUApplyAudioVolumeSettings` assertion is gone, then continue with the next gameplay polish/foundation task.
+
+## 2026-05-08 16:45 +01:00 - Task 15.7 Manual Real Death and Audio Assertion Validation
+- Recorded user manual validation after Task 15.6.
+- Real enemy-damage player death works during normal gameplay.
+- HUD health reached `0 / 400`.
+- HUD objective displayed `Objective: You died`.
+- The `JUApplyAudioVolumeSettings` red assertion no longer appears after enemy spawning.
+- Unity Console was clean with no red errors or red assertions; regular JU TPS `SwitchID` inventory logs remain acceptable.
+- Documentation-only update; no scenes, scripts, prefabs, ProjectSettings, gameplay systems, pickups, or drops were changed.
+
+## Next Planned Task
+- Continue with the next gameplay foundation or polish task using the now-validated failure flow and clean enemy audio setup.

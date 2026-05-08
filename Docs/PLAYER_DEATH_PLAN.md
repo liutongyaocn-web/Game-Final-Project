@@ -38,6 +38,15 @@ Validation used `PlayerDeathMonitor`'s debug start toggle temporarily in Play Mo
 
 Runtime enemy-damage death was not repeated in this task. It should be manually checked later during a full combat pass, especially because ranged enemies are still highly lethal.
 
+## Manual Real Death Validation
+After Task 15.6, the user manually validated real player death during normal gameplay:
+
+- `Player_JUTPS` was killed by enemy damage during a real combat run.
+- HUD health reached `0 / 400`.
+- HUD objective changed to `Objective: You died`.
+- This confirms real health-based player death detection works, not only the debug validation path.
+- This confirms the `Failed` state works during normal combat after the enemy audio-tag fix.
+
 ## Deliberately Not Implemented
 - Full game-over screen.
 - Restart button.
@@ -52,10 +61,8 @@ Runtime enemy-damage death was not repeated in this task. It should be manually 
 - Later implementation should inspect or reference the JU TPS AI Attack Demo health/ammo pickup and drop setup.
 
 ## Manual Validation Still Needed
-- Let enemies reduce player health to zero during a normal combat run.
-- Confirm `PlayerDeathMonitor` detects the real JU TPS health state in live combat.
-- Confirm survival time stops during an active run after death.
-- Confirm full win and fail flows in the same final playtest build.
+- Recheck full win and fail flows in the same final playtest build.
+- Add final game-over/restart UI later if required by the final demo plan.
 
 ## Coursework002 Evidence Supported
 - Game mechanics: the game can now enter a failure state when the player dies.

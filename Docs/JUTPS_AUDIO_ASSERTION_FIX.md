@@ -45,3 +45,11 @@ Fixed prefabs:
 - Run Wave 1 or debug-spawn `Enemy_FistMelee_JUTPS`.
 - Confirm the `JUApplyAudioVolumeSettings` audio-tag assertion no longer appears.
 - Treat regular JU TPS `SwitchID` inventory logs as acceptable unless they become red errors.
+
+## Manual Runtime Revalidation
+After Task 15.6, the user manually revalidated enemy spawning in Unity:
+
+- Enemy spawning was tested after the SFX Audio Tag fix.
+- The `JUApplyAudioVolumeSettings` audio tag assertion no longer appeared.
+- Unity Console showed no red errors and no red assertions.
+- Regular JU TPS `SwitchID` inventory log messages may still appear and are acceptable for this task.

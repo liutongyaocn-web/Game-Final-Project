@@ -226,3 +226,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The JU TPS audio-tag assertion on spawned Last Stand enemies was resolved in project-owned enemy prefabs.
 - Missing `JUApplyAudioVolumeSettings.AudioTag` references were set to the JU TPS SFX audio tag.
 - This keeps runtime validation cleaner without modifying JU TPS source assets.
+
+## Task 15.7 Manual Death and Audio Revalidation
+- Real player death and the HUD failure state were manually validated during normal gameplay.
+- Player health reached `0 / 400`, and the HUD displayed `Objective: You died`.
+- The JU TPS audio assertion fix was manually revalidated after enemy spawning.
+- This supports final demo evidence for the failure condition and runtime stability.
