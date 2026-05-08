@@ -1,7 +1,7 @@
 # StatsManager Plan
 
 ## Purpose
-The StatsManager foundation tracks the core gameplay statistics needed for Last Stand: kills, score, current wave, enemy counts, and survival time. It prepares the data layer for a later HUD without implementing UI in this task.
+The StatsManager foundation tracks the core gameplay statistics needed for Last Stand: kills, score, current wave, enemy counts, and survival time. The data is now displayed by the project-owned Last Stand HUD layer.
 
 ## Why Stats Are Separate From HUD
 Statistics are gameplay state. HUD is presentation. Keeping them separate allows `LastStandStatsManager` to be tested and reused before a custom Last Stand HUD layer is added on top of the JU TPS default UI.
@@ -72,8 +72,12 @@ Validation was performed in `LS_Arena_01` with `WaveManager.autoStartOnPlay` tem
 
 The user also manually confirmed after Task 11 that normal combat kills allow WaveManager to continue spawning/progressing, so the stats path is ready for a later hands-on kill/score pass.
 
+## Task 13 HUD Display Integration
+`LastStandStatsManager` is now displayed through `LastStandHudController` in `LS_Arena_01`. The HUD shows wave, enemy count, kills, score, survival time, FPS, player health when readable, and objective text while keeping the stats logic separate from UI presentation.
+
+Runtime validation confirmed the HUD read Wave 1 stats (`1 / 5`, `2 / 4` enemies), survival/FPS values, player health (`400 / 400`), and updated kills/score to `1` and `100` after a defeat event.
+
 ## Deliberately Not Implemented
-- HUD.
 - Pickups or enemy death drops.
 - Extraction objective.
 - Game over UI.

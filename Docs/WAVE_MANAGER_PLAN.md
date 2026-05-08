@@ -76,6 +76,9 @@ Real hands-on JU TPS death detection from player combat still needs confirmation
 ## Task 12 Stats Integration
 `WaveManager` now reports run start, current wave, wave enemy counts, alive enemy count, and enemy defeat events to `LastStandStatsManager`. This allows statistics to update independently of the future HUD.
 
+## Task 13 HUD Readout
+The Last Stand HUD now reads wave and enemy-count state through `LastStandStatsManager` and `WaveManager`. Runtime validation confirmed the HUD displayed Wave 1 as `1 / 5`, enemy count as `2 / 4`, and objective text while `WaveManager.autoStartOnPlay` was temporarily enabled for testing and restored to false before saving.
+
 ## Future Enemy Death Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.

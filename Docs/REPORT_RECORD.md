@@ -202,3 +202,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - `LastStandStatsManager` receives wave and defeat updates from `WaveManager`.
 - Runtime validation confirmed Wave 1 stats update, survival time increases, and a defeated fist melee enemy awards 1 kill and 100 score.
 - This prepares the HUD and final video/report explanation for Coursework002 statistics.
+
+## Task 13 Last Stand HUD Layer
+- A project-owned Last Stand HUD layer was added on top of the JU TPS default UI.
+- The HUD displays wave, enemies alive/total, kills, score, survival time, FPS, objective text, and player health when readable.
+- Runtime validation confirmed the HUD updates from `LastStandStatsManager` and `WaveManager`.
+- This directly supports Coursework002 UI/statistics evidence and makes gameplay progress clearer for the final video demonstration.

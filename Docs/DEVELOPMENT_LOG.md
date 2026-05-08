@@ -386,3 +386,23 @@
 
 ## Next Planned Task
 - Add a HUD presenter layer that reads from `LastStandStatsManager` and WaveManager without controlling gameplay.
+
+## 2026-05-08 00:15 +01:00 - Task 13 Last Stand HUD Layer
+- Created `Assets/_LastStand/Scripts/UI/FpsCounter.cs`.
+- Created `Assets/_LastStand/Scripts/UI/PlayerHealthReader.cs`.
+- Created `Assets/_LastStand/Scripts/UI/LastStandHudController.cs`.
+- Added `_UISetup/LastStandHUD` to `LS_Arena_01`.
+- Added a screen-space overlay HUD canvas, top-left gameplay stat text block, and upper objective text.
+- Kept `UI_JUTPS_Default` active and added the Last Stand HUD as an overlay layer.
+- TextMeshPro was not present in the project manifest, so the HUD uses Unity UI `Text` for this pass.
+- Runtime validation temporarily enabled `WaveManager.autoStartOnPlay`.
+- HUD component values showed Wave `1 / 5`, Enemies `2 / 4`, FPS, health `400 / 400`, and objective text.
+- Defeat validation updated HUD kills to `1` and score to `100`.
+- `WaveManager.autoStartOnPlay` was restored to false before saving.
+- `SpawnDirector.debugSpawnOnStart` remained false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after validation: 0 errors and 0 warnings.
+- No pickups, enemy drops, extraction, game over UI, restart buttons, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Continue with the next gameplay foundation task, likely extraction/objective flow or pickup/drop planning, while keeping HUD and stats separate from JU TPS source code.
