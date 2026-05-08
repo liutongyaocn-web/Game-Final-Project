@@ -238,3 +238,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Defeated enemies can now select health/ammo pickup prefabs from `EnemyDropTable_Default.asset`.
 - The system avoids fixed pickup points and supports risk-reward survival gameplay by encouraging players to leave safe positions for supplies.
 - Runtime pickup effect validation remains a manual follow-up.
+
+## Task 16.5 Manual Enemy Drop and Pickup Validation
+- Enemy death drops were manually validated in `LS_Arena_01`.
+- Defeated enemies can generate `HealthPowerUp` and `AmmoPowerUp` pickups.
+- `Player_JUTPS` can collect these pickups during combat.
+- Health recovery and ammo pickup behaviour worked through the JU TPS pickup prefabs.
+- This supports the intended survival loop and Coursework002 game mechanics/content generation evidence.

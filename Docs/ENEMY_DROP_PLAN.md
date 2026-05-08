@@ -84,6 +84,25 @@ A hands-on Play Mode drop test was not completed in this task because no scene/d
 ## Pickup Interaction Result
 Pickup interaction/effect was not manually confirmed in this task. The selected prefabs are JU TPS pickup prefabs, so the intended next check is to confirm that the existing JU TPS player pickup/inventory/health behaviour handles them correctly after they are dropped.
 
+## Manual Drop and Pickup Validation
+Enemy death drops were manually tested in `LS_Arena_01` after Task 16.
+
+- Wave 1 was started in Play Mode.
+- Enemies were killed through normal player combat.
+- `HealthPowerUp` spawned near defeated enemies.
+- `AmmoPowerUp` spawned near defeated enemies.
+- `Player_JUTPS` successfully picked up `HealthPowerUp`.
+- Health recovery worked.
+- `Player_JUTPS` successfully picked up `AmmoPowerUp`.
+- Ammo pickup worked.
+- Unity Console remained free of red errors and red assertions.
+- Temporary debug/start settings were restored after Play Mode:
+  - `WaveManager.autoStartOnPlay = false`
+  - `SpawnDirector.debugSpawnOnStart = false`
+  - `PlayerDeathMonitor.debugReportDeathOnStart = false`
+
+This confirms the intended risk-reward pickup loop works: defeat enemies, move to dropped supplies, recover resources, and continue surviving.
+
 ## Deliberately Not Implemented
 - Custom pickup mechanics.
 - Fixed pickup points.

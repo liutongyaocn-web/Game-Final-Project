@@ -487,3 +487,16 @@
 
 ## Next Planned Task
 - Manually validate enemy death drop spawning and JU TPS pickup interaction during a Wave 1 combat pass, then tune drop chances if needed.
+
+## 2026-05-08 17:55 +01:00 - Task 16.5 Manual Enemy Drop and Pickup Validation
+- Recorded user manual validation of enemy death drops and pickup interaction.
+- Wave 1 was started in Play Mode and enemies were killed through normal player combat.
+- `HealthPowerUp` and `AmmoPowerUp` spawned near defeated enemies.
+- `Player_JUTPS` could pick up both drops.
+- Health recovery and ammo pickup worked.
+- Unity Console had no red errors or red assertions.
+- Temporary debug/start settings were restored after Play Mode.
+- Documentation-only update; no gameplay, scene, script, prefab, ProjectSettings, Packages, or third-party asset changes were made.
+
+## Next Planned Task
+- Proceed to the game-over/restart UI foundation now that the enemy drop loop has been validated.
