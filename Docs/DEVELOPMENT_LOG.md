@@ -443,3 +443,19 @@
 
 ## Next Planned Task
 - Manually validate health-based player death during a full combat run, then continue with either lightweight game-over UI or enemy death drop planning.
+
+## 2026-05-08 16:25 +01:00 - Task 15.6 JU TPS Audio Tag Assertion Fix
+- Investigated the red JU TPS assertion reported during manual player death validation: `JUApplyAudioVolumeSettings` on `Enemy_FistMelee_JUTPS(Clone)` lacked an audio tag.
+- Inspected all three project-owned Last Stand enemy prefabs.
+- Compared the missing `AudioTag` references against JU TPS source audio configuration.
+- Set empty `JUApplyAudioVolumeSettings.AudioTag` references to the JU TPS `SFX Audio Tag.asset` reference in:
+  - `Enemy_FistMelee_JUTPS.prefab`
+  - `Enemy_KnifeMelee_JUTPS.prefab`
+  - `Enemy_Ranged_JUTPS.prefab`
+- Left JU TPS source assets untouched.
+- Left `JU_AI_WeaponSoundSource.SoundTag` fields unchanged because they were not the component named in the assertion.
+- Unity refresh after the prefab-only fix reported 0 errors and 0 warnings.
+- No gameplay systems, pickup/drop logic, HUD/game-over/restart changes, scene changes, Build Settings changes, or third-party source edits were implemented.
+
+## Next Planned Task
+- Manually re-run Wave 1 or debug-spawn the fist enemy to confirm the `JUApplyAudioVolumeSettings` assertion is gone, then continue with the next gameplay polish/foundation task.

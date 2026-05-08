@@ -221,3 +221,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The game can now enter the `Failed` state when player health reaches zero.
 - The HUD objective can display `You died`, preparing the game for later game-over UI and final demo explanation.
 - This balances the existing extraction victory path with a clear failure condition.
+
+## Task 15.6 JU TPS Audio Assertion Fix
+- The JU TPS audio-tag assertion on spawned Last Stand enemies was resolved in project-owned enemy prefabs.
+- Missing `JUApplyAudioVolumeSettings.AudioTag` references were set to the JU TPS SFX audio tag.
+- This keeps runtime validation cleaner without modifying JU TPS source assets.
