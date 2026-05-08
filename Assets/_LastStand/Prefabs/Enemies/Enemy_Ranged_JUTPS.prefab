@@ -11680,7 +11680,7 @@ MonoBehaviour:
   Attack:
     GunAttack:
       MinDistance: 4
-      MaxDistance: 15
+      MaxDistance: 8.5
       StartRunDistance: 4
       StopDistance: 3
       IfInAttackArea: 1
@@ -11688,7 +11688,7 @@ MonoBehaviour:
       FlankRandomlyInterval: 2
       Shooting:
         Precision: 15
-        MaxShotDistance: 100
+        MaxShotDistance: 30
         ObstaclesLayer:
           serializedVersion: 2
           m_Bits: 66049

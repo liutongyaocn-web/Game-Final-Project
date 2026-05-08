@@ -257,3 +257,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - End screen restart input was fixed for Unity's New Input System.
 - The previous `UnityEngine.Input.GetKeyDown` exception was removed from `EndScreenController`.
 - This improves final demo stability by keeping the visible restart prompt compatible with the project's active input handling.
+
+## Task 18 Ranged Enemy Balance
+- Ranged enemy attack distance was adjusted after playtest feedback.
+- The project-owned `Enemy_Ranged_JUTPS` prefab now uses a shorter gun attack range and shot distance.
+- Failed-state restart with `R` was manually validated.
+- This improves ranged enemy fairness and final demo readability without editing JU TPS source assets.

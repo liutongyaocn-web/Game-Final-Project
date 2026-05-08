@@ -35,6 +35,13 @@ No custom wave, score, HUD, pickup, or death-reporting systems are implemented i
 |---|---|---|---|
 | `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab` | Pass | Conditionally yes | The ranged variant detected/targeted `Player_JUTPS` after safe scene-instance target assignment, moved on the arena floor, used the inherited P226/gun attack behaviour, and reduced player health from `400` to `0`. Later spawning code should assign the JU TPS AI target at runtime and tune fair ranged spawn distances/line of sight. |
 
+## Task 18 Ranged Balance Update
+After playtesting, `Enemy_Ranged_JUTPS.prefab` was tuned for fairness without changing damage:
+- `Attack.GunAttack.MaxDistance`: `15` -> `8.5`
+- `Attack.GunAttack.Shooting.MaxShotDistance`: `100` -> `30`
+
+This keeps the ranged enemy as distance pressure while reducing long-range attacks that could hit the player before the enemy was clearly visible.
+
 ## Task 6 EnemyDefinition Assets
 
 The three validated enemy prefabs now have project-owned `EnemyDefinition` ScriptableObject assets under `Assets/_LastStand/ScriptableObjects/Enemies`:

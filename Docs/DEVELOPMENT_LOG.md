@@ -526,3 +526,15 @@
 
 ## Next Planned Task
 - Manually recheck `R` restart on the Failed/Victory end screen, then continue with final polish/balancing or presentation evidence tasks.
+
+## 2026-05-08 19:20 +01:00 - Task 18 Ranged Enemy Attack Distance Balance
+- Recorded manual playtest feedback: the 5-wave flow basically runs, enemy drops feel reasonable, HUD/end-screen placement is acceptable for now, and failed-state `R` restart works.
+- Victory-state `R` restart remains a later manual check because full victory flow is slower to reach.
+- Tuned only `Assets/_LastStand/Prefabs/Enemies/Enemy_Ranged_JUTPS.prefab`.
+- Reduced `Attack.GunAttack.MaxDistance` from `15` to `8.5`.
+- Reduced `Attack.GunAttack.Shooting.MaxShotDistance` from `100` to `30`.
+- Left damage, player health, melee enemies, scenes, wave data, HUD layout, Build Settings, ProjectSettings, and third-party source assets unchanged.
+- Unity refresh/compile validation reported 0 errors and 0 warnings.
+
+## Next Planned Task
+- Manually validate the tuned ranged enemy in a live wave and continue with final NavMesh/spawn fairness polish.
