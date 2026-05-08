@@ -471,3 +471,19 @@
 
 ## Next Planned Task
 - Continue with the next gameplay foundation or polish task using the now-validated failure flow and clean enemy audio setup.
+
+## 2026-05-08 17:35 +01:00 - Task 16 Enemy Death Drop Foundation
+- Inspected JU TPS demo pickup assets without modifying third-party source folders.
+- Identified `HealthPowerUp.prefab` as the health pickup candidate and `AmmoPowerUp.prefab` as the ammo pickup candidate.
+- Created `Assets/_LastStand/Scripts/Pickups/DropItemEntry.cs`.
+- Created `Assets/_LastStand/Scripts/Pickups/EnemyDropTable.cs`.
+- Created `Assets/_LastStand/Scripts/Pickups/EnemyDeathDropper.cs`.
+- Updated `EnemyLifecycleReporter` with a one-time `Defeated` event for project-owned drop listeners.
+- Created `Assets/_LastStand/ScriptableObjects/Pickups/EnemyDropTable_Default.asset`.
+- Added `EnemyDeathDropper` to the fist melee, knife/blade melee, and ranged Last Stand enemy prefabs.
+- Unity refresh/compile validation reported 0 errors and 0 warnings.
+- Runtime drop instantiation and pickup interaction remain a manual follow-up.
+- No fixed pickup points, custom pickup mechanics, inventory rewrite, scene setup changes, restart UI, pause menu, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Manually validate enemy death drop spawning and JU TPS pickup interaction during a Wave 1 combat pass, then tune drop chances if needed.

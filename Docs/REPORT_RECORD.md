@@ -232,3 +232,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Player health reached `0 / 400`, and the HUD displayed `Objective: You died`.
 - The JU TPS audio assertion fix was manually revalidated after enemy spawning.
 - This supports final demo evidence for the failure condition and runtime stability.
+
+## Task 16 Enemy Death Drop Foundation
+- Enemy death drops were added using project-owned Last Stand drop scripts and JU TPS pickup prefab references.
+- Defeated enemies can now select health/ammo pickup prefabs from `EnemyDropTable_Default.asset`.
+- The system avoids fixed pickup points and supports risk-reward survival gameplay by encouraging players to leave safe positions for supplies.
+- Runtime pickup effect validation remains a manual follow-up.

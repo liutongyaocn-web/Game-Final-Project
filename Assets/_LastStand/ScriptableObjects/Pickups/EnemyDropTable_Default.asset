@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c6d7376a2eb1f44ba280bd8848a3c8, type: 3}
+  m_Name: EnemyDropTable_Default
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.Pickups.EnemyDropTable
+  tableId: default_enemy_drops
+  drops:
+  - pickupPrefab: {fileID: 3516352575337148050, guid: 07db9bf568242044f9211ec0cd24c092,
+      type: 3}
+    dropChance: 0.2
+    minWave: 1
+    allowMultiple: 0
+    notes: Emergency recovery drop from defeated enemies.
+  - pickupPrefab: {fileID: 6687682940110421504, guid: f0feff2f4bd13aa4c8e09fdee06d883f,
+      type: 3}
+    dropChance: 0.3
+    minWave: 1
+    allowMultiple: 0
+    notes: Ammunition recovery drop from defeated enemies.
+  dropAtMostOneItem: 1
+  verticalOffset: 0.25
+  scatterRadius: 0.75
+  useWaveRestrictions: 1
+  notes: Default Last Stand enemy death drops. Uses JU TPS demo pickup prefabs so
+    pickup behaviour remains JU TPS-owned.

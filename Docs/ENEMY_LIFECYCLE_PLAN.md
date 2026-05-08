@@ -86,6 +86,11 @@ During a later hands-on gameplay pass, kill a spawned fist, knife/blade, and ran
 ## Task 12 Manual Validation Update
 After Task 11, the user manually confirmed that wave enemies can spawn automatically, can be killed through normal combat, and that `WaveManager` continues spawning/progressing after enemy kills. This supports using `EnemyLifecycleReporter` as the foundation for Task 12 stats integration.
 
+## Task 16 Drop Event Integration
+`EnemyLifecycleReporter` now exposes a project-owned `Defeated` event. `EnemyDeathDropper` subscribes to this event so pickups can be spawned from the same one-time defeat report used by `WaveManager`.
+
+`WaveManager.NotifyEnemyDefeated` still remains the wave progression path, while `EnemyDeathDropper` handles pickup generation separately. This keeps wave completion, scoring, and drops decoupled.
+
 ## Future Pickup/Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.

@@ -52,6 +52,7 @@ namespace LastStand.AI
 
         public string LastReportReason => lastReportReason;
         public bool HasReported => hasReported;
+        public event Action<EnemyLifecycleReporter, GameObject, string> Defeated;
 
         private void Awake()
         {
@@ -100,6 +101,8 @@ namespace LastStand.AI
 
             hasReported = true;
             lastReportReason = string.IsNullOrWhiteSpace(reason) ? "Unknown" : reason;
+
+            Defeated?.Invoke(this, gameObject, lastReportReason);
 
             if (waveManager == null && autoFindWaveManager)
             {

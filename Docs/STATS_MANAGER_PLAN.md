@@ -83,15 +83,23 @@ Runtime validation confirmed the HUD read Wave 1 stats (`1 / 5`, `2 / 4` enemies
 ## Task 15 Failure Integration
 `GameFlowManager` also calls `LastStandStatsManager.EndRun()` when `PlayerDeathMonitor` reports player death and the run enters the `Failed` state. This lets the same survival timer stop path support both victory and failure.
 
+## Task 16 Enemy Drop Separation
+Enemy death drops now respond to the same enemy defeat lifecycle as kills and score, but they remain separate from `LastStandStatsManager`.
+
+- Stats: `WaveManager` reports defeats to `LastStandStatsManager`.
+- Drops: `EnemyDeathDropper` listens to `EnemyLifecycleReporter.Defeated`.
+- Pickup effects: left to JU TPS pickup prefabs and future manual validation.
+
 ## Deliberately Not Implemented
-- Pickups or enemy death drops.
+- HUD pickup notifications.
+- Custom pickup/inventory mechanics.
 - Game over UI.
 - Ranged enemy damage tuning.
 
 ## Future Pickup/Drop Design
 - Do not use fixed pickup points.
-- Health/ammo should drop from killed enemies.
-- Later implementation should inspect or reference the JU TPS AI Attack Demo health/ammo pickup and drop setup.
+- Health/ammo drops now use JU TPS demo pickup prefab references through `EnemyDropTable_Default.asset`.
+- Later validation should confirm dropped JU TPS pickups interact correctly with `Player_JUTPS`.
 
 ## Coursework002 Evidence Supported
 - UI/statistics: provides data for wave, kills, score, enemy remaining, and survival timer HUD.
