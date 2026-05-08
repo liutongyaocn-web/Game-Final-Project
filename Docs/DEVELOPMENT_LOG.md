@@ -564,3 +564,18 @@
 
 ## Next Planned Task
 - Reopen/reconnect Unity MCP if needed, then run a normal Play Mode pass to confirm Wave 1 auto-start, tuned pacing, extraction, and victory restart.
+
+## 2026-05-08 22:24 +01:00 - Task 20 Post-Pacing Smoke Audit
+- Ran a post-pacing Unity MCP smoke audit on `LS_Arena_01`.
+- Confirmed final-scene `WaveManager.autoStartOnPlay` remains true.
+- Confirmed debug-only settings remain disabled: `SpawnDirector.debugSpawnOnStart`, `PlayerDeathMonitor.debugReportDeathOnStart`, and GameFlow extraction debug toggles.
+- Entered Play Mode and confirmed Wave 1 starts automatically.
+- Observed Wave 1 at `1 / 5` with `2 / 3` enemies spawned/alive and max-alive `2` respected.
+- Confirmed spawned enemies are parented under `_Systems/Spawned_Enemies` and include target binding, lifecycle, dropper, and runtime metadata components.
+- Confirmed HUD/stat state updated: enemy counts, survival time, FPS, and player health were readable.
+- Did not retest victory debug or `R` restart in this task to avoid unnecessary scene/debug changes.
+- Unity Console contained no Last Stand gameplay exception or JU TPS audio-tag assertion, but MCP's own runtime component serializer produced red tooling entries while inspecting JU TPS/Animator/audio internals.
+- Documentation-only update; no scripts, prefabs, scene assets, wave assets, ProjectSettings, Packages, or third-party assets were staged.
+
+## Next Planned Task
+- Perform targeted hands-on final checks: full Wave 5 clear, extraction trigger through real play, victory-state `R` restart, ranged enemy feel, and NavMesh stuck spots.

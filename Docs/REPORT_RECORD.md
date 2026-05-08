@@ -273,3 +273,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Final scene wave auto-start was enabled so the game begins naturally in Play Mode.
 - Five waves were retained, but enemy counts and timings were shortened for a more realistic demo run.
 - Ranged enemies remain limited to preserve fair challenge after playtest feedback.
+
+## Task 20 Post-Pacing Smoke Audit
+- Post-pacing smoke validation confirmed the final scene now starts Wave 1 automatically in Play Mode.
+- HUD/stat state updated to Wave `1 / 5`, enemy counts updated, and spawned enemies retained target binding, lifecycle reporting, death dropper, and runtime metadata components.
+- This supports final demo readiness by confirming the shortened wave pacing actually starts from normal Play Mode.
+- Remaining full-run checks are now focused on Wave 5 completion, extraction, victory restart, ranged feel, and possible NavMesh stuck spots.
