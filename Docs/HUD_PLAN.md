@@ -33,11 +33,15 @@ TextMeshPro is not currently available in the project manifest, so this pass use
 ## Task 15 Failure Objective Integration
 The HUD objective also reflects `GameFlowManager`'s `Failed` state. Player-death debug validation confirmed the objective text can display `Objective: You died`.
 
+## Task 17 End Screen Integration
+The HUD is now complemented by a simple end screen layer. `EndScreenController` displays a centered panel for `Victory` and `Failed` states while the normal HUD remains the live gameplay stat layer.
+
 ## Scene UI Setup
 `LS_Arena_01` now contains:
 - `_UISetup/LastStandHUD`
 - `_UISetup/LastStandHUD/LastStandHUD_Canvas`
 - `_UISetup/LastStandHUD/LastStandHUD_Controller`
+- `_UISetup/LastStandHUD/LastStandHUD_Canvas/EndScreen`
 
 The canvas is screen-space overlay with a `CanvasScaler` set to scale with a 1920 x 1080 reference resolution. The stat block is anchored to the top-left, and objective text is placed near the upper center. `UI_JUTPS_Default` remains active underneath this project-owned HUD layer.
 
@@ -58,8 +62,8 @@ The MCP screenshot returned the scene view without clearly compositing the overl
 - Pickups.
 - Enemy health/ammo drops.
 - Extraction activation.
-- Game over UI.
-- Restart buttons.
+- Main menu.
+- Pause menu.
 - Ranged enemy damage tuning.
 
 ## Future Pickup/Drop Design

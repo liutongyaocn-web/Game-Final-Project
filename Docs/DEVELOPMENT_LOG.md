@@ -500,3 +500,18 @@
 
 ## Next Planned Task
 - Proceed to the game-over/restart UI foundation now that the enemy drop loop has been validated.
+
+## 2026-05-08 18:35 +01:00 - Task 17 End Screen and Restart Foundation
+- Created `Assets/_LastStand/Scripts/UI/EndScreenController.cs`.
+- Added `_UISetup/LastStandHUD/LastStandHUD_Canvas/EndScreen` to `LS_Arena_01`.
+- Added a disabled-by-default `EndScreen_Panel` with title, subtitle, stats, and restart prompt text.
+- Added `EndScreen_Controller` and assigned `GameFlowManager`, `LastStandStatsManager`, and UI text references.
+- Debug failure validation showed `You Died`.
+- Debug victory validation showed `Extraction Complete`.
+- Restart-by-`R` is implemented in code and should be manually keypress-tested in the Game view.
+- Unity Console after validation: 0 errors and 0 warnings.
+- Debug/start settings were restored before saving.
+- No main menu, pause menu, settings menu, full score screen, Build Settings changes, gameplay mechanics, ranged damage tuning, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Manually keypress-test the restart prompt, then continue with final polish/balancing or presentation evidence tasks.

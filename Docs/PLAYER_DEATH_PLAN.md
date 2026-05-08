@@ -23,7 +23,7 @@ The script also exposes `DebugReportPlayerDeath()` and a disabled-by-default deb
 
 `Objective: You died`
 
-No full game-over panel is implemented yet.
+Task 17 added a simple end screen for the Failed state. When `GameFlowManager` is failed, the end panel shows `You Died`, a short subtitle, run stats, and `Press R to Restart`.
 
 ## Runtime Validation Result
 Validation used `PlayerDeathMonitor`'s debug start toggle temporarily in Play Mode, then restored it to false before saving.
@@ -48,8 +48,8 @@ After Task 15.6, the user manually validated real player death during normal gam
 - This confirms the `Failed` state works during normal combat after the enemy audio-tag fix.
 
 ## Deliberately Not Implemented
-- Full game-over screen.
-- Restart button.
+- Full score breakdown.
+- Main menu.
 - Pause menu.
 - Pickups.
 - Enemy health/ammo drops.
@@ -62,7 +62,7 @@ After Task 15.6, the user manually validated real player death during normal gam
 
 ## Manual Validation Still Needed
 - Recheck full win and fail flows in the same final playtest build.
-- Add final game-over/restart UI later if required by the final demo plan.
+- Manually press `R` on the failed end screen to confirm the scene reload path in the Game view.
 
 ## Coursework002 Evidence Supported
 - Game mechanics: the game can now enter a failure state when the player dies.

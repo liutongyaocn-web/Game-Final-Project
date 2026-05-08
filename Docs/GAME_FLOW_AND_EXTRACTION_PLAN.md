@@ -28,6 +28,9 @@ When the final configured wave completes, `WaveManager` sets `HasCompletedAllWav
 ## HUD Objective Integration
 `LastStandHudController` now optionally reads `GameFlowManager.CurrentObjectiveText`. If no `GameFlowManager` is available, the previous HUD fallback objective logic remains in place.
 
+## Task 17 End-State UI Integration
+Victory and Failed states now display a simple end-state panel through `EndScreenController`. The end screen reads `GameFlowManager.CurrentState`, shows either `Extraction Complete` or `You Died`, and provides a `Press R to Restart` prompt.
+
 ## Task 15 Player Death Integration
 `GameFlowManager` now supports the `Failed` state through `PlayerDeathMonitor`. When player health reaches zero, or when the debug validation method is used, `FailRun()` stops the stats timer and exposes `You died` through `CurrentObjectiveText`.
 
@@ -53,8 +56,7 @@ Full five-wave completion was not required for this task. Instead, debug validat
 - Unity Console reported 0 errors and 0 warnings after final validation.
 
 ## Deliberately Not Implemented
-- Game over UI.
-- Restart UI.
+- Main menu.
 - Pause menu.
 - Pickups.
 - Enemy health/ammo drops.

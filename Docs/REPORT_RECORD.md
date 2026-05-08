@@ -245,3 +245,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - `Player_JUTPS` can collect these pickups during combat.
 - Health recovery and ammo pickup behaviour worked through the JU TPS pickup prefabs.
 - This supports the intended survival loop and Coursework002 game mechanics/content generation evidence.
+
+## Task 17 End Screen and Restart Foundation
+- End screen and restart foundation was added.
+- Failed state displays `You Died`.
+- Victory state displays `Extraction Complete`.
+- The screen includes run stats and a `Press R to Restart` prompt.
+- This improves final demo clarity by giving both win and fail states a visible conclusion.
