@@ -102,7 +102,7 @@ namespace LastStand.GameFlow
 
         public void UnlockExtraction()
         {
-            if (victoryReached || extractionUnlocked)
+            if (currentState == GameFlowState.Failed || victoryReached || extractionUnlocked)
             {
                 return;
             }
@@ -119,7 +119,7 @@ namespace LastStand.GameFlow
 
         public void CompleteExtraction()
         {
-            if (!extractionUnlocked || victoryReached)
+            if (currentState == GameFlowState.Failed || !extractionUnlocked || victoryReached)
             {
                 return;
             }

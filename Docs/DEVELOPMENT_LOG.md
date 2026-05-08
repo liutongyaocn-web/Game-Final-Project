@@ -427,3 +427,19 @@
 
 ## Next Planned Task
 - Manually validate full Wave 5 completion unlocking extraction, then add either player failure/game-over handling or enemy drop planning.
+
+## 2026-05-08 15:55 +01:00 - Task 15 Player Death and Game-Over Foundation
+- Created `Assets/_LastStand/Scripts/GameFlow/PlayerDeathMonitor.cs`.
+- Updated `GameFlowManager` so extraction unlock/completion is ignored after the run has failed.
+- Added `PlayerDeathMonitor` to `_Systems/GameFlowSystem` in `LS_Arena_01`.
+- Assigned references to `GameFlowManager`, `PlayerHealthReader`, and `Player_JUTPS`.
+- Debug validation confirmed `GameFlowManager` enters `Failed`.
+- HUD objective validation confirmed `Objective: You died`.
+- `PlayerDeathMonitor.debugReportDeathOnStart` was restored to false before saving.
+- `WaveManager.autoStartOnPlay` and `SpawnDirector.debugSpawnOnStart` remain false.
+- No runtime-spawned enemies remain saved in the scene.
+- Unity Console after validation: 0 errors and 0 warnings.
+- No restart UI, full game-over UI, pause menu, pickups, enemy drops, ranged damage tuning, Build Settings changes, actor skin replacement, or third-party source edits were implemented.
+
+## Next Planned Task
+- Manually validate health-based player death during a full combat run, then continue with either lightweight game-over UI or enemy death drop planning.

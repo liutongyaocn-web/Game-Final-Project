@@ -215,3 +215,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The player wins by entering the extraction trigger after it is unlocked.
 - The HUD objective line now reflects game-flow state.
 - This strengthens the final game objective, win condition, and level progression evidence for Coursework002.
+
+## Task 15 Player Death Foundation
+- Player death foundation was added through a project-owned `PlayerDeathMonitor`.
+- The game can now enter the `Failed` state when player health reaches zero.
+- The HUD objective can display `You died`, preparing the game for later game-over UI and final demo explanation.
+- This balances the existing extraction victory path with a clear failure condition.

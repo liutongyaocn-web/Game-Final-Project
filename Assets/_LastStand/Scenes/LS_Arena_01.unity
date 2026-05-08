@@ -6090,7 +6090,7 @@ PrefabInstance:
     - target: {fileID: 8325505125749106588, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 393.77493
+      value: 390.78452
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -95290,19 +95290,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 492474785}
   m_PrefabAsset: {fileID: 0}
---- !u!134 &492582400
-PhysicsMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 2
-  m_DynamicFriction: 0.6
-  m_StaticFriction: 0.6
-  m_Bounciness: 0
-  m_FrictionCombine: 0
-  m_BounceCombine: 0
 --- !u!1001 &492849347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105070,6 +105057,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 544595682}
   m_PrefabAsset: {fileID: 0}
+--- !u!134 &545106187
+PhysicsMaterial:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ' (Instance)'
+  serializedVersion: 2
+  m_DynamicFriction: 0.6
+  m_StaticFriction: 0.6
+  m_Bounciness: 0
+  m_FrictionCombine: 0
+  m_BounceCombine: 0
 --- !u!1001 &545396134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123661,7 +123661,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637034246}
-  m_Material: {fileID: 492582400}
+  m_Material: {fileID: 545106187}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -212019,6 +212019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1095115678}
   - component: {fileID: 1095115677}
+  - component: {fileID: 1095115679}
   m_Layer: 0
   m_Name: GameFlowSystem
   m_TagString: Untagged
@@ -212060,6 +212061,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412428588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095115679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095115676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480b560cb97da6f46a7540a0d93f4f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LastStand.GameFlow.PlayerDeathMonitor
+  gameFlowManager: {fileID: 1095115677}
+  healthReader: {fileID: 472935463}
+  player: {fileID: 596985973}
+  playerObjectName: Player_JUTPS
+  autoFindReferences: 1
+  monitorOnUpdate: 1
+  logDeathEvents: 0
+  debugReportDeathOnStart: 0
 --- !u!1001 &1095270437
 PrefabInstance:
   m_ObjectHideFlags: 0

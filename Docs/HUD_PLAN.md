@@ -30,6 +30,9 @@ TextMeshPro is not currently available in the project manifest, so this pass use
 ## Task 14 Game Flow Objective Integration
 `LastStandHudController` now optionally reads `GameFlowManager.CurrentObjectiveText`. This allows the objective line to change from preparation, to survival, to `Reach extraction`, and finally `Extraction complete` without putting game-flow logic inside the HUD.
 
+## Task 15 Failure Objective Integration
+The HUD objective also reflects `GameFlowManager`'s `Failed` state. Player-death debug validation confirmed the objective text can display `Objective: You died`.
+
 ## Scene UI Setup
 `LS_Arena_01` now contains:
 - `_UISetup/LastStandHUD`

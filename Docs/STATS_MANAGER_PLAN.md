@@ -80,6 +80,9 @@ Runtime validation confirmed the HUD read Wave 1 stats (`1 / 5`, `2 / 4` enemies
 ## Task 14 Victory Integration
 `GameFlowManager` can call `LastStandStatsManager.EndRun()` when extraction is completed. This allows survival time to continue after the final wave is cleared and stop when the player actually reaches extraction.
 
+## Task 15 Failure Integration
+`GameFlowManager` also calls `LastStandStatsManager.EndRun()` when `PlayerDeathMonitor` reports player death and the run enters the `Failed` state. This lets the same survival timer stop path support both victory and failure.
+
 ## Deliberately Not Implemented
 - Pickups or enemy death drops.
 - Game over UI.

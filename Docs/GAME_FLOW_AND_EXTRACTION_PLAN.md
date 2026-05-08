@@ -8,7 +8,7 @@ This task adds the foundation for Last Stand's final objective: after the final 
 - `Running`: waves are active and the player must survive.
 - `ExtractionUnlocked`: all waves are complete and the player should reach extraction.
 - `Victory`: the player entered the unlocked extraction objective.
-- `Failed`: reserved for future death/game-over logic.
+- `Failed`: the player has died and the run is no longer completable.
 
 ## GameFlowManager Script Summary
 `Assets/_LastStand/Scripts/GameFlow/GameFlowManager.cs` owns high-level run state. It listens for `WaveManager.FinalWaveCompleted`, unlocks extraction, records victory, and exposes `CurrentObjectiveText` for the HUD.
@@ -27,6 +27,11 @@ When the final configured wave completes, `WaveManager` sets `HasCompletedAllWav
 
 ## HUD Objective Integration
 `LastStandHudController` now optionally reads `GameFlowManager.CurrentObjectiveText`. If no `GameFlowManager` is available, the previous HUD fallback objective logic remains in place.
+
+## Task 15 Player Death Integration
+`GameFlowManager` now supports the `Failed` state through `PlayerDeathMonitor`. When player health reaches zero, or when the debug validation method is used, `FailRun()` stops the stats timer and exposes `You died` through `CurrentObjectiveText`.
+
+Extraction unlock and extraction completion now ignore requests after the run has failed.
 
 ## Scene Setup
 `LS_Arena_01` now contains:
@@ -63,7 +68,7 @@ Full five-wave completion was not required for this task. Instead, debug validat
 ## Known Limitations
 - Full Wave 5 clear into extraction should be manually validated later.
 - Extraction marker visual polish is still needed.
-- Player death/failure flow is reserved for a later task.
+- Real enemy-damage player death should be manually rechecked during a full combat pass.
 
 ## Coursework002 Evidence Supported
 - Game mechanics: player has a clear final extraction objective and victory state.
