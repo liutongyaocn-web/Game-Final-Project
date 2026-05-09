@@ -579,3 +579,16 @@
 
 ## Next Planned Task
 - Perform targeted hands-on final checks: full Wave 5 clear, extraction trigger through real play, victory-state `R` restart, ranged enemy feel, and NavMesh stuck spots.
+
+## 2026-05-09 15:32 +01:00 - Task 21 Final Release-Readiness Audit
+- Reviewed existing project evidence, documentation logs, and project-owned file inventory.
+- Created `Docs/FINAL_READINESS_AUDIT.md`.
+- Confirmed the implemented feature set includes arena, JU TPS player/camera/UI, HUD, NavMesh, three enemy variants, EnemyDefinition/WaveDefinition assets, SpawnPointGroup, SpawnDirector, WaveManager, target binding, lifecycle reporting, StatsManager, GameFlowManager, ExtractionObjective, PlayerDeathMonitor, enemy death drops, and end-screen/restart foundation.
+- Mapped the current implementation to Coursework002 evidence areas.
+- Classified remaining risks by severity and noted whether they block submission.
+- Added recommended video and live demo routes.
+- Added release checklist and next-task recommendations.
+- Documentation-only update; no gameplay scripts, prefabs, scenes, wave assets, ProjectSettings, Packages, Build Settings, or third-party assets were modified.
+
+## Next Planned Task
+- Prepare the final video demo script and recording plan, then confirm GitHub/release/submission packaging.
