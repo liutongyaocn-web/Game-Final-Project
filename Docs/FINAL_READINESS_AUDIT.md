@@ -31,7 +31,7 @@ This audit records the release-readiness state of Last Stand after the post-paci
 | Coursework evidence area | Current evidence | Readiness |
 |---|---|---|
 | Game story and game logic | Lone survivor, infected waves, extraction objective, failure on player death, 5-wave structure. | Ready. |
-| UI and game statistics | HUD shows wave, enemies, kills, score, time, FPS, health, objective; end screen shows win/fail state and stats. | Ready, visually plain. |
+| UI and game statistics | Main menu shows title/controls/start flow; HUD shows wave, enemies, kills, score, time, FPS, health, objective; end screen shows win/fail state and stats. | Ready, visually plain. |
 | Game mechanics | JU TPS movement/combat, enemy waves, health/ammo drops, scoring, extraction, failure, restart. | Ready with remaining full-run validation. |
 | Game AI | Three enemy roles use JU TPS AI behaviours; spawned enemies target player and attack. | Ready. |
 | Animation | JU TPS locomotion, attacks, gun behaviour, melee/blade behaviour, hit/death behaviour. | Ready to demonstrate. |
@@ -47,6 +47,7 @@ This audit records the release-readiness state of Last Stand after the post-paci
 |---|---|---|---|---|---|
 | Full Wave 5 to extraction not manually completed | High | Not blocking if objective/debug path and wave systems are shown honestly | Yes | Worth attempting once before final recording | Show normal wave flow, then show documented extraction/victory path if full clear is too slow. |
 | Victory-state `R` restart not manually tested | Medium | Not blocking | Yes | Quick to test if time permits | Show failed-state restart if victory restart cannot be reached; mention same end screen controller handles both. |
+| Main menu physical button click not manually confirmed | Low | Not blocking | Yes | Quick to test before recording | If needed, open `LS_Arena_01` directly as fallback; controller refs and target scene loading were validated. |
 | Some enemies may get stuck on NavMesh in detailed areas | Medium | Not blocking unless frequent in demo route | Yes | Fix only if a repeatable stuck spot appears in the planned route | Keep combat near validated open areas and spawn routes. |
 | Ranged enemy may still feel strong | Medium | Not blocking | Yes | Tune only if it prevents demo completion | Treat as intended difficulty; show cover/movement and keep ranged count limited. |
 | HUD is readable but plain | Low | Not blocking | Yes | Optional only | Explain HUD values clearly in narration. |
@@ -75,31 +76,35 @@ The remaining issues are mostly validation, balance feel, and presentation polis
 
 ## Recommended 10-12 Minute Video Demo Route
 1. Brief story and objective: survive five waves, collect supplies, reach extraction.
-2. Show GitHub/release briefly: project-owned code under `Assets/_LastStand`, docs evidence, and no third-party source edits.
-3. Start `LS_Arena_01` in Play Mode and show Wave 1 starts automatically.
-4. Demonstrate player movement, aiming, shooting, reload, and basic combat.
-5. Show HUD values: wave, enemy count, kills, score, survival time, FPS, health, objective.
-6. Show fist melee enemy behaviour.
-7. Show knife/blade melee enemy behaviour.
-8. Show ranged enemy behaviour and mention range tuning.
-9. Kill an enemy and collect a health/ammo drop.
-10. Show wave progression or explain the shortened 5-wave pacing table.
-11. Show player death/failure if possible, including `You Died` end screen and `R` restart.
-12. Show extraction/victory path: preferably after final wave, or through the documented debug/foundation route if full clear is too slow for recording.
-13. End with code/docs evidence: WaveDefinition, EnemyDefinition, SpawnDirector, WaveManager, StatsManager, GameFlowManager, and evidence logs.
+2. Show `LS_MainMenu`: title, controls panel, and Start Game flow into the arena.
+3. Show GitHub/release briefly: project-owned code under `Assets/_LastStand`, docs evidence, and no third-party source edits.
+4. Start gameplay and show Wave 1 starts automatically.
+5. Demonstrate player movement, aiming, shooting, reload, and basic combat.
+6. Show HUD values: wave, enemy count, kills, score, survival time, FPS, health, objective.
+7. Show fist melee enemy behaviour.
+8. Show knife/blade melee enemy behaviour.
+9. Show ranged enemy behaviour and mention range tuning.
+10. Kill an enemy and collect a health/ammo drop.
+11. Show wave progression or explain the shortened 5-wave pacing table.
+12. Show player death/failure if possible, including `You Died` end screen and `R` restart.
+13. Show extraction/victory path: preferably after final wave, or through the documented debug/foundation route if full clear is too slow for recording.
+14. End with code/docs evidence: WaveDefinition, EnemyDefinition, SpawnDirector, WaveManager, StatsManager, GameFlowManager, and evidence logs.
 
 ## Recommended 5 Minute Live Demo Route
-1. Open `LS_Arena_01` and press Play.
-2. Show automatic Wave 1 start and HUD updating to `Wave 1 / 5`.
-3. Fight the first enemies and show kills/score/enemy count changing.
-4. Pick up a dropped health or ammo item if one appears.
-5. Briefly explain the three enemy types and 5-wave progression.
-6. Trigger or demonstrate a failure/victory path if practical.
-7. If asked about known polish, state that remaining risks are full Wave 5 rehearsal, possible NavMesh stuck spots, ranged feel, and visual HUD polish.
+1. Open `LS_MainMenu` and press Play.
+2. Show title, controls, and Start Game into `LS_Arena_01`.
+3. Show automatic Wave 1 start and HUD updating to `Wave 1 / 5`.
+4. Fight the first enemies and show kills/score/enemy count changing.
+5. Pick up a dropped health or ammo item if one appears.
+6. Briefly explain the three enemy types and 5-wave progression.
+7. Trigger or demonstrate a failure/victory path if practical.
+8. If asked about known polish, state that remaining risks are full Wave 5 rehearsal, possible NavMesh stuck spots, ranged feel, and visual HUD polish.
 
 ## Release Checklist
 - Confirm latest `main` branch is pushed.
 - Confirm no unintended `Assets/**`, `ProjectSettings/**`, `Packages/**`, or third-party folders are staged.
+- Confirm `LS_MainMenu` and `LS_Arena_01` are in Build Settings.
+- Confirm `Start Game` loads `LS_Arena_01`.
 - Confirm final playable scene is `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
 - Confirm `WaveManager.autoStartOnPlay` remains true.
 - Confirm `SpawnDirector.debugSpawnOnStart` remains false.

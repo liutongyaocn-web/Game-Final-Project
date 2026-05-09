@@ -67,8 +67,10 @@ Before saving:
 - `EndScreen_Panel` was inactive
 - no runtime enemies or pickups were saved
 
+## Task 22A Main Menu Relationship
+`LS_MainMenu.unity` now provides the initial start flow, while the end screen remains the post-run restart layer inside `LS_Arena_01`. The two UI layers are separate: the menu starts a run, and the end screen restarts the active gameplay scene after victory or failure.
+
 ## Deliberately Not Implemented
-- Main menu.
 - Pause menu.
 - Settings menu.
 - Full score breakdown.

@@ -46,6 +46,9 @@ Meaning:
 
 This is clearer for players than the old `Enemies: alive / total` display because it answers the practical question: how many enemies are left before the current wave can end?
 
+## Task 22A Main Menu Integration
+The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
+
 ## Scene UI Setup
 `LS_Arena_01` now contains:
 - `_UISetup/LastStandHUD`
@@ -77,7 +80,6 @@ Task 22B validation confirmed the revised enemy text:
 - Pickups.
 - Enemy health/ammo drops.
 - Extraction activation.
-- Main menu.
 - Pause menu.
 - Ranged enemy damage tuning.
 

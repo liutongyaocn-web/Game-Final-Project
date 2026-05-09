@@ -289,3 +289,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The HUD enemy count was clarified from alive enemies to enemies remaining in the current wave.
 - The display now reads `Enemies Remaining: X / Total`.
 - This improves player understanding of wave progress and makes video/live demo narration clearer.
+
+## Task 22A Main Menu Foundation
+- A project-owned Last Stand main menu scene was added.
+- The menu includes a title, short objective description, Start Game button, Controls panel, and Quit button.
+- Build Settings now include the Last Stand menu and gameplay scene so the project has a complete start flow.
+- JU TPS demo menu assets were used only as a visual reference and were not modified.

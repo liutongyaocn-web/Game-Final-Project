@@ -605,3 +605,16 @@
 
 ## Next Planned Task
 - Continue final video/demo preparation, with the clearer enemy remaining HUD included in the recording route.
+
+## 2026-05-10 00:10 +01:00 - Task 22A Last Stand Main Menu Foundation
+- Inspected the JU TPS demo menu scene as a visual reference without modifying JU TPS source assets.
+- Created `Assets/_LastStand/Scenes/LS_MainMenu.unity`.
+- Created `Assets/_LastStand/Scripts/UI/MainMenuController.cs`.
+- Added a Last Stand title, subtitle, Start Game button, Controls panel, and Quit button.
+- Intentionally updated `ProjectSettings/EditorBuildSettings.asset` so the built player includes `LS_MainMenu` and `LS_Arena_01`.
+- Confirmed the gameplay target scene opens and auto-starts Wave 1 with no red Console errors.
+- Physical UGUI button-click validation remains a manual Game view check because MCP could not click the UI and runtime code execution hit a Windows tooling limit.
+- No JU TPS/Synty/JUTPS Addons source assets or gameplay systems were modified.
+
+## Next Planned Task
+- Manually confirm Start Game and Controls button clicks in the Game view, then continue with final video/demo preparation.
