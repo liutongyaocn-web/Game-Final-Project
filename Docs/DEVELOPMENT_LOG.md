@@ -592,3 +592,16 @@
 
 ## Next Planned Task
 - Prepare the final video demo script and recording plan, then confirm GitHub/release/submission packaging.
+
+## 2026-05-09 23:56 +01:00 - Task 22B Enemy Count HUD Semantics
+- Updated `LastStandStatsManager` to track `enemiesDefeatedThisWave`.
+- Added `EnemiesDefeatedThisWave` and `EnemiesRemainingThisWave` read-only properties.
+- Reset wave-specific defeated count when the active wave number changes.
+- Updated `LastStandHudController` enemy text from `Enemies: alive / total` to `Enemies Remaining: remaining / total`.
+- Kept alive/spawned enemy counts internally available for systems/debugging.
+- Refreshed Unity and confirmed 0 red compile errors.
+- Runtime smoke validation confirmed Wave 1 HUD starts at `Enemies Remaining: 3 / 3` and changes to `Enemies Remaining: 2 / 3` after one runtime defeat/removal proxy.
+- No wave balance, scene, prefab, third-party asset, or new system changes were made.
+
+## Next Planned Task
+- Continue final video/demo preparation, with the clearer enemy remaining HUD included in the recording route.

@@ -8,7 +8,7 @@ The Last Stand HUD layer displays the runtime statistics needed for Coursework00
 
 ## HUD Elements Implemented
 - Current wave / total waves.
-- Enemies alive / total enemies this wave.
+- Enemies remaining / total enemies this wave.
 - Kills.
 - Score.
 - Survival time.
@@ -36,6 +36,16 @@ The HUD objective also reflects `GameFlowManager`'s `Failed` state. Player-death
 ## Task 17 End Screen Integration
 The HUD is now complemented by a simple end screen layer. `EndScreenController` displays a centered panel for `Victory` and `Failed` states while the normal HUD remains the live gameplay stat layer.
 
+## Task 22B Enemy Count Semantics
+The enemy count label now displays wave progress as `Enemies Remaining: X / Total` instead of alive enemies only.
+
+Meaning:
+- `Total` is the total enemy count for the current wave.
+- `Remaining` is the number of enemies in the current wave that have not yet been defeated.
+- Remaining includes both currently alive enemies and enemies still waiting to spawn.
+
+This is clearer for players than the old `Enemies: alive / total` display because it answers the practical question: how many enemies are left before the current wave can end?
+
 ## Scene UI Setup
 `LS_Arena_01` now contains:
 - `_UISetup/LastStandHUD`
@@ -55,6 +65,11 @@ Validation temporarily enabled `WaveManager.autoStartOnPlay` and then restored i
 
 The MCP screenshot returned the scene view without clearly compositing the overlay, but live Canvas/Text component state confirmed the HUD values were active and updating. Unity Console reported 0 errors and 0 warnings after final validation.
 
+Task 22B validation confirmed the revised enemy text:
+- Initial Wave 1 display: `Enemies Remaining: 3 / 3`.
+- After one runtime defeat/removal proxy: `Enemies Remaining: 2 / 3`.
+- Unity Console reported 0 red errors.
+
 ## Health Reading Result
 `PlayerHealthReader` successfully read the JU TPS player health during validation and displayed `Health: 400 / 400`.
 
@@ -72,7 +87,7 @@ The MCP screenshot returned the scene view without clearly compositing the overl
 - Later implementation should inspect or reference the JU TPS AI Attack Demo health/ammo pickup and drop setup.
 
 ## Coursework002 Evidence Supported
-- UI/statistics: visible HUD for wave, enemies, kills, score, survival time, FPS, health, and objective text.
+- UI/statistics: visible HUD for wave, enemies remaining, kills, score, survival time, FPS, health, and objective text.
 - Game mechanics: players can observe combat progress, enemy pressure, and scoring feedback.
 - C# code quality: separates stats, health reading, FPS tracking, and HUD presentation.
 - Video demo: on-screen values make final gameplay evidence easier to explain and verify.

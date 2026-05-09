@@ -284,3 +284,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Final readiness was reviewed across completed systems, coursework evidence, remaining risks, video planning, live demo planning, and release checklist.
 - The project is judged acceptable as a vertical-slice submission with clearly documented remaining polish and validation risks.
 - The next highest-value work is video/release preparation rather than adding major new systems.
+
+## Task 22B Enemy Count HUD Semantics
+- The HUD enemy count was clarified from alive enemies to enemies remaining in the current wave.
+- The display now reads `Enemies Remaining: X / Total`.
+- This improves player understanding of wave progress and makes video/live demo narration clearer.

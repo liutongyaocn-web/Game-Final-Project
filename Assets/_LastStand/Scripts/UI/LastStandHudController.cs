@@ -85,7 +85,7 @@ namespace LastStand.UI
             if (statsManager == null)
             {
                 SetText(waveText, showDebugFallbackText ? "Wave: - / -" : string.Empty);
-                SetText(enemiesText, showDebugFallbackText ? "Enemies: - / -" : string.Empty);
+                SetText(enemiesText, showDebugFallbackText ? "Enemies Remaining: - / -" : string.Empty);
                 SetText(killsText, showDebugFallbackText ? "Kills: 0" : string.Empty);
                 SetText(scoreText, showDebugFallbackText ? "Score: 0" : string.Empty);
                 SetText(timeText, showDebugFallbackText ? "Time: 00:00" : string.Empty);
@@ -93,7 +93,7 @@ namespace LastStand.UI
             else
             {
                 SetText(waveText, $"Wave: {statsManager.CurrentWaveNumber} / {statsManager.TotalWaves}");
-                SetText(enemiesText, $"Enemies: {statsManager.EnemiesAlive} / {statsManager.EnemiesTotalThisWave}");
+                SetText(enemiesText, $"Enemies Remaining: {statsManager.EnemiesRemainingThisWave} / {statsManager.EnemiesTotalThisWave}");
                 SetText(killsText, $"Kills: {statsManager.Kills}");
                 SetText(scoreText, $"Score: {statsManager.Score}");
                 SetText(timeText, $"Time: {statsManager.FormattedSurvivalTime}");

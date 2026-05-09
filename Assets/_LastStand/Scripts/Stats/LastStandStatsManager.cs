@@ -17,6 +17,7 @@ namespace LastStand.Stats
         private int enemiesAlive;
         private int enemiesSpawnedThisWave;
         private int enemiesTotalThisWave;
+        private int enemiesDefeatedThisWave;
         private float survivalTimeSeconds;
         private bool runActive;
 
@@ -27,6 +28,8 @@ namespace LastStand.Stats
         public int EnemiesAlive => enemiesAlive;
         public int EnemiesSpawnedThisWave => enemiesSpawnedThisWave;
         public int EnemiesTotalThisWave => enemiesTotalThisWave;
+        public int EnemiesDefeatedThisWave => enemiesDefeatedThisWave;
+        public int EnemiesRemainingThisWave => Mathf.Max(0, enemiesTotalThisWave - enemiesDefeatedThisWave);
         public float SurvivalTimeSeconds => survivalTimeSeconds;
         public string FormattedSurvivalTime => FormatTime(survivalTimeSeconds);
 
@@ -55,6 +58,7 @@ namespace LastStand.Stats
             enemiesAlive = 0;
             enemiesSpawnedThisWave = 0;
             enemiesTotalThisWave = 0;
+            enemiesDefeatedThisWave = 0;
             survivalTimeSeconds = 0f;
             runActive = false;
         }
@@ -75,7 +79,13 @@ namespace LastStand.Stats
 
         public void SetCurrentWave(int waveNumber, int totalWaveCount)
         {
-            currentWaveNumber = Mathf.Max(0, waveNumber);
+            int nextWaveNumber = Mathf.Max(0, waveNumber);
+            if (currentWaveNumber != nextWaveNumber)
+            {
+                enemiesDefeatedThisWave = 0;
+            }
+
+            currentWaveNumber = nextWaveNumber;
             totalWaves = Mathf.Max(0, totalWaveCount);
         }
 
@@ -114,6 +124,7 @@ namespace LastStand.Stats
             }
 
             kills++;
+            enemiesDefeatedThisWave++;
             Log($"Enemy defeated. Kills: {kills}, Score: {score}.");
         }
 

@@ -45,6 +45,8 @@ This prevents duplicate score/kills if a lifecycle event is reported more than o
 - enemies alive
 - enemies spawned this wave
 - total enemies this wave
+- enemies defeated this wave
+- enemies remaining this wave
 - survival time
 
 ## Scoring Table
@@ -76,6 +78,17 @@ The user also manually confirmed after Task 11 that normal combat kills allow Wa
 `LastStandStatsManager` is now displayed through `LastStandHudController` in `LS_Arena_01`. The HUD shows wave, enemy count, kills, score, survival time, FPS, player health when readable, and objective text while keeping the stats logic separate from UI presentation.
 
 Runtime validation confirmed the HUD read Wave 1 stats (`1 / 5`, `2 / 4` enemies), survival/FPS values, player health (`400 / 400`), and updated kills/score to `1` and `100` after a defeat event.
+
+## Task 22B Enemy Remaining Semantics
+`LastStandStatsManager` now tracks `EnemiesDefeatedThisWave` and exposes `EnemiesRemainingThisWave`.
+
+The remaining count is calculated as:
+
+`max(0, enemiesTotalThisWave - enemiesDefeatedThisWave)`
+
+This keeps internal alive/spawned counts available while giving the HUD a clearer wave-progress value. The defeated counter resets when the active wave number changes and increments only when `RegisterEnemyDefeated` successfully counts a defeat.
+
+Runtime validation confirmed Wave 1 showed `Enemies Remaining: 3 / 3` at the start, then `Enemies Remaining: 2 / 3` after one runtime defeat/removal proxy.
 
 ## Task 14 Victory Integration
 `GameFlowManager` can call `LastStandStatsManager.EndRun()` when extraction is completed. This allows survival time to continue after the final wave is cleared and stop when the player actually reaches extraction.
