@@ -125,3 +125,8 @@ Move into video/release preparation. The project has enough implemented systems 
 JU TPS/JUTPS Addons were audited for minimap, radar, compass, blip, and UI map assets. No ready-made minimap/radar system was found. Related assets such as `AI Alert Indicator.prefab`, `JU_AiAlert.cs`, `InfoIcon.prefab`, and hit marker effects are useful as world-space feedback or hit UI, but they do not provide player/enemy map tracking or runtime-spawned enemy minimap support.
 
 Recommendation: postpone minimap work and avoid a late custom minimap system before submission. If time remains, a simpler extraction/objective marker is lower risk than a full minimap.
+
+## Task 23A Revive Feasibility Note
+A revive-current-wave system is feasible but medium-to-high risk because it touches wave reset, enemy cleanup, JU TPS player resurrection, stats timing, death monitoring, and end-screen UI. The safest design would restart the current wave, preserve score/kills/time, consume one of five revives, clear spawned enemies without defeat reporting or drops, restore the player through JU TPS resurrection behaviour, and move the player back to `Player_Start`.
+
+Recommendation: implement only if there is enough time for careful hands-on validation. If time is tight, keep the existing failure/restart flow for submission.

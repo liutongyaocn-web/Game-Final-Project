@@ -664,3 +664,14 @@
 
 ## Next Planned Task
 - Continue video/release preparation, or add only a low-risk objective/extraction marker if visual navigation polish is still desired.
+
+## 2026-05-10 02:35 +01:00 - Task 23A Revive Current Wave Feasibility Audit
+- Inspected `WaveManager`, `GameFlowManager`, `PlayerDeathMonitor`, `EndScreenController`, `LastStandStatsManager`, `PlayerHealthReader`, `EnemyLifecycleReporter`, and `SpawnDirector`.
+- Inspected JU TPS health/death reset support in `JUHealth`, `JUCharacterControllerCore.RessurectCharacter()`, and `SceneController.RespawnPlayer()`.
+- Confirmed `Player_Start` and `_Systems/Spawned_Enemies` exist in `LS_Arena_01`.
+- Determined that revive is feasible, but requires coordinated code changes rather than a UI-only patch.
+- Identified key risks: enemy cleanup currently reports defeats/drops, player health restore must reset JU TPS death/ragdoll/controller state, stats need resume support, and PlayerDeathMonitor must be reset after revive.
+- Documentation-only update; no scripts, scenes, prefabs, ProjectSettings, Packages, or third-party assets were modified.
+
+## Next Planned Task
+- Decide whether to implement the simplified revive-current-wave flow or postpone it and proceed with final video/release preparation.

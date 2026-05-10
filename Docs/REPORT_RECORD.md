@@ -315,3 +315,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - No ready-made minimap/radar asset was found.
 - Related alert/icon assets exist, but they do not provide player/enemy minimap tracking or runtime-spawn support.
 - The safest submission recommendation is to rely on the existing HUD and postpone any full minimap to a later project-owned task.
+
+## Task 23A Revive Current Wave Feasibility Audit
+- A revive-current-wave system was audited before implementation.
+- The feature is technically feasible, but it is not a small UI-only change.
+- Safe implementation requires current-wave restart support, cleanup suppression for spawned enemies, JU TPS-compatible player resurrection, stats timer resume support, death-monitor reset, and end-screen revive controls.
+- Recommendation is to implement a simplified version only if enough hands-on validation time remains.
