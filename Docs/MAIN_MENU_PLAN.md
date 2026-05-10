@@ -112,6 +112,18 @@ After adding `LS_MainMenu`, `LS_Arena_01` still had the JU TPS pause menu config
 
 The gameplay scene instance was updated so `_UISetup/UI_JUTPS_Default/Pause Screen` has `JU_UIPause.MainMenuScene = LS_MainMenu`. This preserves the Last Stand main menu start flow while keeping the JU TPS pause menu pointed at the correct project-owned menu scene.
 
+## Task 22D-R Return Clickability Fix
+`MainMenuController` now resets menu input state whenever `LS_MainMenu` loads. This protects the menu from inherited gameplay/pause state after returning from the JU TPS pause menu.
+
+Reset behaviour:
+
+- `Time.timeScale = 1`
+- cursor unlocked
+- cursor visible
+- current EventSystem selected object cleared
+
+No scene changes were needed for this fix.
+
 ## Deliberately Not Implemented
 - Save system.
 - Settings menu.

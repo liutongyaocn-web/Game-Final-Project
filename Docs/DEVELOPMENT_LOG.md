@@ -643,3 +643,14 @@
 
 ## Next Planned Task
 - Manually confirm `Esc` opens the JU TPS pause UI and its Menu button returns to `LS_MainMenu`, then continue final video/demo preparation.
+
+## 2026-05-10 01:25 +01:00 - Task 22D-R Main Menu Return Clickability
+- Fixed the issue where `LS_MainMenu` was visible but not clickable after returning from the JU TPS pause menu.
+- Updated `MainMenuController` to reset menu state in `Awake`.
+- Reset now restores time scale, unlocks/shows cursor, and clears the current EventSystem selected object.
+- Confirmed `LS_MainMenu` has one EventSystem and the controller reset toggles are enabled.
+- Direct menu Play Mode validation reported 0 red Console errors.
+- No scene, JU TPS source, Synty asset, gameplay system, Build Settings, ProjectSettings, or Package changes were made.
+
+## Next Planned Task
+- Manually confirm the full pause menu return loop: Esc -> Menu -> LS_MainMenu -> Start Game.

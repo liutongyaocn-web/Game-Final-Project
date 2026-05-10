@@ -1,5 +1,6 @@
 // Initially generated with Codex assistance and intended for student review/modification.
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,10 +14,14 @@ namespace LastStand.UI
         [SerializeField] private Button controlsButton;
         [SerializeField] private Button closeControlsButton;
         [SerializeField] private Button quitButton;
+        [SerializeField] private bool resetCursorOnStart = true;
+        [SerializeField] private bool resetTimeScaleOnStart = true;
+        [SerializeField] private bool clearSelectedUiOnStart = true;
         [SerializeField] private bool logMenuEvents;
 
         private void Awake()
         {
+            ResetMenuState();
             HookButtons();
             SetControlsVisible(false);
         }
@@ -100,6 +105,25 @@ namespace LastStand.UI
             {
                 quitButton.onClick.RemoveListener(QuitGame);
                 quitButton.onClick.AddListener(QuitGame);
+            }
+        }
+
+        private void ResetMenuState()
+        {
+            if (resetTimeScaleOnStart)
+            {
+                Time.timeScale = 1f;
+            }
+
+            if (resetCursorOnStart)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+
+            if (clearSelectedUiOnStart && EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
             }
         }
 

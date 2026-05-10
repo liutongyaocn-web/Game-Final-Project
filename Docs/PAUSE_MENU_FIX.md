@@ -74,6 +74,11 @@ MCP could not physically press `Esc` or click the JU TPS pause menu buttons in t
 - The JU TPS pause menu's Menu button returns to `LS_MainMenu`.
 - No red errors appear after returning to the menu.
 
+## Task 22D-R Menu Return Clickability
+Manual testing confirmed the JU TPS pause menu can return to `LS_MainMenu`, but the menu was visible and not clickable afterward. This was treated as inherited input/cursor state rather than a JU TPS source issue.
+
+`MainMenuController` now resets cursor lock, cursor visibility, time scale, and EventSystem selection on menu load. This should make the menu clickable whether opened directly or loaded from the JU TPS pause menu.
+
 ## Stutter / Performance Notes
 No duplicate menu UI, duplicate EventSystem, duplicate AudioListener, or persistent menu systems were found in direct gameplay Play Mode. That makes the main-menu scene persistence unlikely as the stutter cause.
 

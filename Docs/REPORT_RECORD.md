@@ -305,3 +305,7 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The JU TPS pause menu scene target in `LS_Arena_01` was updated from the old demo `Menu` scene to `LS_MainMenu`.
 - This restores consistency between the project-owned main menu and the gameplay pause menu flow.
 - JU TPS source assets were not modified.
+
+## Task 22D-R Main Menu Return Clickability
+- `MainMenuController` now resets time scale, cursor visibility/lock state, and EventSystem selection whenever the main menu loads.
+- This makes the menu robust when reached from the JU TPS pause menu after gameplay.
