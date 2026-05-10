@@ -309,3 +309,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 ## Task 22D-R Main Menu Return Clickability
 - `MainMenuController` now resets time scale, cursor visibility/lock state, and EventSystem selection whenever the main menu loads.
 - This makes the menu robust when reached from the JU TPS pause menu after gameplay.
+
+## Task 22C Minimap / Radar Availability Audit
+- JU TPS and JUTPS Addons were audited for an existing minimap/radar system.
+- No ready-made minimap/radar asset was found.
+- Related alert/icon assets exist, but they do not provide player/enemy minimap tracking or runtime-spawn support.
+- The safest submission recommendation is to rely on the existing HUD and postpone any full minimap to a later project-owned task.

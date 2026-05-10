@@ -654,3 +654,13 @@
 
 ## Next Planned Task
 - Manually confirm the full pause menu return loop: Esc -> Menu -> LS_MainMenu -> Start Game.
+
+## 2026-05-10 02:05 +01:00 - Task 22C Minimap / Radar Availability Audit
+- Searched JU TPS, JUTPS Addons, and Last Stand project-owned folders for minimap, radar, compass, blip, marker, map, and navigation terms.
+- Inspected candidate related assets including `AI Alert Indicator.prefab`, `JU_AiAlert.cs`, `InfoIcon.prefab`, and `HitMarkerEffect.cs`.
+- Found no ready-made JU TPS/JUTPS Addons minimap or radar system.
+- Documented that a full minimap would require a new project-owned camera/render texture/layer/blip/runtime-spawn tracking system and is not recommended before submission.
+- Documentation-only update; no scripts, scenes, prefabs, ProjectSettings, Packages, JU TPS source assets, JUTPS Addons assets, or Synty assets were modified.
+
+## Next Planned Task
+- Continue video/release preparation, or add only a low-risk objective/extraction marker if visual navigation polish is still desired.

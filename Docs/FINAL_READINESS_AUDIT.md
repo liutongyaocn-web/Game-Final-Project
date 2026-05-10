@@ -63,6 +63,7 @@ The remaining issues are mostly validation, balance feel, and presentation polis
 ## Polish Only If Time Permits
 - Improve HUD visual styling and spacing.
 - Add a clearer extraction marker visual.
+- Do not add a full minimap before submission unless time is abundant; Task 22C found no ready-made JU TPS/JUTPS Addons minimap or radar system.
 - Smooth any repeatable NavMesh stuck point on the planned demo path.
 - Run one full 5-wave clear and confirm extraction trigger.
 - Confirm victory-state `R` restart.
@@ -119,3 +120,8 @@ The remaining issues are mostly validation, balance feel, and presentation polis
 
 ## Final Recommendation
 Move into video/release preparation. The project has enough implemented systems and evidence for a strong vertical slice. The best use of remaining time is rehearsing a reliable demo route, documenting asset delivery expectations, and lightly polishing presentation only where it improves clarity.
+
+## Task 22C Minimap Audit Note
+JU TPS/JUTPS Addons were audited for minimap, radar, compass, blip, and UI map assets. No ready-made minimap/radar system was found. Related assets such as `AI Alert Indicator.prefab`, `JU_AiAlert.cs`, `InfoIcon.prefab`, and hit marker effects are useful as world-space feedback or hit UI, but they do not provide player/enemy map tracking or runtime-spawned enemy minimap support.
+
+Recommendation: postpone minimap work and avoid a late custom minimap system before submission. If time remains, a simpler extraction/objective marker is lower risk than a full minimap.

@@ -18,6 +18,7 @@
 ## Final Readiness Notes
 - Completed systems now cover the required vertical slice: player foundation, arena, AI enemies, wave spawning, stats, HUD, pickups, win/fail state, and restart foundation.
 - The project now also has a project-owned main menu scene with controls information and scene-loading setup.
+- Task 22C found no ready-made JU TPS/JUTPS Addons minimap or radar system; the current HUD remains the recommended UI evidence, with minimap work postponed to avoid late custom-system risk.
 - Remaining risks are acceptable for submission if documented and demonstrated carefully: full Wave 5 extraction validation, victory-state restart, ranged feel, possible NavMesh stuck spots, plain HUD visuals, and third-party asset delivery.
 - Recommended evidence priority is now video/demo clarity rather than major new implementation.
 
