@@ -327,3 +327,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - A dark translucent stats panel and objective banner were added.
 - Existing gameplay stat logic was preserved.
 - The polished HUD better supports final video and live-demo explanation of wave progress, health, kills, score, survival time, FPS, and objective state.
+
+## Task 24R Compact HUD Fix
+- The HUD polish was corrected after playtest feedback so the stats panel and objective banner are compact enough for normal play.
+- Font sizes and panel opacity were reduced while preserving all existing gameplay stat logic.
+- A red `UnityEditor.EditorStyles.get_toolbarButtonRight` stack trace was investigated and documented as Unity Editor Inspector/UIElements noise, not a Last Stand gameplay/input exception.

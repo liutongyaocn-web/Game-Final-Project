@@ -686,3 +686,15 @@
 
 ## Next Planned Task
 - Continue final video/release preparation and perform a quick human visual pass on HUD readability at the target recording resolution.
+
+## 2026-05-10 03:45 +01:00 - Task 24R Compact HUD Fix and Console Investigation
+- Reduced the Task 24 HUD polish after playtest feedback showed the first version was too large.
+- Shrank `HUD_StatsPanel` and `HUD_ObjectivePanel`.
+- Reduced stat/objective font sizes while preserving all existing HUD controller references.
+- Investigated the reported red Console stack trace.
+- Found the stack trace references Unity Editor Inspector/UIElements internals (`UnityEditor.EditorStyles.get_toolbarButtonRight`, `UnityEditor.PropertyEditor`, and `UnityEditor.InspectorWindow`) rather than Last Stand gameplay scripts.
+- Filtered Console checks for `_LastStand`, `LastStand`, and `Input` returned 0 red entries.
+- No gameplay logic, scripts, enemy/wave/spawn systems, Build Settings, JU TPS source assets, or Synty assets were changed.
+
+## Next Planned Task
+- Manual visual/input pass at the final recording resolution, then continue video/release preparation.

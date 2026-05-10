@@ -45,3 +45,8 @@ The Unity screenshot tool did not clearly composite the Screen Space Overlay HUD
 
 ## Coursework/Video Relevance
 The HUD now presents Coursework002 UI/statistics evidence more clearly for the final video and live demo. Wave, enemies remaining, health, kills, score, time, FPS, and objective text are easier to read without adding new systems or blocking the player view.
+
+## Task 24R Compact HUD Fix
+The first HUD polish pass was too large in practice. Task 24R reduced the stats panel, objective banner, and font sizes so the HUD remains readable without dominating the gameplay view.
+
+The Console issue reported during playtesting was investigated. The red stack trace referenced Unity Editor UI internals such as `UnityEditor.EditorStyles.get_toolbarButtonRight`, `UnityEditor.PropertyEditor`, and `UnityEditor.InspectorWindow`. Filters for `_LastStand`, `LastStand`, and `Input` returned 0 red entries, so this was documented as Editor Inspector/UIElements tooling noise rather than a Last Stand gameplay/input exception.

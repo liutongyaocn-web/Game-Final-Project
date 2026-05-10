@@ -59,6 +59,21 @@ Changes:
 
 This keeps the HUD readable for gameplay and clearer for video evidence while leaving JU TPS default UI active.
 
+## Task 24R Compact HUD Fix
+The Task 24 HUD panels were reduced after playtest feedback because the first polish pass blocked too much of the view.
+
+Compact layout:
+- Stats panel reduced to roughly `360 x 218`.
+- Objective banner reduced to roughly `560 x 46`.
+- Core stat fonts reduced into the `19-22` range.
+- FPS reduced to font size `15`.
+- Objective text reduced to font size `24`.
+- Background opacity was lowered so the HUD remains readable but less visually heavy.
+
+No HUD controller logic was changed. The existing `LastStandHudController` references remain intact.
+
+Console investigation found the reported red stack trace came from Unity Editor Inspector/UIElements internals, not `_LastStand` gameplay scripts or old `UnityEngine.Input` usage.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 
