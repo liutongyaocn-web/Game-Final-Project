@@ -806,3 +806,14 @@
 
 ## Next Planned Task
 - Record the final demo using `Docs/VIDEO_DEMO_SCRIPT.md`, then create the final GitHub release/submission package.
+
+## 2026-05-10 22:50 +01:00 - Task 26 Release and Delivery Checklist
+- Created `Docs/RELEASE_AND_DELIVERY_CHECKLIST.md`.
+- Documented the GitHub repository, `main` branch, latest checked commit, final scenes, and final validation checklist.
+- Recommended GitHub release tag `v1.0-coursework002` and title `Last Stand Coursework002 Final Build`.
+- Documented build/package delivery options, third-party asset dependency notes, video upload checks, final PDF contents, known limitations, and final pre-submission checklist.
+- Updated `README.md` with final scene flow, implemented systems, release target, and references to the delivery checklist/video script.
+- This was a docs-only task; no gameplay scripts, scenes, prefabs, assets, ProjectSettings, Packages, or third-party source folders were changed.
+
+## Next Planned Task
+- Create the GitHub release `v1.0-coursework002`, record/upload the final video from that release version, and prepare the final PDF submission.

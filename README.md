@@ -14,19 +14,34 @@ JU TPS is the gameplay foundation during core development. POLYGON Apocalypse is
 
 See `Docs/JUTPS_INTEGRATION_GUIDE.md` for the detailed rules future tasks should follow.
 
-The main custom scene planned for the final vertical slice is:
+The final scene flow is:
 
+- `Assets/_LastStand/Scenes/LS_MainMenu.unity`
 - `Assets/_LastStand/Scenes/LS_Arena_01.unity`
 
-## Planned Custom Systems
+## Implemented Custom Systems
 
 - `GameFlowManager`
 - `WaveManager`
 - `SpawnDirector`
-- `StatsManager`
-- `HUDPresenter`
-- Pickup system
-- Enemy integration/reporting
+- `LastStandStatsManager`
+- `LastStandHudController`
+- `EndScreenController`
+- `EnemyTargetBinder`
+- `EnemyLifecycleReporter`
+- `EnemyDeathDropper`
+- `ExtractionObjective`
+- `ExtractionMarkerController`
+
+## Final Release Target
+
+Recommended final release:
+
+- Tag: `v1.0-coursework002`
+- Title: `Last Stand Coursework002 Final Build`
+- Video length target: 9-11 minutes, maximum 12 minutes.
+- Final delivery checklist: `Docs/RELEASE_AND_DELIVERY_CHECKLIST.md`
+- Video script: `Docs/VIDEO_DEMO_SCRIPT.md`
 
 ## Documentation
 

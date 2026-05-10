@@ -378,3 +378,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Created the final Coursework002 video demo script and recording plan.
 - The plan targets a 9-11 minute video and covers story, menu flow, combat, HUD/statistics, AI, waves, pickups, win/fail states, code evidence, GitHub evidence, and external asset attribution.
 - A backup extraction/victory demonstration route is documented in case a full Wave 5 run takes too long during recording.
+
+## Task 26 Release and Delivery Checklist
+- Created the final release and delivery checklist.
+- Recommended release tag: `v1.0-coursework002`.
+- Recommended release title: `Last Stand Coursework002 Final Build`.
+- Documented final validation checks, build/package options, asset attribution, video upload checks, final PDF contents, and known limitations.

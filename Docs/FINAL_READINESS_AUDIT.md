@@ -169,3 +169,18 @@ The plan covers:
 - code, GitHub, and external asset evidence
 
 It also includes a backup route for demonstrating extraction through the debug path if a full Wave 5 run takes too long during recording.
+
+## Release and Delivery Checklist Note
+`Docs/RELEASE_AND_DELIVERY_CHECKLIST.md` now records the final delivery process:
+- GitHub repository and branch
+- recommended release tag `v1.0-coursework002`
+- release title `Last Stand Coursework002 Final Build`
+- final scene flow
+- final validation checklist
+- build/package delivery options
+- asset attribution
+- video upload checks
+- final PDF contents
+- known limitations
+
+The recommended submission route is to create the GitHub release first, record/upload the final video from that release version, then submit a PDF containing the GitHub repository link, release link, and video link.
