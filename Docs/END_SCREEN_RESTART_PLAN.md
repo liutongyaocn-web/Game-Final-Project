@@ -70,6 +70,18 @@ Before saving:
 ## Task 22A Main Menu Relationship
 `LS_MainMenu.unity` now provides the initial start flow, while the end screen remains the post-run restart layer inside `LS_Arena_01`. The two UI layers are separate: the menu starts a run, and the end screen restarts the active gameplay scene after victory or failure.
 
+## Task 24W End Screen Layout Cleanup
+The end screen was repositioned/restyled after Full HD review found it too close to the bottom-right JU TPS weapon UI.
+
+Current layout:
+- `EndScreen_Panel` is centred with an approximate size of `620 x 320`.
+- `Title_Text`, `Subtitle_Text`, `Stats_Text`, and `Restart_Text` use centred pivots/positions.
+- Failure title remains `You Died`.
+- Victory title remains `Extraction Complete`.
+- Restart prompt remains `Press R to Restart`.
+
+`EndScreenController` now leaves the restart prompt to the dedicated `Restart_Text` object instead of duplicating it inside the stats block.
+
 ## Deliberately Not Implemented
 - Pause menu.
 - Settings menu.

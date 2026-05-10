@@ -115,14 +115,13 @@ namespace LastStand.UI
         {
             if (statsManager == null)
             {
-                return "Kills: -\nScore: -\nTime: --:--\nWave: - / -\n\nPress R to Restart";
+                return "Kills: -\nScore: -\nTime: --:--\nWave: - / -";
             }
 
             return $"Kills: {statsManager.Kills}\n"
                 + $"Score: {statsManager.Score}\n"
                 + $"Time: {statsManager.FormattedSurvivalTime}\n"
-                + $"Wave: {statsManager.CurrentWaveNumber} / {statsManager.TotalWaves}\n\n"
-                + "Press R to Restart";
+                + $"Wave: {statsManager.CurrentWaveNumber} / {statsManager.TotalWaves}";
         }
 
         private void HookRestartButton()

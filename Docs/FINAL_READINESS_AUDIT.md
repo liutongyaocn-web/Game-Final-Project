@@ -133,3 +133,8 @@ Recommendation: implement only if there is enough time for careful hands-on vali
 
 ## Task 24 HUD Polish Note
 The in-game HUD has been lightly polished for readability. The left stats are now grouped inside a translucent dark panel, the objective is shown in a top-centre translucent banner, and text hierarchy/colours make Wave, Enemies Remaining, Health, and Objective easier to read. No gameplay logic or HUD data logic changed.
+
+## Task 24W UI Cleanup Note
+The custom Last Stand HUD FPS line was removed because the existing bottom-left FPS overlay already provides that data. This reduces HUD clutter before recording.
+
+The end screen was also centred and resized so `You Died` and `Extraction Complete` states are clearer and no longer sit over the JU TPS weapon UI. Failed/victory visual checks and `R` restart from both states should be included in the final manual recording rehearsal.

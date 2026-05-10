@@ -348,3 +348,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The visible HUD background rectangles were removed.
 - Compact text remains visible without the dark stats/objective panels.
 - This further reduces screen obstruction for recording and normal play.
+
+## Task 24W HUD and End Screen Cleanup
+- Removed the custom Last Stand HUD FPS line because another FPS overlay already exists.
+- Centred and resized the end-screen failure/victory layout so it no longer overlaps the JU TPS weapon UI.
+- Kept the restart prompt visible and kept gameplay/stat logic unchanged.

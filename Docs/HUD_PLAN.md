@@ -117,6 +117,16 @@ Implementation:
 
 This further reduces screen obstruction while preserving the compact Full HD stat layout.
 
+## Task 24W Duplicate FPS Removal
+The custom Last Stand HUD no longer displays its own FPS line because an existing bottom-left FPS overlay already shows that information.
+
+Current custom HUD stat block:
+- `Wave 1/5    Enemies 3/3`
+- `HP 400/400    Kills 0`
+- `Score 0    Time 00:09`
+
+The bottom-left FPS display is untouched. End-screen layout was also moved into a clearer centred presentation so failure/victory messaging does not overlap the JU TPS weapon UI.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 

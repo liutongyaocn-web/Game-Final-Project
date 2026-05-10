@@ -735,3 +735,15 @@
 
 ## Next Planned Task
 - Manual Full HD Game view pass to confirm HUD readability without backing panels.
+
+## 2026-05-10 05:05 +01:00 - Task 24W HUD FPS Removal and End Screen Layout
+- Removed the duplicate FPS line from the custom Last Stand HUD because the project already has a bottom-left FPS overlay.
+- Disabled `HUD_FPSText` in `LS_Arena_01`.
+- Updated `LastStandHudController` to keep the custom FPS text blank.
+- Repositioned and resized the EndScreen panel/text layout to be centred and avoid the JU TPS weapon UI.
+- Removed duplicate `Press R to Restart` output from the stats text; the dedicated restart prompt remains.
+- No gameplay logic, stats calculations, enemy/wave/spawn systems, pickups, GameFlow logic, JU TPS source assets, Synty assets, or Build Settings were changed.
+- Unity MCP had no active Unity session, so failed/victory visual validation remains manual.
+
+## Next Planned Task
+- Manually test failed and victory end screens in Full HD, including `R` restart from both states before final recording.

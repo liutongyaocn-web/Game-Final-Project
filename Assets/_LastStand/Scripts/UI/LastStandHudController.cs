@@ -101,7 +101,7 @@ namespace LastStand.UI
                 SetText(timeText, string.Empty);
             }
 
-            SetText(fpsText, fpsCounter != null ? $"FPS: {Mathf.RoundToInt(fpsCounter.CurrentFps)}" : "FPS: -");
+            SetText(fpsText, string.Empty);
             SetText(objectiveText, $"Objective: {GetObjectiveText()}");
         }
 

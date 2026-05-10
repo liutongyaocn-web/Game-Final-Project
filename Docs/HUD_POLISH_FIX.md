@@ -111,3 +111,10 @@ Affected objects:
 The panel GameObjects and RectTransforms were kept so the compact text layout remains stable. No text objects were deleted and no `LastStandHudController` references were changed.
 
 Unity MCP still had no active Unity session, so Play Mode validation remains a manual follow-up. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace remains editor UI noise, not a Last Stand gameplay exception.
+
+## Task 24W FPS and End Screen Cleanup
+The custom Last Stand HUD FPS line was removed because an existing bottom-left FPS display already covers that information. The compact top-left Last Stand HUD now focuses on wave, enemies, health, kills, score, and time.
+
+End-screen layout was adjusted so the death/victory panel is centred and clear instead of sitting near the bottom-right JU TPS weapon UI. The panel RectTransform now uses a centred pivot, the panel size is approximately `620 x 320`, and the title/subtitle/stats/restart prompt text objects use smaller centred RectTransforms.
+
+`EndScreenController` was also cleaned up so the stats text no longer duplicates `Press R to Restart`; the separate restart prompt remains visible. Unity MCP still had no active Unity session during this task, so failed/victory visual validation and `R` restart checks remain a manual follow-up.
