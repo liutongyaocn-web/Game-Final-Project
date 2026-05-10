@@ -698,3 +698,15 @@
 
 ## Next Planned Task
 - Manual visual/input pass at the final recording resolution, then continue video/release preparation.
+
+## 2026-05-10 04:05 +01:00 - Task 24S Minimal HUD Conversion
+- Converted the HUD to a smaller, minimally obstructive layout after further feedback.
+- Reduced `HUD_StatsPanel` to roughly `286 x 152`.
+- Reduced `HUD_ObjectivePanel` to roughly `460 x 32`.
+- Lowered panel alpha to around `0.22-0.24`.
+- Reduced stat fonts to `14-16`, FPS to `11`, and objective text to `17`.
+- Kept `UI_JUTPS_Default`, `EndScreen`, `LastStandHudController`, gameplay logic, stats logic, wave logic, enemy logic, and Build Settings unchanged.
+- Unity MCP had no active Unity session, so final Play Mode validation is a manual follow-up.
+
+## Next Planned Task
+- Open `LS_Arena_01`, confirm Wave 1 auto-start and check the minimal HUD in Game view at recording resolution.

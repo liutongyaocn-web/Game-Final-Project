@@ -332,3 +332,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The HUD polish was corrected after playtest feedback so the stats panel and objective banner are compact enough for normal play.
 - Font sizes and panel opacity were reduced while preserving all existing gameplay stat logic.
 - A red `UnityEditor.EditorStyles.get_toolbarButtonRight` stack trace was investigated and documented as Unity Editor Inspector/UIElements noise, not a Last Stand gameplay/input exception.
+
+## Task 24S Minimal HUD Conversion
+- The HUD was reduced again into a minimal top-left stats block and small top-centre objective strip.
+- Large presentation panels were replaced with low-alpha backing panels to avoid blocking combat view.
+- No scripts or gameplay systems were changed.

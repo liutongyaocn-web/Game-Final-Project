@@ -63,3 +63,21 @@ MCP could not simulate real WASD/mouse input in the Game view, so player-facing 
 - The compact HUD should be checked once at the final recording resolution.
 - The HUD is intentionally simple and readable rather than highly styled.
 - No gameplay logic or HUD controller script changes were made.
+
+## Task 24S Minimal HUD Conversion
+Task 24R was still too visually heavy, so the HUD was converted to a smaller minimal layout.
+
+Minimal layout changes:
+- `HUD_StatsPanel` reduced to approximately `286 x 152`.
+- `HUD_ObjectivePanel` reduced to approximately `460 x 32`.
+- Stats panel alpha reduced to `0.24`.
+- Objective panel alpha reduced to `0.22`.
+- Wave and Enemies Remaining text reduced to font size `16`.
+- Health text reduced to font size `15`.
+- Kills, Score, and Time reduced to font size `14`.
+- FPS reduced to font size `11`.
+- Objective text reduced to font size `17`.
+
+The large dark panels were not removed entirely because a faint backing panel helps readability over the bright POLYGON city scene, but they are now low-opacity and much smaller.
+
+Unity MCP was not connected during this follow-up, so Play Mode validation must be completed manually. Static scene inspection confirmed the target RectTransform, alpha, and font-size values were applied. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace remains documented as editor UI noise, not a Last Stand gameplay exception.

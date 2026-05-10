@@ -74,6 +74,20 @@ No HUD controller logic was changed. The existing `LastStandHudController` refer
 
 Console investigation found the reported red stack trace came from Unity Editor Inspector/UIElements internals, not `_LastStand` gameplay scripts or old `UnityEngine.Input` usage.
 
+## Task 24S Minimal HUD Conversion
+The HUD was reduced again after further playtest feedback.
+
+Minimal layout:
+- Stats panel: roughly `286 x 152`, top-left.
+- Objective banner: roughly `460 x 32`, top-centre.
+- Panel opacity: low alpha around `0.22-0.24`.
+- Main stat fonts: `15-16`.
+- Secondary stat fonts: `14`.
+- FPS font: `11`.
+- Objective font: `17`.
+
+The large visual treatment from Task 24 was intentionally dialed back. The HUD now prioritizes low obstruction over presentation weight while preserving the same displayed data and `LastStandHudController` references.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 

@@ -50,3 +50,15 @@ The HUD now presents Coursework002 UI/statistics evidence more clearly for the f
 The first HUD polish pass was too large in practice. Task 24R reduced the stats panel, objective banner, and font sizes so the HUD remains readable without dominating the gameplay view.
 
 The Console issue reported during playtesting was investigated. The red stack trace referenced Unity Editor UI internals such as `UnityEditor.EditorStyles.get_toolbarButtonRight`, `UnityEditor.PropertyEditor`, and `UnityEditor.InspectorWindow`. Filters for `_LastStand`, `LastStand`, and `Input` returned 0 red entries, so this was documented as Editor Inspector/UIElements tooling noise rather than a Last Stand gameplay/input exception.
+
+## Task 24S Minimal HUD Conversion
+Task 24S converted the HUD from the previous compact-polish version into a minimal overlay:
+- Stats panel is now roughly `286 x 152`.
+- Objective panel is now roughly `460 x 32`.
+- Background alpha is low, around `0.22-0.24`.
+- Important stat text is now in the `15-16` range.
+- Secondary stat text is now `14`.
+- FPS is now `11`.
+- Objective text is now `17`.
+
+This keeps the HUD readable while reducing obstruction during combat. No scripts or gameplay logic were changed.
