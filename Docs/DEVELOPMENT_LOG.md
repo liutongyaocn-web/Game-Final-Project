@@ -817,3 +817,15 @@
 
 ## Next Planned Task
 - Create the GitHub release `v1.0-coursework002`, record/upload the final video from that release version, and prepare the final PDF submission.
+
+## 2026-05-10 23:10 +01:00 - Task 25R Video Script Marking Alignment
+- Updated `Docs/VIDEO_DEMO_SCRIPT.md` for stronger Coursework002 marking alignment.
+- Added a dedicated animation section covering player movement, aiming/shooting/reload, enemy chase/attack, ranged attack, and death behaviour.
+- Added explicit source-page shots for JU TPS, POLYGON Apocalypse/Synty, and Unity AI Navigation.
+- Strengthened the HUD/statistics section with Unity Canvas, Canvas Scaler, anchored layout, Full HD-style reference resolution, and PC 16:9 scope.
+- Updated GitHub wording to show an actual release version placeholder `[FINAL_RELEASE_TAG]` rather than future-tense release language.
+- Added an assessment coverage reminder table and expanded Q&A preparation.
+- This was a docs-only task; no scenes, scripts, prefabs, assets, ProjectSettings, Packages, or gameplay systems were changed.
+
+## Next Planned Task
+- Replace `[FINAL_RELEASE_TAG]` with the final release tag after release creation, then record the demo from that release version.

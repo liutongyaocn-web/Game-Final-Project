@@ -170,6 +170,17 @@ The plan covers:
 
 It also includes a backup route for demonstrating extraction through the debug path if a full Wave 5 run takes too long during recording.
 
+## Task 25R Marking Alignment Update
+`Docs/VIDEO_DEMO_SCRIPT.md` was strengthened against the Coursework002 marking criteria.
+
+The final recording plan now explicitly includes:
+- a dedicated animation section for player/enemy movement, combat, reload, attack, hit/death behaviour, and JU TPS animation-source evidence
+- UI/statistics explanation with StatsManager, enemies remaining semantics, Unity Canvas, Canvas Scaler, and PC 16:9 screen-size support
+- GitHub release evidence using `[FINAL_RELEASE_TAG]` rather than future-tense release wording
+- external asset source-page shots for JU TPS, POLYGON Apocalypse/Synty, and Unity AI Navigation
+- an assessment coverage reminder table mapping the video shots to marking areas
+- Q&A prompts for animation, screen-size support, third-party assets, postponed minimap/revive work, and release-version evidence
+
 ## Release and Delivery Checklist Note
 `Docs/RELEASE_AND_DELIVERY_CHECKLIST.md` now records the final delivery process:
 - GitHub repository and branch

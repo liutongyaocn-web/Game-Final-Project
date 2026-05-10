@@ -384,3 +384,10 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Recommended release tag: `v1.0-coursework002`.
 - Recommended release title: `Last Stand Coursework002 Final Build`.
 - Documented final validation checks, build/package options, asset attribution, video upload checks, final PDF contents, and known limitations.
+
+## Task 25R Video Script Marking Alignment
+- Improved the final video script to align more directly with Coursework002 marking criteria.
+- Added a dedicated animation segment.
+- Added explicit external asset source-page shots.
+- Added UI/statistics coverage for Canvas Scaler and screen-size support.
+- Updated GitHub evidence wording to show a final release version using `[FINAL_RELEASE_TAG]`.
