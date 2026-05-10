@@ -17,6 +17,7 @@ namespace LastStand.Waves
         [SerializeField] private LastStandStatsManager statsManager;
         [SerializeField] private bool autoStartOnPlay;
         [SerializeField] private float firstWaveDelaySeconds = 2f;
+        [SerializeField] private float failedSpawnRetryDelaySeconds = 1f;
         [SerializeField] private bool logWaveEvents;
 
         private int currentWaveIndex = -1;
@@ -28,6 +29,8 @@ namespace LastStand.Waves
         private readonly Queue<EnemyDefinition> spawnQueue = new();
         private Coroutine waveRoutine;
         private bool hasCompletedAllWaves;
+        private int spawnFailureCountThisWave;
+        [SerializeField] private string lastSpawnFailureReason;
 
         public WaveState State => state;
         public int CurrentWaveNumber => currentWave != null ? currentWave.WaveNumber : 0;
@@ -47,6 +50,9 @@ namespace LastStand.Waves
         public bool IsFinalWave => currentWaveIndex >= 0 && currentWaveIndex == waves.Count - 1;
         public bool ExtractionShouldUnlock => currentWave != null && (currentWave.UnlockExtractionAfterWave || IsFinalWave) && state == WaveState.Completed;
         public bool HasCompletedAllWaves => hasCompletedAllWaves;
+        public int PendingSpawnQueueCount => spawnQueue.Count;
+        public int SpawnFailureCountThisWave => spawnFailureCountThisWave;
+        public string LastSpawnFailureReason => lastSpawnFailureReason;
 
         private void Start()
         {
@@ -93,6 +99,8 @@ namespace LastStand.Waves
             currentWave = null;
             enemiesSpawnedThisWave = 0;
             totalEnemiesToSpawnThisWave = 0;
+            spawnFailureCountThisWave = 0;
+            lastSpawnFailureReason = string.Empty;
             spawnQueue.Clear();
             aliveEnemies.Clear();
             state = WaveState.Idle;
@@ -147,6 +155,8 @@ namespace LastStand.Waves
             }
 
             enemiesSpawnedThisWave = 0;
+            spawnFailureCountThisWave = 0;
+            lastSpawnFailureReason = string.Empty;
             aliveEnemies.Clear();
             BuildSpawnQueue(currentWave);
             totalEnemiesToSpawnThisWave = spawnQueue.Count;
@@ -171,26 +181,41 @@ namespace LastStand.Waves
                     continue;
                 }
 
-                EnemyDefinition enemyDefinition = spawnQueue.Dequeue();
+                EnemyDefinition enemyDefinition = spawnQueue.Peek();
                 GameObject enemy = spawnDirector != null
                     ? spawnDirector.SpawnEnemy(enemyDefinition, currentWave.WaveNumber)
                     : null;
 
                 if (enemy != null)
                 {
+                    spawnQueue.Dequeue();
                     aliveEnemies.Add(enemy);
                     ConfigureLifecycleReporter(enemy);
                     enemiesSpawnedThisWave++;
+                    lastSpawnFailureReason = string.Empty;
                     PublishWaveEnemyCounts();
+
+                    if (spawnQueue.Count > 0)
+                    {
+                        yield return new WaitForSeconds(currentWave.SpawnIntervalSeconds);
+                    }
                 }
                 else
                 {
-                    Log($"Spawn failed for wave {currentWave.WaveNumber}.");
-                }
+                    spawnFailureCountThisWave++;
+                    lastSpawnFailureReason = enemyDefinition != null
+                        ? $"Wave {currentWave.WaveNumber} spawn failed for {enemyDefinition.DisplayName}. Queue item retained for retry."
+                        : $"Wave {currentWave.WaveNumber} spawn failed because queued enemy definition was missing. Queue item retained for retry.";
 
-                if (spawnQueue.Count > 0)
-                {
-                    yield return new WaitForSeconds(currentWave.SpawnIntervalSeconds);
+                    if (spawnFailureCountThisWave == 1 || spawnFailureCountThisWave % 5 == 0)
+                    {
+                        Log(lastSpawnFailureReason);
+                    }
+
+                    float retryDelay = failedSpawnRetryDelaySeconds > 0f
+                        ? failedSpawnRetryDelaySeconds
+                        : currentWave.SpawnIntervalSeconds;
+                    yield return new WaitForSeconds(retryDelay);
                 }
             }
 
@@ -302,6 +327,7 @@ namespace LastStand.Waves
         private void OnValidate()
         {
             firstWaveDelaySeconds = Mathf.Max(0f, firstWaveDelaySeconds);
+            failedSpawnRetryDelaySeconds = Mathf.Max(0.1f, failedSpawnRetryDelaySeconds);
         }
 
         private void Log(string message)

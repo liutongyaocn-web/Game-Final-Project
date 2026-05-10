@@ -15,6 +15,7 @@ namespace LastStand.Spawning
         [SerializeField] private int currentWaveNumber = 1;
         [SerializeField] private bool useNavMeshValidation = true;
         [SerializeField] private float navMeshSampleRadius = 3f;
+        [SerializeField] private float fallbackNavMeshSampleRadius = 6f;
         [SerializeField] private bool avoidSpawningTooCloseToPlayer = true;
         [SerializeField] private bool logSpawnEvents;
 
@@ -104,9 +105,24 @@ namespace LastStand.Spawning
             }
 
             List<LastStandSpawnPoint> filteredPoints = new();
+            List<LastStandSpawnPoint> navMeshFallbackPoints = new();
             foreach (LastStandSpawnPoint point in rolePoints)
             {
                 if (point == null)
+                {
+                    continue;
+                }
+
+                bool hasNavMeshPosition = !useNavMeshValidation || TrySampleNavMesh(point.Position, navMeshSampleRadius, out _);
+                if (!hasNavMeshPosition && useNavMeshValidation && TrySampleNavMesh(point.Position, fallbackNavMeshSampleRadius, out _))
+                {
+                    navMeshFallbackPoints.Add(point);
+                }
+                else if (hasNavMeshPosition)
+                {
+                    navMeshFallbackPoints.Add(point);
+                }
+                else
                 {
                     continue;
                 }
@@ -120,18 +136,19 @@ namespace LastStand.Spawning
                     }
                 }
 
-                if (useNavMeshValidation && !TrySampleNavMesh(point.Position, out _))
-                {
-                    continue;
-                }
-
                 filteredPoints.Add(point);
             }
 
-            List<LastStandSpawnPoint> candidates = filteredPoints.Count > 0 ? filteredPoints : rolePoints;
+            List<LastStandSpawnPoint> candidates = filteredPoints.Count > 0 ? filteredPoints : navMeshFallbackPoints;
+            if (candidates.Count == 0)
+            {
+                Log($"No {spawnRole} spawn points for wave {waveNumber} could be sampled on the NavMesh.");
+                return null;
+            }
+
             if (filteredPoints.Count == 0)
             {
-                Log($"Falling back to unfiltered {spawnRole} spawn points for wave {waveNumber}.");
+                Log($"Falling back to distance-relaxed {spawnRole} spawn points for wave {waveNumber}.");
             }
 
             int index = Random.Range(0, candidates.Count);
@@ -156,7 +173,13 @@ namespace LastStand.Spawning
 
         private Vector3 GetSpawnPosition(LastStandSpawnPoint spawnPoint, out bool navMeshAdjusted)
         {
-            if (useNavMeshValidation && TrySampleNavMesh(spawnPoint.Position, out Vector3 sampledPosition))
+            if (useNavMeshValidation && TrySampleNavMesh(spawnPoint.Position, navMeshSampleRadius, out Vector3 sampledPosition))
+            {
+                navMeshAdjusted = true;
+                return sampledPosition;
+            }
+
+            if (useNavMeshValidation && TrySampleNavMesh(spawnPoint.Position, fallbackNavMeshSampleRadius, out sampledPosition))
             {
                 navMeshAdjusted = true;
                 return sampledPosition;
@@ -166,9 +189,9 @@ namespace LastStand.Spawning
             return spawnPoint.Position;
         }
 
-        private bool TrySampleNavMesh(Vector3 position, out Vector3 sampledPosition)
+        private static bool TrySampleNavMesh(Vector3 position, float sampleRadius, out Vector3 sampledPosition)
         {
-            if (NavMesh.SamplePosition(position, out NavMeshHit hit, navMeshSampleRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(position, out NavMeshHit hit, sampleRadius, NavMesh.AllAreas))
             {
                 sampledPosition = hit.position;
                 return true;
@@ -202,6 +225,7 @@ namespace LastStand.Spawning
             currentWaveNumber = Mathf.Max(1, currentWaveNumber);
             debugSpawnWaveNumber = Mathf.Max(1, debugSpawnWaveNumber);
             navMeshSampleRadius = Mathf.Max(0.1f, navMeshSampleRadius);
+            fallbackNavMeshSampleRadius = Mathf.Max(navMeshSampleRadius, fallbackNavMeshSampleRadius);
         }
 
         private void Log(string message)

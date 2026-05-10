@@ -143,3 +143,8 @@ The end screen was also centred and resized so `You Died` and `Extraction Comple
 The scene-instance `CameraController_JUTPS` was tuned for a more natural final demo view. Normal and fire-mode camera states are slightly higher and farther back, reducing player obstruction while keeping an over-the-shoulder third-person shooter feel.
 
 Manual recording rehearsal should still include mouse-look, aiming, shooting, and enemy visibility checks because MCP cannot fully judge hands-on camera feel.
+
+## Task 25B Wave 4 Stall Fix Note
+WaveManager and SpawnDirector were updated after a manual Wave 4 stall report. Failed spawn attempts no longer consume queued enemies, and SpawnDirector has a role-preserving NavMesh fallback if strict distance filtering blocks all spawn points.
+
+Before recording, manually replay Wave 4 and confirm all 7 enemies resolve and Wave 5 begins.

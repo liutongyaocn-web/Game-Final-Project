@@ -363,3 +363,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The scene-instance JU TPS camera was adjusted for a more natural third-person shooter view.
 - The camera is slightly higher and farther back in normal/fire modes.
 - This improves final demo readability without modifying JU TPS source assets.
+
+## Task 25B Wave 4 Stall Fix
+- Wave spawning was made robust against failed spawn attempts.
+- Failed spawns no longer permanently consume queued enemies.
+- SpawnDirector fallback now keeps role separation while relaxing distance filtering and using a larger NavMesh sample radius.

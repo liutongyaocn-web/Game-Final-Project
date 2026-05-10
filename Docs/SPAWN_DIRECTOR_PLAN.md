@@ -66,6 +66,15 @@ Future `WaveManager` can read a `WaveDefinition`, ask `SpawnDirector` to spawn s
 ## Task 12 Runtime Metadata Integration
 `SpawnDirector` now attaches `SpawnedEnemyRuntimeInfo` to runtime-spawned enemies. The metadata records the source `EnemyDefinition`, wave number, configured score value, and spawn time so `LastStandStatsManager` can award score/kills without hard-coded prefab checks.
 
+## Task 25B Spawn Fallback Fix
+SpawnDirector now uses a safer fallback when normal spawn filtering fails:
+- first tries role-eligible points with player-distance and NavMesh checks
+- if all points fail distance filtering, retries role-eligible points that still sample to NavMesh
+- uses a fallback NavMesh sample radius of `6`
+- does not ignore the requested enemy role
+
+This reduces the chance that a final ranged Wave 4 spawn fails because all ranged points are temporarily too close or slightly outside the primary NavMesh sample radius.
+
 ## Pickup/Drop Design Decision
 - Do not use fixed health/ammo pickup points.
 - Future health/ammo pickups should drop from killed enemies.

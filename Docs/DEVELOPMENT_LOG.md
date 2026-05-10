@@ -772,3 +772,15 @@
 
 ## Next Planned Task
 - Manual camera feel pass: mouse look, aiming, shooting, and final recording composition.
+
+## 2026-05-10 06:20 +01:00 - Task 25B Wave 4 Stall Fix
+- Investigated a manual Wave 4 progression stall where the final enemy did not appear to resolve.
+- Found that `WaveManager` consumed queued enemies before confirming spawn success.
+- Changed `WaveManager` to peek first and dequeue only after `SpawnDirector` returns a valid spawned enemy.
+- Added spawn retry diagnostics for pending queue count, failure count, and last failure reason.
+- Improved `SpawnDirector` fallback so distance-filter failures can retry role-eligible NavMesh-valid points.
+- Script validation and Unity Console checks returned 0 red errors.
+- No gameplay systems, wave balance, Build Settings, JU TPS source assets, JUTPS Addons assets, or Synty assets were changed.
+
+## Next Planned Task
+- Manual replay from Wave 4 into Wave 5 to confirm all 7 Wave 4 enemies resolve.

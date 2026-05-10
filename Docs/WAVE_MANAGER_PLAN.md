@@ -85,6 +85,16 @@ The Last Stand HUD now reads wave and enemy-count state through `LastStandStatsM
 ## Task 14 Final-Wave Completion Signal
 `WaveManager` now exposes `FinalWaveCompleted` and `HasCompletedAllWaves`. When the final wave completes, it signals `GameFlowManager` so extraction can unlock outside the wave system. This keeps wave spawning/progression separate from victory and extraction responsibilities.
 
+## Task 25B Spawn Queue Stall Fix
+WaveManager now treats failed spawn attempts as retryable instead of consuming the queued enemy. It peeks at the next `EnemyDefinition`, calls `SpawnDirector`, and only dequeues/increments spawned count after a valid GameObject is returned.
+
+Diagnostic readouts were added:
+- `PendingSpawnQueueCount`
+- `SpawnFailureCountThisWave`
+- `LastSpawnFailureReason`
+
+This prevents Wave 4 or later waves from permanently losing the final queued enemy if a spawn point selection or NavMesh check fails once.
+
 ## Future Enemy Death Drop Design
 - Do not use fixed pickup points.
 - Health/ammo should drop from killed enemies.
