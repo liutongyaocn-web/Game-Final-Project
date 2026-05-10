@@ -34,7 +34,7 @@ Before release:
 
 ## Release Version
 Recommended GitHub release:
-- Tag: `v1.0-coursework002`
+- Tag: `v1.0.1`
 - Release title: `Last Stand Coursework002 Final Build`
 
 Release notes should include:
@@ -97,17 +97,17 @@ If sharing the Unity project:
 - Confirm the link works in a private/incognito browser.
 - Recommended video length: 9-11 minutes.
 - Maximum video length: 12 minutes.
-- Video should use the release version, recommended tag `v1.0-coursework002`.
+- Video should use release version `v1.0.1`.
 
 ## Final Submission PDF
 The PDF should contain:
 - Student name / ID if required.
 - Game title: `Last Stand`.
 - GitHub repository link: https://github.com/liutongyaocn-web/Game-Final-Project
-- GitHub release link for `v1.0-coursework002`.
+- GitHub release link for `v1.0.1`.
 - Video demo link.
 - Optional playable build link.
-- Short note: "The video demonstration and live demo are based on release v1.0-coursework002."
+- Short note: "The video demonstration and live demo are based on release v1.0.1."
 
 ## Known Limitations
 - HUD is functional and clear but visually simple.
@@ -125,4 +125,4 @@ The PDF should contain:
 - [ ] No local-only paths in submitted PDF.
 - [ ] YouTube/OneDrive permissions are correct.
 - [ ] Release notes mention third-party dependencies.
-- [ ] Demo/video is based on release `v1.0-coursework002`.
+- [ ] Demo/video is based on release `v1.0.1`.

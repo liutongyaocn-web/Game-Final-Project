@@ -176,7 +176,7 @@ It also includes a backup route for demonstrating extraction through the debug p
 The final recording plan now explicitly includes:
 - a dedicated animation section for player/enemy movement, combat, reload, attack, hit/death behaviour, and JU TPS animation-source evidence
 - UI/statistics explanation with StatsManager, enemies remaining semantics, Unity Canvas, Canvas Scaler, and PC 16:9 screen-size support
-- GitHub release evidence using `[FINAL_RELEASE_TAG]` rather than future-tense release wording
+- GitHub release evidence using `v1.0.1` rather than future-tense release wording
 - external asset source-page shots for JU TPS, POLYGON Apocalypse/Synty, and Unity AI Navigation
 - an assessment coverage reminder table mapping the video shots to marking areas
 - Q&A prompts for animation, screen-size support, third-party assets, postponed minimap/revive work, and release-version evidence
@@ -184,7 +184,7 @@ The final recording plan now explicitly includes:
 ## Release and Delivery Checklist Note
 `Docs/RELEASE_AND_DELIVERY_CHECKLIST.md` now records the final delivery process:
 - GitHub repository and branch
-- recommended release tag `v1.0-coursework002`
+- final release tag `v1.0.1`
 - release title `Last Stand Coursework002 Final Build`
 - final scene flow
 - final validation checklist

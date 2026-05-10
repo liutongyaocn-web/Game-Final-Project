@@ -2,7 +2,7 @@
 
 Recommended length: 9-11 minutes. Maximum length: 12 minutes.
 
-The video should be based on the final GitHub release version: `[FINAL_RELEASE_TAG]`.
+The video should be based on the final GitHub release version: `v1.0.1`.
 
 If development continued after `v1.0.0`, create a newer release such as `v1.0.1` before recording, then use that release in the video and final PDF.
 
@@ -239,12 +239,12 @@ Target time: `8:35-9:25`
 
 Narration:
 
-> A GitHub release has been created for final submission, and this video demo is based on that release version: `[FINAL_RELEASE_TAG]`. The repository also shows the staged commit history and development documentation.
+> A GitHub release has been created for final submission, and this video demo is based on that release version: `v1.0.1`. The repository also shows the staged commit history and development documentation.
 
 Show:
 - GitHub repository.
 - GitHub release page.
-- Release tag `[FINAL_RELEASE_TAG]`.
+- Release tag `v1.0.1`.
 - Commit history.
 - Key folders:
   - `Assets/_LastStand/Scripts/AI`
@@ -403,7 +403,7 @@ JU TPS was used for third-person shooter, AI, pickup, and animation foundations.
 No ready-made JU TPS minimap was found, and a custom minimap would be risky late in the project. Revive-current-wave was feasible but touched wave reset, enemy cleanup, player resurrection, stats timing, and end-screen UI, so it was postponed to protect final stability.
 
 ### How does the release version relate to the video?
-The video should be recorded from the final GitHub release version `[FINAL_RELEASE_TAG]`. If any changes are made after that release, create a newer release and update the video/PDF links.
+The video should be recorded from the final GitHub release version `v1.0.1`. If any changes are made after that release, create a newer release and update the video/PDF links.
 
 ### What would I improve with more time?
 I would polish NavMesh edge cases, add a carefully scoped objective/minimap indicator if needed, improve HUD art styling, implement a fully validated revive-current-wave system, and continue balancing enemy difficulty through more playtests.

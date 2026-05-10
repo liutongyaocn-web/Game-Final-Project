@@ -37,7 +37,7 @@ The final scene flow is:
 
 Recommended final release:
 
-- Tag: `v1.0-coursework002`
+- Tag: `v1.0.1`
 - Title: `Last Stand Coursework002 Final Build`
 - Video length target: 9-11 minutes, maximum 12 minutes.
 - Final delivery checklist: `Docs/RELEASE_AND_DELIVERY_CHECKLIST.md`

@@ -381,7 +381,7 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 
 ## Task 26 Release and Delivery Checklist
 - Created the final release and delivery checklist.
-- Recommended release tag: `v1.0-coursework002`.
+- Final release tag: `v1.0.1`.
 - Recommended release title: `Last Stand Coursework002 Final Build`.
 - Documented final validation checks, build/package options, asset attribution, video upload checks, final PDF contents, and known limitations.
 
@@ -390,4 +390,4 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Added a dedicated animation segment.
 - Added explicit external asset source-page shots.
 - Added UI/statistics coverage for Canvas Scaler and screen-size support.
-- Updated GitHub evidence wording to show a final release version using `[FINAL_RELEASE_TAG]`.
+- Updated GitHub evidence wording to show final release version `v1.0.1`.
