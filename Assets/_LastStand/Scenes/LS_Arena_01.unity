@@ -283101,6 +283101,46 @@ PrefabInstance:
       propertyPath: characterTarget
       value: 
       objectReference: {fileID: 781298960}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: NormalCameraState.Distance
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: FireModeCameraState.Distance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: NormalCameraState.UpCameraOffset
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: NormalCameraState.UpTargetOffset
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: FireModeCameraState.UpCameraOffset
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: FireModeCameraState.UpTargetOffset
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: NormalCameraState.RightCameraOffset
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243631560226216736, guid: 3f9896eb08ade7b4ab7b111e294279d4,
+        type: 3}
+      propertyPath: FireModeCameraState.RightCameraOffset
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 3243631560226216737, guid: 3f9896eb08ade7b4ab7b111e294279d4,
         type: 3}
       propertyPath: m_Name

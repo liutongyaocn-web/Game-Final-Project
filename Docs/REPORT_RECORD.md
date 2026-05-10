@@ -358,3 +358,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Enlarged the end-screen layout and added a dark translucent card behind the text.
 - Improved title, subtitle, stats, and restart prompt hierarchy.
 - Regular compact HUD remains unchanged.
+
+## Task 25A Camera Polish
+- The scene-instance JU TPS camera was adjusted for a more natural third-person shooter view.
+- The camera is slightly higher and farther back in normal/fire modes.
+- This improves final demo readability without modifying JU TPS source assets.

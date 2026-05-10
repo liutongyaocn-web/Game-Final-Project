@@ -759,3 +759,16 @@
 
 ## Next Planned Task
 - Manually trigger Failed and Victory screens in Full HD and confirm readability, Console state, and `R` restart.
+
+## 2026-05-10 05:50 +01:00 - Task 25A Camera Polish
+- Adjusted the scene-instance `CameraController_JUTPS` camera settings in `LS_Arena_01`.
+- Increased normal camera distance from `3.0` to `3.6`.
+- Raised normal camera offset from `0.5` to `0.75`.
+- Increased fire-mode camera distance from `1.5` to `2.0`.
+- Raised fire-mode camera offset from `0.5` to `0.7`.
+- Added small target-height offsets for normal and fire modes.
+- Play Mode validation confirmed the camera follows the player and Console returned 0 red errors.
+- No JU TPS source prefabs/scripts, gameplay systems, enemies, waves, HUD systems, or Build Settings were changed.
+
+## Next Planned Task
+- Manual camera feel pass: mouse look, aiming, shooting, and final recording composition.

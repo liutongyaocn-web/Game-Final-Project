@@ -138,3 +138,8 @@ The in-game HUD has been lightly polished for readability. The left stats are no
 The custom Last Stand HUD FPS line was removed because the existing bottom-left FPS overlay already provides that data. This reduces HUD clutter before recording.
 
 The end screen was also centred and resized so `You Died` and `Extraction Complete` states are clearer and no longer sit over the JU TPS weapon UI. Failed/victory visual checks and `R` restart from both states should be included in the final manual recording rehearsal.
+
+## Task 25A Camera Polish Note
+The scene-instance `CameraController_JUTPS` was tuned for a more natural final demo view. Normal and fire-mode camera states are slightly higher and farther back, reducing player obstruction while keeping an over-the-shoulder third-person shooter feel.
+
+Manual recording rehearsal should still include mouse-look, aiming, shooting, and enemy visibility checks because MCP cannot fully judge hands-on camera feel.
