@@ -46,6 +46,19 @@ Meaning:
 
 This is clearer for players than the old `Enemies: alive / total` display because it answers the practical question: how many enemies are left before the current wave can end?
 
+## Task 24 HUD Visual Polish
+The HUD received a light visual polish pass without changing `LastStandHudController` logic.
+
+Changes:
+- Added a translucent dark stats panel behind the left HUD text.
+- Added a translucent dark objective banner behind the objective text.
+- Re-parented the existing text objects under those panels while preserving controller references.
+- Made Wave and Enemies Remaining the most prominent left-side values.
+- Used subtle accent colours for enemies remaining and health.
+- Made FPS smaller and less visually dominant.
+
+This keeps the HUD readable for gameplay and clearer for video evidence while leaving JU TPS default UI active.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 
@@ -54,9 +67,11 @@ The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now 
 - `_UISetup/LastStandHUD`
 - `_UISetup/LastStandHUD/LastStandHUD_Canvas`
 - `_UISetup/LastStandHUD/LastStandHUD_Controller`
+- `_UISetup/LastStandHUD/LastStandHUD_Canvas/HUD_StatsPanel`
+- `_UISetup/LastStandHUD/LastStandHUD_Canvas/HUD_ObjectivePanel`
 - `_UISetup/LastStandHUD/LastStandHUD_Canvas/EndScreen`
 
-The canvas is screen-space overlay with a `CanvasScaler` set to scale with a 1920 x 1080 reference resolution. The stat block is anchored to the top-left, and objective text is placed near the upper center. `UI_JUTPS_Default` remains active underneath this project-owned HUD layer.
+The canvas is screen-space overlay with a `CanvasScaler` set to scale with a 1920 x 1080 reference resolution. The stat block is anchored to the top-left inside a semi-transparent dark panel, and objective text is placed near the upper center inside a matching dark banner. `UI_JUTPS_Default` remains active underneath this project-owned HUD layer.
 
 ## Runtime Validation Result
 Validation temporarily enabled `WaveManager.autoStartOnPlay` and then restored it to false before saving. During Play Mode, live UGUI text components confirmed:

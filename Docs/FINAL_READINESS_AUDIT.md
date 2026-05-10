@@ -51,7 +51,7 @@ This audit records the release-readiness state of Last Stand after the post-paci
 | JU TPS pause `Esc` flow needs manual recheck after scene target fix | Low | Not blocking if direct gameplay remains clean | Yes | Quick to test before recording | Press `Esc`, confirm the JU TPS pause UI opens, then confirm its Menu button returns to `LS_MainMenu`. |
 | Some enemies may get stuck on NavMesh in detailed areas | Medium | Not blocking unless frequent in demo route | Yes | Fix only if a repeatable stuck spot appears in the planned route | Keep combat near validated open areas and spawn routes. |
 | Ranged enemy may still feel strong | Medium | Not blocking | Yes | Tune only if it prevents demo completion | Treat as intended difficulty; show cover/movement and keep ranged count limited. |
-| HUD is readable but plain | Low | Not blocking | Yes | Optional only | Explain HUD values clearly in narration. |
+| HUD still needs final recording-resolution visual check | Low | Not blocking | Yes | Quick visual pass only | Task 24 added a dark stats panel and objective banner; confirm readability at the final capture resolution. |
 | Third-party assets are not committed to public GitHub | Medium | Potential submission/logistics risk | Yes if delivery instructions are clear | Confirm final delivery method before submission | State that the project depends on imported JU TPS/Synty/POLYGON assets and that source-code repo excludes raw third-party folders. |
 | Unity MCP generated red tooling entries during live serialization | Low | Not blocking | Yes | No gameplay fix needed | Avoid live MCP serialization during recording; use Game view/manual play instead. |
 
@@ -130,3 +130,6 @@ Recommendation: postpone minimap work and avoid a late custom minimap system bef
 A revive-current-wave system is feasible but medium-to-high risk because it touches wave reset, enemy cleanup, JU TPS player resurrection, stats timing, death monitoring, and end-screen UI. The safest design would restart the current wave, preserve score/kills/time, consume one of five revives, clear spawned enemies without defeat reporting or drops, restore the player through JU TPS resurrection behaviour, and move the player back to `Player_Start`.
 
 Recommendation: implement only if there is enough time for careful hands-on validation. If time is tight, keep the existing failure/restart flow for submission.
+
+## Task 24 HUD Polish Note
+The in-game HUD has been lightly polished for readability. The left stats are now grouped inside a translucent dark panel, the objective is shown in a top-centre translucent banner, and text hierarchy/colours make Wave, Enemies Remaining, Health, and Objective easier to read. No gameplay logic or HUD data logic changed.

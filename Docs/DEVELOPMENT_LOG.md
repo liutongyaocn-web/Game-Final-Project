@@ -675,3 +675,14 @@
 
 ## Next Planned Task
 - Decide whether to implement the simplified revive-current-wave flow or postpone it and proceed with final video/release preparation.
+
+## 2026-05-10 03:10 +01:00 - Task 24 Light HUD Visual Polish
+- Added a translucent dark stats panel to the top-left Last Stand HUD.
+- Added a translucent dark objective banner to the top-centre HUD.
+- Re-parented the existing Wave, Enemies Remaining, Health, Kills, Score, Time, FPS, and Objective text objects under the new panels while preserving existing HUD controller references.
+- Adjusted text sizes and colours for clearer hierarchy: Wave/Enemies Remaining are most prominent, Health has a green accent, FPS is smaller/subtler, and the objective is centred and larger.
+- Play Mode validation confirmed HUD values still update after auto-start and Console had 0 fresh red errors.
+- No gameplay logic, scripts, wave balance, enemy prefabs, pickups, GameFlow, EndScreen logic, Build Settings, or third-party assets were changed.
+
+## Next Planned Task
+- Continue final video/release preparation and perform a quick human visual pass on HUD readability at the target recording resolution.

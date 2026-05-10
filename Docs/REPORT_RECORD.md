@@ -321,3 +321,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The feature is technically feasible, but it is not a small UI-only change.
 - Safe implementation requires current-wave restart support, cleanup suppression for spawned enemies, JU TPS-compatible player resurrection, stats timer resume support, death-monitor reset, and end-screen revive controls.
 - Recommendation is to implement a simplified version only if enough hands-on validation time remains.
+
+## Task 24 Light HUD Visual Polish
+- The Last Stand HUD received a light readability polish pass.
+- A dark translucent stats panel and objective banner were added.
+- Existing gameplay stat logic was preserved.
+- The polished HUD better supports final video and live-demo explanation of wave progress, health, kills, score, survival time, FPS, and objective state.
