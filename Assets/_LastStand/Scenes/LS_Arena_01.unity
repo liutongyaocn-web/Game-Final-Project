@@ -5902,6 +5902,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 538463249}
     m_Modifications:
+    - target: {fileID: 658524603141998498, guid: 9ce03ed22613ec94794c2173f187f0bf,
+        type: 3}
+      propertyPath: MainMenuScene
+      value: LS_MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 969879555309924604, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6090,7 +6095,7 @@ PrefabInstance:
     - target: {fileID: 8325505125749106588, guid: 9ce03ed22613ec94794c2173f187f0bf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 393.77475
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

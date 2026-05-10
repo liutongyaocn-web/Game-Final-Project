@@ -631,3 +631,15 @@
 
 ## Next Planned Task
 - Manually click Start Game, Controls, Close, and Quit in the Game view, then continue final video/demo preparation.
+
+## 2026-05-10 01:05 +01:00 - Task 22D Gameplay Pause Menu Fix
+- Investigated the `Esc`/JU TPS pause menu regression after adding `LS_MainMenu`.
+- Found `JU_UIPause.MainMenuScene` in `LS_Arena_01` still pointed to the old JU TPS demo scene name `Menu`.
+- The missing scene caused `SceneManager.LoadSceneAsync("Menu")` errors after Build Settings were changed to the Last Stand menu flow.
+- The failed load also explained the follow-up inactive `Pause Screen` coroutine error.
+- Updated only the `LS_Arena_01` scene instance so `JU_UIPause.MainMenuScene = LS_MainMenu`.
+- Confirmed direct gameplay Play Mode has one EventSystem, no persistent main menu UI, and 0 red Console errors.
+- No JU TPS source scripts/prefabs, Synty assets, gameplay systems, minimap, enemy/wave balance, ProjectSettings, or Packages were changed.
+
+## Next Planned Task
+- Manually confirm `Esc` opens the JU TPS pause UI and its Menu button returns to `LS_MainMenu`, then continue final video/demo preparation.

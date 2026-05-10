@@ -107,6 +107,11 @@ Validation:
 - Console reported 0 red errors.
 - Physical button clicks still need a quick manual Game view check because MCP cannot reliably click UGUI buttons.
 
+## Task 22D Pause Menu Integration Fix
+After adding `LS_MainMenu`, `LS_Arena_01` still had the JU TPS pause menu configured to return to the old demo scene name `Menu`. Because Build Settings now use `LS_MainMenu` instead of the JU TPS demo menu scene, the JU TPS pause Menu button could throw a missing-scene error.
+
+The gameplay scene instance was updated so `_UISetup/UI_JUTPS_Default/Pause Screen` has `JU_UIPause.MainMenuScene = LS_MainMenu`. This preserves the Last Stand main menu start flow while keeping the JU TPS pause menu pointed at the correct project-owned menu scene.
+
 ## Deliberately Not Implemented
 - Save system.
 - Settings menu.

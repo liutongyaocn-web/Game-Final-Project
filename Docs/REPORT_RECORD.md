@@ -300,3 +300,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The `LS_MainMenu` white-screen issue was fixed.
 - The menu now uses a Screen Space - Overlay Canvas with a dark background and visible text/buttons.
 - This keeps the start flow usable for final demo and assessment without modifying gameplay systems.
+
+## Task 22D Pause Menu Regression Fix
+- The JU TPS pause menu scene target in `LS_Arena_01` was updated from the old demo `Menu` scene to `LS_MainMenu`.
+- This restores consistency between the project-owned main menu and the gameplay pause menu flow.
+- JU TPS source assets were not modified.

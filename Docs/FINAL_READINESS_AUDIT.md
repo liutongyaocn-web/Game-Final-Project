@@ -48,6 +48,7 @@ This audit records the release-readiness state of Last Stand after the post-paci
 | Full Wave 5 to extraction not manually completed | High | Not blocking if objective/debug path and wave systems are shown honestly | Yes | Worth attempting once before final recording | Show normal wave flow, then show documented extraction/victory path if full clear is too slow. |
 | Victory-state `R` restart not manually tested | Medium | Not blocking | Yes | Quick to test if time permits | Show failed-state restart if victory restart cannot be reached; mention same end screen controller handles both. |
 | Main menu physical button click not manually confirmed | Low | Not blocking | Yes | Quick to test before recording | If needed, open `LS_Arena_01` directly as fallback; controller refs and target scene loading were validated. |
+| JU TPS pause `Esc` flow needs manual recheck after scene target fix | Low | Not blocking if direct gameplay remains clean | Yes | Quick to test before recording | Press `Esc`, confirm the JU TPS pause UI opens, then confirm its Menu button returns to `LS_MainMenu`. |
 | Some enemies may get stuck on NavMesh in detailed areas | Medium | Not blocking unless frequent in demo route | Yes | Fix only if a repeatable stuck spot appears in the planned route | Keep combat near validated open areas and spawn routes. |
 | Ranged enemy may still feel strong | Medium | Not blocking | Yes | Tune only if it prevents demo completion | Treat as intended difficulty; show cover/movement and keep ranged count limited. |
 | HUD is readable but plain | Low | Not blocking | Yes | Optional only | Explain HUD values clearly in narration. |
@@ -105,6 +106,8 @@ The remaining issues are mostly validation, balance feel, and presentation polis
 - Confirm no unintended `Assets/**`, `ProjectSettings/**`, `Packages/**`, or third-party folders are staged.
 - Confirm `LS_MainMenu` and `LS_Arena_01` are in Build Settings.
 - Confirm `Start Game` loads `LS_Arena_01`.
+- Confirm `Esc` opens the JU TPS pause UI in `LS_Arena_01`.
+- Confirm the JU TPS pause Menu button returns to `LS_MainMenu`.
 - Confirm final playable scene is `Assets/_LastStand/Scenes/LS_Arena_01.unity`.
 - Confirm `WaveManager.autoStartOnPlay` remains true.
 - Confirm `SpawnDirector.debugSpawnOnStart` remains false.
