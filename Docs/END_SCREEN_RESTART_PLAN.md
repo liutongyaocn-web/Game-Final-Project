@@ -82,6 +82,19 @@ Current layout:
 
 `EndScreenController` now leaves the restart prompt to the dedicated `Restart_Text` object instead of duplicating it inside the stats block.
 
+## Task 24X Readability Pass
+The end screen was made more prominent while keeping the same failure/victory/restart behaviour.
+
+Updated Full HD layout:
+- Centred `EndScreen_Panel`, approximately `660 x 360`.
+- Dark translucent card background, alpha `0.45`.
+- Title font size `52`.
+- Subtitle font size `24`.
+- Stats font size `20`.
+- Restart prompt font size `24`, yellow accent.
+
+The same layout is used for `You Died` and `Extraction Complete`. No restart input or GameFlow logic changed.
+
 ## Deliberately Not Implemented
 - Pause menu.
 - Settings menu.

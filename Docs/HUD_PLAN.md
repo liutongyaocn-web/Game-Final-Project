@@ -127,6 +127,17 @@ Current custom HUD stat block:
 
 The bottom-left FPS display is untouched. End-screen layout was also moved into a clearer centred presentation so failure/victory messaging does not overlap the JU TPS weapon UI.
 
+## Task 24X End Screen Card
+The end screen was enlarged and restyled into a centred card for clearer win/fail communication.
+
+The regular gameplay HUD remains compact. The end screen is intentionally more prominent:
+- `EndScreen_Panel`: approximately `660 x 360`.
+- Background: dark translucent Image alpha `0.45`.
+- Title: font size `52`.
+- Subtitle: font size `24`.
+- Stats: font size `20`.
+- Restart prompt: font size `24`, yellow accent.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 

@@ -747,3 +747,15 @@
 
 ## Next Planned Task
 - Manually test failed and victory end screens in Full HD, including `R` restart from both states before final recording.
+
+## 2026-05-10 05:25 +01:00 - Task 24X EndScreen Readability Pass
+- Enlarged and restyled the centred EndScreen after visual feedback.
+- Converted `EndScreen_Panel` into a dark translucent card with alpha `0.45`.
+- Increased panel size to approximately `660 x 360`.
+- Increased title/subtitle/stats/restart prompt font sizes for stronger hierarchy.
+- Kept the regular compact HUD unchanged.
+- No gameplay logic, GameFlow, WaveManager, enemies, stats, pickups, restart logic, JU TPS/Synty/JUTPS Addons assets, or Build Settings were changed.
+- Unity MCP had no active Unity session, so failed/victory Play Mode validation remains manual.
+
+## Next Planned Task
+- Manually trigger Failed and Victory screens in Full HD and confirm readability, Console state, and `R` restart.

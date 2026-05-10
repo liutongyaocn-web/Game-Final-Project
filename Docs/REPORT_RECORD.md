@@ -353,3 +353,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Removed the custom Last Stand HUD FPS line because another FPS overlay already exists.
 - Centred and resized the end-screen failure/victory layout so it no longer overlaps the JU TPS weapon UI.
 - Kept the restart prompt visible and kept gameplay/stat logic unchanged.
+
+## Task 24X End Screen Readability
+- Enlarged the end-screen layout and added a dark translucent card behind the text.
+- Improved title, subtitle, stats, and restart prompt hierarchy.
+- Regular compact HUD remains unchanged.

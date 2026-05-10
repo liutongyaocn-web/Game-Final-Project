@@ -118,3 +118,17 @@ The custom Last Stand HUD FPS line was removed because an existing bottom-left F
 End-screen layout was adjusted so the death/victory panel is centred and clear instead of sitting near the bottom-right JU TPS weapon UI. The panel RectTransform now uses a centred pivot, the panel size is approximately `620 x 320`, and the title/subtitle/stats/restart prompt text objects use smaller centred RectTransforms.
 
 `EndScreenController` was also cleaned up so the stats text no longer duplicates `Press R to Restart`; the separate restart prompt remains visible. Unity MCP still had no active Unity session during this task, so failed/victory visual validation and `R` restart checks remain a manual follow-up.
+
+## Task 24X End Screen Readability Pass
+The centred EndScreen was enlarged and given a stronger card-style presentation after visual review found it still too small.
+
+EndScreen changes:
+- `EndScreen_Panel` now uses a dark translucent Image card with alpha `0.45`.
+- Panel size increased to approximately `660 x 360`.
+- Title font increased to `52`.
+- Subtitle font set to `24`.
+- Stats font increased to `20`.
+- Restart prompt font increased to `24`.
+- Text RectTransforms were widened to approximately `600` pixels and spaced within the card.
+
+The regular compact HUD was not changed. Unity MCP still had no active Unity session, so failed/victory Play Mode visual validation remains a manual follow-up.

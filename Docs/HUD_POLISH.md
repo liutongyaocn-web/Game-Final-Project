@@ -85,3 +85,14 @@ The compact text layout was kept unchanged:
 - Objective
 
 No HUD data logic, gameplay logic, or script references were changed.
+
+## Task 24X End Screen Visual Hierarchy
+The regular gameplay HUD remains compact and background-free. The end screen now uses a stronger centred dark card so victory/failure states stand apart from normal play.
+
+End-screen visual hierarchy:
+- Large white title.
+- Light grey subtitle and stats.
+- Yellow restart prompt.
+- Dark translucent card behind the text.
+
+No gameplay, stats, wave, enemy, pickup, or restart logic was changed.
