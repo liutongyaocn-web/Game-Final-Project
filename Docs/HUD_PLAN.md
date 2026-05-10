@@ -127,6 +127,11 @@ Current custom HUD stat block:
 
 The bottom-left FPS display is untouched. End-screen layout was also moved into a clearer centred presentation so failure/victory messaging does not overlap the JU TPS weapon UI.
 
+## Task 25D Extraction Distance Prompt
+The HUD now includes a small optional extraction distance text, `HUD_ExtractionDistanceText`, controlled by `ExtractionMarkerController`.
+
+It stays inactive before extraction unlocks. When extraction is available, it displays a compact prompt such as `Extraction: 54m` so the player has both the objective text and a distance cue. This is intentionally not a minimap and does not change HUD stat calculations.
+
 ## Task 24X End Screen Card
 The end screen was enlarged and restyled into a centred card for clearer win/fail communication.
 

@@ -784,3 +784,15 @@
 
 ## Next Planned Task
 - Manual replay from Wave 4 into Wave 5 to confirm all 7 Wave 4 enemies resolve.
+
+## 2026-05-10 22:05 +01:00 - Task 25D Extraction Marker and Distance Prompt
+- Added `ExtractionMarkerController` under `Assets/_LastStand/Scripts/GameFlow`.
+- Added a hidden-by-default `ExtractionMarker` visual root under `_ExtractionObjective/Extraction_Point`.
+- Added a simple green/yellow beacon, orb, and world label for the extraction point.
+- Added `HUD_ExtractionDistanceText` so extraction unlock can show a compact distance prompt.
+- Validated default hidden state, debug unlock visibility, debug victory completion, and clean Console state.
+- Restored game-flow debug toggles to false after validation.
+- No minimap, wave balance, enemies, pickups, scoring, player controller, JU TPS source assets, JUTPS Addons assets, Synty assets, or Build Settings were changed.
+
+## Next Planned Task
+- Manual full-run check from Wave 5 clear to visible marker, extraction trigger entry, victory screen, and `R` restart.

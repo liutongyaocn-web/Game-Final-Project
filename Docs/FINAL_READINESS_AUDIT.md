@@ -148,3 +148,8 @@ Manual recording rehearsal should still include mouse-look, aiming, shooting, an
 WaveManager and SpawnDirector were updated after a manual Wave 4 stall report. Failed spawn attempts no longer consume queued enemies, and SpawnDirector has a role-preserving NavMesh fallback if strict distance filtering blocks all spawn points.
 
 Before recording, manually replay Wave 4 and confirm all 7 enemies resolve and Wave 5 begins.
+
+## Task 25D Extraction Marker Note
+An extraction marker and distance prompt were added after manual testing showed that players did not know where to go once extraction unlocked. The marker is hidden before unlock, appears at `_ExtractionObjective/Extraction_Point` when extraction becomes available, and pairs with a compact HUD distance prompt such as `Extraction: 54m`.
+
+This is a low-risk clarity improvement, not a minimap or new objective system. Before final recording, manually complete Wave 5 and confirm the marker guides the player to the trigger, the victory screen appears, and `R` restart works from victory.

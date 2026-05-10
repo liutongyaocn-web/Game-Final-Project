@@ -28,6 +28,11 @@ When the final configured wave completes, `WaveManager` sets `HasCompletedAllWav
 ## HUD Objective Integration
 `LastStandHudController` now optionally reads `GameFlowManager.CurrentObjectiveText`. If no `GameFlowManager` is available, the previous HUD fallback objective logic remains in place.
 
+## Task 25D Extraction Marker Integration
+`Extraction_Point` now has an `ExtractionMarkerController` that observes `GameFlowManager` and `ExtractionObjective` state. The marker root is hidden before extraction unlocks, appears when extraction becomes available, and hides again after victory.
+
+The scene marker uses simple project-owned primitives and a world label at the extraction point. A small HUD distance text can display `Extraction: Xm` while extraction is unlocked. This improves objective clarity without adding a minimap or moving extraction logic into the wave system.
+
 ## Task 17 End-State UI Integration
 Victory and Failed states now display a simple end-state panel through `EndScreenController`. The end screen reads `GameFlowManager.CurrentState`, shows either `Extraction Complete` or `You Died`, and provides a `Press R to Restart` prompt.
 
@@ -40,6 +45,7 @@ Extraction unlock and extraction completion now ignore requests after the run ha
 `LS_Arena_01` now contains:
 - `_Systems/GameFlowSystem` with `GameFlowManager`
 - `_ExtractionObjective/Extraction_Point` with `ExtractionObjective`
+- `_ExtractionObjective/Extraction_Point/ExtractionMarker` visual root, hidden by default
 - `Extraction_Point` `BoxCollider` configured as a trigger with approximate size `4 x 3 x 4`
 - HUD controller reference to `GameFlowManager`
 

@@ -23,6 +23,7 @@
 - Task 24 improved HUD readability without changing gameplay logic; Tasks 24R, 24S, 24U, and 24V iterated the layout into a compact Full HD gameplay HUD with no visible background panels after visual feedback; Task 24W removed duplicate FPS from the custom HUD and centred the end-screen layout away from the JU TPS weapon UI; Task 24X enlarged the end-screen card/hierarchy for clearer win/fail communication.
 - Remaining risks are acceptable for submission if documented and demonstrated carefully: full Wave 5 extraction validation, victory-state restart, ranged feel, possible NavMesh stuck spots, plain HUD visuals, and third-party asset delivery.
 - Task 25B addressed a blocking Wave 4 progression risk by making wave spawning retry failed spawns instead of consuming queued enemies.
+- Task 25D added a visible extraction marker and HUD distance prompt so the final objective is easier to find once unlocked.
 - Recommended evidence priority is now video/demo clarity rather than major new implementation.
 
 

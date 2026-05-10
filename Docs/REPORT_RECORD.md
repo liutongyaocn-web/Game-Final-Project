@@ -368,3 +368,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Wave spawning was made robust against failed spawn attempts.
 - Failed spawns no longer permanently consume queued enemies.
 - SpawnDirector fallback now keeps role separation while relaxing distance filtering and using a larger NavMesh sample radius.
+
+## Task 25D Extraction Marker
+- Added a visible extraction marker and distance prompt for the final objective.
+- The marker stays hidden before extraction unlocks and appears once the player needs to reach extraction.
+- This improves win-condition clarity for the final demo without implementing a minimap or changing gameplay balance.
