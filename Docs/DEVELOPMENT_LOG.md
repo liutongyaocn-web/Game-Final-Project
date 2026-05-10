@@ -710,3 +710,16 @@
 
 ## Next Planned Task
 - Open `LS_Arena_01`, confirm Wave 1 auto-start and check the minimal HUD in Game view at recording resolution.
+
+## 2026-05-10 04:30 +01:00 - Task 24U Full HD Compact HUD Layout
+- Reworked the HUD for a `1920 x 1080` Game view after the previous vertical layout was still too tall.
+- Updated `LastStandHudController` formatting so stats appear in four compact rows instead of seven separate visible lines.
+- Set the stats panel to roughly `340 x 105`.
+- Set the objective panel to roughly `480 x 30`.
+- Kept UI parent scales at `1,1,1` and used RectTransform/font changes rather than transform scaling.
+- Kept all gameplay/stat data visible: wave, enemies, health, kills, score, time, FPS, and objective.
+- No gameplay logic, stats calculations, enemy/wave/spawn systems, JU TPS source assets, Synty assets, or Build Settings were changed.
+- Unity MCP had no active Unity session, so Full HD Play Mode validation remains manual.
+
+## Next Planned Task
+- Manual Full HD Game view pass: confirm Wave 1 auto-start, compact HUD readability, and no gameplay Console errors.

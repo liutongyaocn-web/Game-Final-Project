@@ -62,3 +62,14 @@ Task 24S converted the HUD from the previous compact-polish version into a minim
 - Objective text is now `17`.
 
 This keeps the HUD readable while reducing obstruction during combat. No scripts or gameplay logic were changed.
+
+## Task 24U Full HD Gameplay Layout
+Full HD testing showed the minimal vertical HUD was still too tall, so the HUD was reworked into a compact gameplay layout.
+
+The stats display now uses four combined rows instead of a long vertical list:
+- `Wave 1/5    Enemies 3/3`
+- `HP 400/400    Kills 0`
+- `Score 0    Time 00:09`
+- `FPS: 66`
+
+The stats panel is now about `340 x 105` and the objective panel is about `480 x 30`. This is the intended final HUD direction unless critical visual issues remain.

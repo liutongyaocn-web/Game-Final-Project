@@ -337,3 +337,9 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The HUD was reduced again into a minimal top-left stats block and small top-centre objective strip.
 - Large presentation panels were replaced with low-alpha backing panels to avoid blocking combat view.
 - No scripts or gameplay systems were changed.
+
+## Task 24U Full HD Compact HUD Layout
+- The HUD was reworked for Full HD gameplay recording.
+- Stats now use compact combined rows rather than a tall vertical list.
+- The change improves gameplay visibility while keeping all required statistics visible.
+- Data logic was not changed.

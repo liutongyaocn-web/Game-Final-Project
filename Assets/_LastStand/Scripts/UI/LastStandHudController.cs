@@ -84,36 +84,37 @@ namespace LastStand.UI
         {
             if (statsManager == null)
             {
-                SetText(waveText, showDebugFallbackText ? "Wave: - / -" : string.Empty);
-                SetText(enemiesText, showDebugFallbackText ? "Enemies Remaining: - / -" : string.Empty);
-                SetText(killsText, showDebugFallbackText ? "Kills: 0" : string.Empty);
-                SetText(scoreText, showDebugFallbackText ? "Score: 0" : string.Empty);
-                SetText(timeText, showDebugFallbackText ? "Time: 00:00" : string.Empty);
+                SetText(waveText, showDebugFallbackText ? "Wave -/-    Enemies -/-" : string.Empty);
+                SetText(healthText, showDebugFallbackText ? "HP -    Kills 0" : string.Empty);
+                SetText(scoreText, showDebugFallbackText ? "Score 0    Time 00:00" : string.Empty);
+                SetText(enemiesText, string.Empty);
+                SetText(killsText, string.Empty);
+                SetText(timeText, string.Empty);
             }
             else
             {
-                SetText(waveText, $"Wave: {statsManager.CurrentWaveNumber} / {statsManager.TotalWaves}");
-                SetText(enemiesText, $"Enemies Remaining: {statsManager.EnemiesRemainingThisWave} / {statsManager.EnemiesTotalThisWave}");
-                SetText(killsText, $"Kills: {statsManager.Kills}");
-                SetText(scoreText, $"Score: {statsManager.Score}");
-                SetText(timeText, $"Time: {statsManager.FormattedSurvivalTime}");
+                SetText(waveText, $"Wave {statsManager.CurrentWaveNumber}/{statsManager.TotalWaves}    Enemies {statsManager.EnemiesRemainingThisWave}/{statsManager.EnemiesTotalThisWave}");
+                SetText(healthText, $"{FormatHealthCompact()}    Kills {statsManager.Kills}");
+                SetText(scoreText, $"Score {statsManager.Score}    Time {statsManager.FormattedSurvivalTime}");
+                SetText(enemiesText, string.Empty);
+                SetText(killsText, string.Empty);
+                SetText(timeText, string.Empty);
             }
 
             SetText(fpsText, fpsCounter != null ? $"FPS: {Mathf.RoundToInt(fpsCounter.CurrentFps)}" : "FPS: -");
-            SetText(healthText, FormatHealth());
             SetText(objectiveText, $"Objective: {GetObjectiveText()}");
         }
 
-        private string FormatHealth()
+        private string FormatHealthCompact()
         {
             if (healthReader == null || !healthReader.HasHealthValue)
             {
-                return "Health: unavailable";
+                return "HP unavailable";
             }
 
             int current = Mathf.RoundToInt(healthReader.CurrentHealth);
             int max = Mathf.RoundToInt(healthReader.MaxHealth);
-            return max > 0 ? $"Health: {current} / {max}" : $"Health: {current}";
+            return max > 0 ? $"HP {current}/{max}" : $"HP {current}";
         }
 
         private string GetObjectiveText()

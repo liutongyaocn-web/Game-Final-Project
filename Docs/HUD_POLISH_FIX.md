@@ -81,3 +81,22 @@ Minimal layout changes:
 The large dark panels were not removed entirely because a faint backing panel helps readability over the bright POLYGON city scene, but they are now low-opacity and much smaller.
 
 Unity MCP was not connected during this follow-up, so Play Mode validation must be completed manually. Static scene inspection confirmed the target RectTransform, alpha, and font-size values were applied. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace remains documented as editor UI noise, not a Last Stand gameplay exception.
+
+## Task 24U Full HD Compact Layout
+The HUD was reworked again after Full HD `1920 x 1080` testing showed the minimal vertical stack was still too tall and visually distracting.
+
+Final compact layout:
+- Stats panel is approximately `340 x 105`, anchored top-left at `x 18`, `y -18`.
+- Stats panel background alpha is `0.22`.
+- Objective panel is approximately `480 x 30`, anchored top-centre at `y -18`.
+- Objective panel background alpha is `0.18`.
+- HUD stat output is combined into four short rows:
+  - `Wave 1/5    Enemies 3/3`
+  - `HP 400/400    Kills 0`
+  - `Score 0    Time 00:09`
+  - `FPS: 66`
+- Objective text remains a short top-centre strip, not a large banner.
+
+`LastStandHudController` was changed only for display formatting. It still reads the same StatsManager, health, FPS, and objective data. No stats calculation, gameplay logic, wave logic, enemy logic, or spawn logic was changed.
+
+Unity MCP still had no active Unity session during this pass, so Full HD Play Mode validation remains a manual follow-up. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace should continue to be treated as editor UI noise unless a future stack references `_LastStand` gameplay code.

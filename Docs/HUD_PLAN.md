@@ -88,6 +88,24 @@ Minimal layout:
 
 The large visual treatment from Task 24 was intentionally dialed back. The HUD now prioritizes low obstruction over presentation weight while preserving the same displayed data and `LastStandHudController` references.
 
+## Task 24U Full HD Compact Gameplay Layout
+After testing in a `1920 x 1080` Game view, the HUD was reworked from separate vertical stat labels into combined compact rows.
+
+Visible stat rows:
+- `Wave X/Y    Enemies A/B`
+- `HP C/M    Kills K`
+- `Score S    Time MM:SS`
+- `FPS: N`
+
+Layout:
+- Stats panel: about `340 x 105`, top-left.
+- Objective panel: about `480 x 30`, top-centre.
+- Main stats font: `14-15`.
+- FPS font: `11`.
+- Objective font: `16`.
+
+This keeps all previous data visible while making the HUD much less distracting for Full HD recording and normal play.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 
