@@ -373,3 +373,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Added a visible extraction marker and distance prompt for the final objective.
 - The marker stays hidden before extraction unlocks and appears once the player needs to reach extraction.
 - This improves win-condition clarity for the final demo without implementing a minimap or changing gameplay balance.
+
+## Task 25 Video Demo Script
+- Created the final Coursework002 video demo script and recording plan.
+- The plan targets a 9-11 minute video and covers story, menu flow, combat, HUD/statistics, AI, waves, pickups, win/fail states, code evidence, GitHub evidence, and external asset attribution.
+- A backup extraction/victory demonstration route is documented in case a full Wave 5 run takes too long during recording.

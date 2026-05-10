@@ -153,3 +153,19 @@ Before recording, manually replay Wave 4 and confirm all 7 enemies resolve and W
 An extraction marker and distance prompt were added after manual testing showed that players did not know where to go once extraction unlocked. The marker is hidden before unlock, appears at `_ExtractionObjective/Extraction_Point` when extraction becomes available, and pairs with a compact HUD distance prompt such as `Extraction: 54m`.
 
 This is a low-risk clarity improvement, not a minimap or new objective system. Before final recording, manually complete Wave 5 and confirm the marker guides the player to the trigger, the victory screen appears, and `R` restart works from victory.
+
+## Final Video Demo Script Note
+`Docs/VIDEO_DEMO_SCRIPT.md` now provides the final Coursework002 recording plan. It targets a 9-11 minute video, with a hard maximum of 12 minutes.
+
+The plan covers:
+- story and game logic
+- main menu/start flow
+- player controls and combat
+- HUD/statistics
+- enemy AI
+- wave spawning/content generation
+- enemy death pickups
+- failure/victory/restart
+- code, GitHub, and external asset evidence
+
+It also includes a backup route for demonstrating extraction through the debug path if a full Wave 5 run takes too long during recording.

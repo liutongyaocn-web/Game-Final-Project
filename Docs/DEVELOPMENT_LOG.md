@@ -796,3 +796,13 @@
 
 ## Next Planned Task
 - Manual full-run check from Wave 5 clear to visible marker, extraction trigger entry, victory screen, and `R` restart.
+
+## 2026-05-10 22:30 +01:00 - Task 25 Final Video Demo Script
+- Created `Docs/VIDEO_DEMO_SCRIPT.md`.
+- Planned a 9-11 minute Coursework002 video route with a 12 minute maximum.
+- Covered title/game overview, story, main menu, controls, combat, HUD/statistics, enemy AI, wave generation, enemy drops, victory/failure, GitHub/code evidence, external assets, and conclusion.
+- Added a shot checklist, 10-minute timeline, backup extraction/victory route, and Q&A preparation.
+- This was a docs-only task; no scenes, scripts, prefabs, assets, ProjectSettings, Packages, or gameplay systems were changed.
+
+## Next Planned Task
+- Record the final demo using `Docs/VIDEO_DEMO_SCRIPT.md`, then create the final GitHub release/submission package.
