@@ -618,3 +618,16 @@
 
 ## Next Planned Task
 - Manually confirm Start Game and Controls button clicks in the Game view, then continue with final video/demo preparation.
+
+## 2026-05-10 00:35 +01:00 - Task 22A-Fix Main Menu Visibility
+- Investigated the `LS_MainMenu` white Game view issue.
+- Found the menu Canvas was saved as World Space with a small root rect, the background was white, and visible Text content was not serialized.
+- Reconfigured the scene UI to a robust Screen Space - Overlay Canvas with Scale With Screen Size.
+- Changed the background to a dark readable color.
+- Restored visible title, subtitle, button, and controls panel text.
+- Kept the controls panel inactive by default.
+- Play Mode inspection and Console validation passed with 0 red errors.
+- No scripts, gameplay systems, `LS_Arena_01`, ProjectSettings, or third-party assets were changed.
+
+## Next Planned Task
+- Manually click Start Game, Controls, Close, and Quit in the Game view, then continue final video/demo preparation.

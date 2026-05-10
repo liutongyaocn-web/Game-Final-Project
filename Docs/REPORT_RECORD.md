@@ -295,3 +295,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - The menu includes a title, short objective description, Start Game button, Controls panel, and Quit button.
 - Build Settings now include the Last Stand menu and gameplay scene so the project has a complete start flow.
 - JU TPS demo menu assets were used only as a visual reference and were not modified.
+
+## Task 22A-Fix Main Menu Visibility
+- The `LS_MainMenu` white-screen issue was fixed.
+- The menu now uses a Screen Space - Overlay Canvas with a dark background and visible text/buttons.
+- This keeps the start flow usable for final demo and assessment without modifying gameplay systems.

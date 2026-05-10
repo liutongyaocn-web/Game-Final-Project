@@ -81,6 +81,32 @@ Validated through Unity MCP:
 
 MCP could not physically click UGUI buttons in Game view, and arbitrary runtime C# execution hit a Windows filename/extension tooling limit. Therefore, the final physical Start Game and Controls button click should be manually confirmed in the Unity Game view.
 
+## Task 22A-Fix White Screen Repair
+After the first menu pass, opening `LS_MainMenu` in Play Mode showed a white Game view instead of the menu.
+
+Cause found:
+
+- `MainMenuCanvas` had been saved as a World Space Canvas with a small `100 x 100` RectTransform.
+- The full-screen `Background` Image was still pure white.
+- Several `Text` components had empty serialized text values, so the UI offered no visible menu content.
+
+Fix applied:
+
+- Set `MainMenuCanvas` to Screen Space - Overlay.
+- Set `CanvasScaler` to Scale With Screen Size at `1920 x 1080`, match `0.5`.
+- Set the full-screen background to a dark readable color.
+- Reapplied visible text values for `LAST STAND`, subtitle, buttons, and controls panel.
+- Set button and controls panel colors to readable dark/accent tones.
+- Kept the controls panel inactive by default.
+
+Validation:
+
+- Play Mode component inspection confirmed the Canvas is active, Screen Space - Overlay, and using the corrected scaler settings.
+- `Background` Image is dark instead of white.
+- `Title_Text` contains `LAST STAND` with light text.
+- Console reported 0 red errors.
+- Physical button clicks still need a quick manual Game view check because MCP cannot reliably click UGUI buttons.
+
 ## Deliberately Not Implemented
 - Save system.
 - Settings menu.
