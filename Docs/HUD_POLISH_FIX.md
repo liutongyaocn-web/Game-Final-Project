@@ -100,3 +100,14 @@ Final compact layout:
 `LastStandHudController` was changed only for display formatting. It still reads the same StatsManager, health, FPS, and objective data. No stats calculation, gameplay logic, wave logic, enemy logic, or spawn logic was changed.
 
 Unity MCP still had no active Unity session during this pass, so Full HD Play Mode validation remains a manual follow-up. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace should continue to be treated as editor UI noise unless a future stack references `_LastStand` gameplay code.
+
+## Task 24V Background Panel Removal
+The dark translucent HUD backing panels were removed visually by setting their Image alpha values to `0`.
+
+Affected objects:
+- `HUD_StatsPanel` background Image alpha: `0.22 -> 0`
+- `HUD_ObjectivePanel` background Image alpha: `0.18 -> 0`
+
+The panel GameObjects and RectTransforms were kept so the compact text layout remains stable. No text objects were deleted and no `LastStandHudController` references were changed.
+
+Unity MCP still had no active Unity session, so Play Mode validation remains a manual follow-up. The known `UnityEditor.EditorStyles` / `InspectorWindow` / UIElements stack trace remains editor UI noise, not a Last Stand gameplay exception.

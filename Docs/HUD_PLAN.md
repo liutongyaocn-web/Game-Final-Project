@@ -106,6 +106,17 @@ Layout:
 
 This keeps all previous data visible while making the HUD much less distracting for Full HD recording and normal play.
 
+## Task 24V No Background Panels
+The compact HUD no longer shows dark translucent rectangular backing panels.
+
+Implementation:
+- `HUD_StatsPanel` Image alpha set to `0`.
+- `HUD_ObjectivePanel` Image alpha set to `0`.
+- Parent RectTransforms were kept for layout.
+- Text objects and `LastStandHudController` references were left unchanged.
+
+This further reduces screen obstruction while preserving the compact Full HD stat layout.
+
 ## Task 22A Main Menu Integration
 The HUD remains the in-game stat/objective layer, while `LS_MainMenu.unity` now provides the pre-game start flow. The main menu loads `LS_Arena_01`, where the HUD appears during gameplay and Wave 1 auto-starts.
 

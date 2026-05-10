@@ -343,3 +343,8 @@ Working evidence record for CMP-6056B / CMP-7042B Coursework002. Update this con
 - Stats now use compact combined rows rather than a tall vertical list.
 - The change improves gameplay visibility while keeping all required statistics visible.
 - Data logic was not changed.
+
+## Task 24V HUD Background Removal
+- The visible HUD background rectangles were removed.
+- Compact text remains visible without the dark stats/objective panels.
+- This further reduces screen obstruction for recording and normal play.

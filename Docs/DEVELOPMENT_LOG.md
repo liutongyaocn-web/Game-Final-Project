@@ -723,3 +723,15 @@
 
 ## Next Planned Task
 - Manual Full HD Game view pass: confirm Wave 1 auto-start, compact HUD readability, and no gameplay Console errors.
+
+## 2026-05-10 04:45 +01:00 - Task 24V Remove HUD Background Panels
+- Removed the visible dark translucent rectangles behind the compact HUD text.
+- Set `HUD_StatsPanel` Image alpha to `0`.
+- Set `HUD_ObjectivePanel` Image alpha to `0`.
+- Kept panel RectTransforms in place for layout stability.
+- Kept compact text layout unchanged.
+- No scripts, gameplay logic, stats calculations, enemy/wave/spawn systems, JU TPS source assets, Synty assets, or Build Settings were changed.
+- Unity MCP had no active Unity session, so Play Mode validation remains manual.
+
+## Next Planned Task
+- Manual Full HD Game view pass to confirm HUD readability without backing panels.

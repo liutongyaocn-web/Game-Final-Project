@@ -73,3 +73,15 @@ The stats display now uses four combined rows instead of a long vertical list:
 - `FPS: 66`
 
 The stats panel is now about `340 x 105` and the objective panel is about `480 x 30`. This is the intended final HUD direction unless critical visual issues remain.
+
+## Task 24V Background Panel Removal
+The dark translucent rectangles behind the compact HUD were removed visually by setting the stats and objective panel Image alpha values to `0`.
+
+The compact text layout was kept unchanged:
+- Wave / Enemies
+- HP / Kills
+- Score / Time
+- FPS
+- Objective
+
+No HUD data logic, gameplay logic, or script references were changed.
